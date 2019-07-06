@@ -79,7 +79,7 @@ p b {
 .slider {
   -webkit-appearance: none;
   height: 4px;
-  width: 100%;
+  width: 90%;
   border-radius: 2px;   
   background: #d3d3d3;
   outline: none;
