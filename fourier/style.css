@@ -50,11 +50,10 @@ p b {
 
 .container_a {
 	float: right;
-	margin-right: 16px;
 }
 
 .article {
-	width: 300px;
+	width: 360px;
 	float: left;
 }
 
