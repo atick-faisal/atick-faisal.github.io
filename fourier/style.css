@@ -50,6 +50,7 @@ p b {
 
 .container_a {
 	float: right;
+	margin-right: 16px;
 }
 
 .article {
