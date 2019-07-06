@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fourier Series</title>
+	<script type="text/javascript" src="/home/andromeda/Workspace/fourier/p5/p5/p5.min.js"></script>
+	<script type="text/javascript" src="fourier.js"></script>
+	<script type="text/javascript" src="coding_train.js"></script>
+	<script type="text/javascript" src="sketch.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="main">
+
+	<div id="sketch_holder">
+		<div class="center">
+		  <p><b><i>Click and Drag</i></b> to draw any shape then hit <b><i>Enter</i></b></p>
+		</div>
+	</div>
+	<div class="article">
+		<h1>Fourier <br> Drawing <br> Tool</h1>
+		<img src="assets/owl.png" width="150px">
+		<p>This drawing tool uses Fourier Transform method to approximate the shape of the drawing. Each circle represents a harmonic component of the transform. Sum of the amplitudes of all the circles is used to re-draw the shape.</p>
+
+		<button class="button1" onclick="done()">Done</button>
+		<button class="button2" onclick="reset()">Clear</button>
+
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
