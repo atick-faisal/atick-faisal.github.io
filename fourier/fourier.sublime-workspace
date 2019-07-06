@@ -1,0 +1,290 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"d",
+				"dftY"
+			],
+			[
+				"fo",
+				"fourierY"
+			],
+			[
+				"lo",
+				"locusY"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"loc",
+				"locusY"
+			],
+			[
+				"l",
+				"locusX"
+			],
+			[
+				"s",
+				"show"
+			],
+			[
+				"cre",
+				"createVector"
+			],
+			[
+				"da",
+				"dataY"
+			],
+			[
+				"p",
+				"pop"
+			],
+			[
+				"df",
+				"dftY"
+			],
+			[
+				"data",
+				"dataX"
+			],
+			[
+				"t",
+				"time"
+			],
+			[
+				"j",
+				"justify-all\ttext-align"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"fon",
+				"font-weight\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"ma",
+				"margin-left\tproperty"
+			],
+			[
+				"pa",
+				"padding-left\tproperty"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"stro",
+				"strokeWeight"
+			],
+			[
+				"n",
+				"newRadius"
+			],
+			[
+				"B",
+				"BASE_DIR"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"AP",
+				"API_KEY"
+			],
+			[
+				"API_",
+				"API_ENDPOINT"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/andromeda/Workspace/fourier"
+	],
+	"file_history":
+	[
+		"/home/andromeda/Workspace/fourier_transform/src/coding_train.js",
+		"/home/andromeda/Workspace/fourier_transform/src/style.css",
+		"/home/andromeda/Workspace/fourier_transform/src/sketch.js",
+		"/home/andromeda/Workspace/fourier_transform/src/fourier.js",
+		"/home/andromeda/Workspace/fourier_transform/src/index.html",
+		"/home/andromeda/Workspace/locus_tracker/src/sketch.js",
+		"/home/andromeda/Workspace/fourier/src/sketch.js",
+		"/home/andromeda/Workspace/fourier/src/index.html",
+		"/home/andromeda/Workspace/fourier/src/style.css",
+		"/home/andromeda/Workspace/django/src/templates/profile.html",
+		"/home/andromeda/Workspace/django/src/pages/views.py",
+		"/home/andromeda/Workspace/django/src/hello/settings.py",
+		"/home/andromeda/Workspace/python_101/src/dark_sky.py",
+		"/home/andromeda/Workspace/python_101/src/key.py",
+		"/home/andromeda/Workspace/django/src/hello/urls.py",
+		"/home/andromeda/Workspace/django/src/hello/manage.py",
+		"/home/andromeda/Workspace/django/src/products/models.py",
+		"/home/andromeda/Workspace/django/src/products/admin.py"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "fourier.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 266.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
