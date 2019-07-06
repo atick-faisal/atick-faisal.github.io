@@ -184,3 +184,10 @@ p b {
 	border-radius: 50%;
 	background: white;
 }
+
+@media(max-width: 800px) {
+  .article {
+    width: 30%;
+    float: left;
+  }
+}
