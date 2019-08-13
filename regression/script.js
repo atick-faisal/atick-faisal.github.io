@@ -44,14 +44,17 @@ var slider2 = document.getElementById("iterations");
 var slider3 = document.getElementById("order");
 
 slider1.oninput = function() {
-	alpha = map(this.value, 0, 100, 0.01, 0.1);
+    alpha = map(this.value, 0, 100, 0.01, 0.1);
+    updateResults();
 }
 
 slider2.oninput = function() {
-	num_iter = map(this.value, 0, 100, 1, 1000);
+    num_iter = map(this.value, 0, 100, 1, 1000);
+    updateResults();
 }
 
 slider3.oninput = function() {
     order = map(this.value, 1, 10, 1, 10);
     theta = zeros(order + 1, 1);
+    updateResults();
 }

@@ -115,6 +115,18 @@ function result() {
     prediction = mapping(denormalizeY(mul(dx, theta)));
 }
 
+function updateResults() {
+    let X = featurizeX(normalizeX(time));
+    let Y = normalizeY(value);
+    gradientDescent(X, Y);
+    result();
+    xData = linspace(1, num_iter, 6);
+    for(let i = 0; i < 6; i++) {
+        yData[i] = J[xData[i] - 1];
+    }
+    myChart.update();
+}
+
 function mousePressed() {
     if(mouseX < 800 && mouseY < 500) {
         let x = mouseX;
@@ -122,15 +134,7 @@ function mousePressed() {
         time.push(x);
         value.push(map(y, 0, height, height, 0));
         if(time.length > 1) {
-            let X = featurizeX(normalizeX(time));
-            let Y = normalizeY(value);
-            gradientDescent(X, Y);
-            result();
-            xData = linspace(1, num_iter, 6);
-            for(let i = 0; i < 6; i++) {
-                yData[i] = J[xData[i] - 1];
-            }
-            myChart.update();
+            updateResults();
         }
     }
 }
