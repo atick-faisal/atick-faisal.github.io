@@ -1,5 +1,5 @@
 :root {
-  --page-width: 1200px;
+  --page-width: 95%;
   --color-primary: #5C6BC0;
   --color-primary-dark: #3949AB;
   --color-accent: #009688;
@@ -329,4 +329,10 @@ body {
 .fa-linkedin {
   background: #007bb5;
   color: white;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --page-width: 800px;
+  }
 }
