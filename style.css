@@ -32,15 +32,6 @@ body {
   margin: auto;
 }
 
-.box h3 a {
-  text-decoration: none;
-  color: var(--color-primary);
-}
-
-.box h3 a:hover {
-  color: var(--color-primary-dark);
-}
-
 .topnav {
   overflow: hidden;
   font-family: 'Roboto', 'sans-serif';
@@ -64,9 +55,11 @@ body {
   text-decoration: none;
   font-size: 14px;
 }
+
 .topnav .navItem:hover {
   color: var(--color-primary);
 }
+
 .topnav .github {
   padding-top: 13px;
   padding-bottom: 13px;
@@ -79,6 +72,7 @@ body {
   font-weight: 600;
   border-radius: 5px;
 }
+
 .topnav .github:hover {
   background-color: var(--color-accent-dark);
   color: rgba(255, 255, 255, 255);
@@ -91,6 +85,7 @@ body {
   min-width: 600px;
   height: 400px;
   text-align: center;
+  cursor: pointer;
 }
 
 .quote {
@@ -192,6 +187,15 @@ body {
   font-weight: 400;
 }
 
+.box h3 a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.box h3 a:hover {
+  color: var(--color-primary-dark);
+}
+
 .box p {
   font-family: 'Roboto';
   font-size: 1.1rem;
@@ -277,6 +281,36 @@ body {
 
 .app_button:hover {
   background-color: var(--color-app-dark);
+  color: #ffffff;
+}
+
+.find_more {
+  margin-bottom: 60px;
+}
+
+.more_button {
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1.3em;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: #424242;
+  color: rgba(255, 255, 255, 200);
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.more_button img {
+  width: 24px;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.more_button:hover {
+  background-color: #212121;
   color: #ffffff;
 }
 
