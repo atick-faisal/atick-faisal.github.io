@@ -91,10 +91,11 @@ body {
 .quote {
   font-family: 'Roboto', 'sans-serif';
   text-align: center;
-  font-size: 1.3em;
+  color: #606060;
+  font-size: 1.2em;
   padding-left: 17%;
   padding-right: 17%;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 30px;
 }
 
@@ -133,7 +134,7 @@ body {
   margin-left: 10px;
   white-space: nowrap;
   background-color: rgba(239, 83, 80, 1);
-  color: rgba(255, 255, 255, 200); */
+  color: rgba(255, 255, 255, 200);
   color: #EF5350;
   padding-left: 30px;
   padding-right: 30px;
