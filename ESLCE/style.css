@@ -1,0 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    
+}
+
+h1 {
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 300;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+a {
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    white-space: nowrap;
+    background-color: #43A047;
+    color: rgba(255, 255, 255, 200);
+    color: #EEEEEE;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+}
+
