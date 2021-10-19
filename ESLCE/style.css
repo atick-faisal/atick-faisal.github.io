@@ -1,19 +1,43 @@
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+
+
 body {
-    padding: 0;
+    padding-left: 20%;
+    padding-right: 20%;
     margin: 0;
     text-align: center;
     
 }
 
 h1 {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Computer Mdern', 'serif';
+    color: #212121;
     font-weight: 300;
     margin-top: 64px;
     margin-bottom: 64px;
 }
 
 a {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Computer Mdern', 'serif';
     font-weight: 400;
     text-decoration: none;
     font-size: 1.1em;
@@ -26,5 +50,13 @@ a {
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 5px;
+}
+
+p {
+    font-family: 'Computer Mdern', 'serif';
+    line-height: 1.35;
+    color: #212121;
+    text-align: justify;
+    margin-bottom: 64px;
 }
 
