@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: "Computer Modern";
     src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
 }
@@ -17,27 +17,26 @@
     src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
     font-weight: bold;
     font-style: italic, oblique;
-}
+} */
 
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
     padding-left: 20%;
     padding-right: 20%;
     margin: 0;
     text-align: center;
-    
+    font-family: 'Old Standard TT', serif;
+    color: #212121;
 }
 
 h1 {
-    font-family: 'Computer Mdern', 'serif';
-    color: #212121;
     font-weight: 300;
-    margin-top: 64px;
+    margin-top: 128px;
     margin-bottom: 64px;
 }
 
-a {
-    font-family: 'Computer Mdern', 'serif';
+.btn {
     font-weight: 400;
     text-decoration: none;
     font-size: 1.1em;
@@ -53,10 +52,20 @@ a {
 }
 
 p {
-    font-family: 'Computer Mdern', 'serif';
     line-height: 1.35;
     color: #212121;
     text-align: justify;
     margin-bottom: 64px;
+    font-size: 1.2rem;
 }
 
+.dataset_info_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+.dataset_info_table td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>ESLCE</title>
 </head>
 <body>
+    <br><br>
     <h1>ESLCE: A Dataset of Emotional Sounds from Large Crowd Events</h1>
     <p>
-        <b>Abstract:</b>
         The Human-like ability to recognize emotion from speech has been an interesting field
         of research for quite a while now. In contrast, the emotion recognition from the sound
         of the crowd is a relatively new domain. Crowds express emotion as a collective group
@@ -27,6 +27,72 @@
         of 34 different features and 2 analysis techniques on the proposed dataset.
         The dataset has been made publicly available for the community.
     </p>
-    <a href="https://drive.google.com/file/d/1XWKMzZuU8jBcf8_Sl3DeIUAjXx0MfiJV/view?usp=sharing">Download Dataset</a>
+
+    <p>
+        <b>Dataset Description:</b>
+        The dataset is composed of audio recordings only from
+        real-life large crowd events and any kind of synthetic or
+        studio recorded sound clips were avoided. The audio was
+        collected from audience-recorded videos of large sports
+        events, concerts, movie theaters, and other crowd gatherings.
+        The sports events include both international and domestic
+        football, cricket, basketball, baseball, wrestling, and other
+        similar types of events. In these types of sports events,
+        usually there are two groups of supporters and as a result,
+        these events are good sources for collecting the different
+        types of emotional sound. People also collectively express
+        their approval and disapproval in concerts, movie theaters,
+        or political gatherings and, audio samples from these events
+        were also included in the dataset. <br><br>
+
+        Audio recordings from large events sometimes contain
+        the sound of an individual person talking (e.g. commentary
+        during a sports event) along with cheering or booing of the
+        crowd in the background. The audio samples in which these
+        types of individual sounds were dominant were rejected. But
+        some samples in the dataset still contain the sound of talking
+        of an individual as long as it is not significantly dominant
+        than the crowd emotion sound in the background. <br><br>
+
+        The Proposed dataset contains audio samples from <b>70</b>
+        different crowd events of different genres. There are a total
+        of <b>214</b> audio clips with a total duration of <b>3797</b> secs which
+        is greater than any existing dataset in this particular domain.
+        <table class="dataset_info_table">
+            <tr>
+              <th>Class</th>
+              <th>Number of Clips</th>
+              <th>Total Duration (s)</th>
+            </tr>
+            <tr>
+              <td>Approval</td>
+              <td>80</td>
+              <td>1772</td>
+            </tr>
+            <tr>
+              <td>Disapproval</td>
+              <td>69</td>
+              <td>561</td>
+            </tr>
+            <tr>
+              <td>Neutral</td>
+              <td>65</td>
+              <td>1464</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>214</td>
+              <td>3797</td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        To get the dataset description please run the following code in the dataset
+        directory.
+        <script src="https://gist.github.com/atick-faisal/2adf88a6cb71e06d4548c3a829be8f55.js"></script>
+    </p>
+    <a class="btn" href="https://drive.google.com/file/d/1XWKMzZuU8jBcf8_Sl3DeIUAjXx0MfiJV/view?usp=sharing">Download Dataset</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
