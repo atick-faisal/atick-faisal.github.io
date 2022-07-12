@@ -16,15 +16,40 @@
   --color-youtube-dark: #F4511E;
 }
 
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+  font-style: italic, oblique;
+}
+
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+
 html {
   scroll-behavior: smooth;
-
+  font-family: "Computer Modern", serif;
 }
 
 body {
   padding: 0;
   margin: 0;
   text-align: center;
+  font-family: "Computer Modern", serif;
 }
 
 .container {
@@ -34,7 +59,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 600;
   line-height: 14px;
   margin-top: 15px;
@@ -85,7 +110,7 @@ body {
   transform: rotate(180deg);
   width: 100%;
   min-width: 600px;
-  height: 400px;
+  height: 50vh;
   text-align: center;
   cursor: pointer;
   margin-top: 64px;
@@ -93,7 +118,7 @@ body {
 }
 
 .quote {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   text-align: center;
   color: #606060;
   font-size: 1.2em;
@@ -114,7 +139,7 @@ body {
 }
 
 .button_div .git_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.1em;
@@ -129,7 +154,7 @@ body {
 }
 
 .button_div .contact_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.1em;
@@ -187,7 +212,7 @@ body {
 }
 
 .box h3 {
-  font-family: 'Roboto';
+  /* font-family: 'Roboto'; */
   font-size: 1.7rem;
   font-weight: 400;
 }
@@ -202,14 +227,14 @@ body {
 }
 
 .box p {
-  font-family: 'Roboto';
+  /* font-family: 'Roboto'; */
   font-size: 1.1rem;
   color: var(--color-text-dark);
   padding-bottom: 10px;
 }
 
 .box .youtube_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.1em;
@@ -229,7 +254,7 @@ body {
 }
 
 .box .github_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.1em;
@@ -249,7 +274,7 @@ body {
 }
 
 .box .web_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.1em;
@@ -270,7 +295,7 @@ body {
 
 
 .box .app_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.1em;
@@ -294,7 +319,7 @@ body {
 }
 
 .more_button {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-weight: 400;
   text-decoration: none;
   font-size: 1.3em;
@@ -325,7 +350,7 @@ body {
 }
 
 .contacts h3 {
-  font-family: 'Roboto', 'sans-serif';
+  /* font-family: 'Roboto', 'sans-serif'; */
   font-size: 1.3em;
   padding-left: 17%;
   padding-right: 17%;
