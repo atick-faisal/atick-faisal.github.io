@@ -10,7 +10,7 @@ import {
 
 export default function NavigationBar() {
     return (
-        <Navbar color="dark" container="lg" expand="md" dark>
+        <Navbar color="secondary" container="lg" expand="md" light>
             <NavbarBrand>Atick Faisal</NavbarBrand>
             {/* <Collapse navbar> */}
             <Nav className="me" navbar>

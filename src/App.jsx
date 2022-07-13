@@ -1,4 +1,4 @@
-import Butterfly from "./components/butterfly";
+import Banner from "./components/banner";
 // import { Card } from "reactstrap";
 import NavigationBar from "./components/navbar";
 
@@ -7,7 +7,7 @@ function App() {
         <div className="App">
             <NavigationBar />
             <div className="container">
-                <Butterfly />
+                <Banner />
             </div>
         </div>
     );

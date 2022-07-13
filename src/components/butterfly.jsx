@@ -5,7 +5,7 @@ const windowWidth = 600;
 const windowHeight = 400;
 
 let particles = [];
-const nParticles = 700;
+const nParticles = 400;
 
 class LorentzParticle {
     constructor(x, y, z) {
@@ -47,13 +47,13 @@ export default function Butterfly() {
         var mCanvas = p5.createCanvas(windowWidth, windowHeight);
         mCanvas.parent(canvasParentRef);
         p5.strokeWeight(1);
-        p5.stroke(200);
+        p5.stroke(42);
         initialize();
     };
 
     const draw = (p5) => {
         p5.translate(p5.width / 2, 0);
-        p5.background(46, 52, 64);
+        p5.background(255, 30);
         for (let i = 0; i < nParticles; i++) {
             let oldParticle = particles[i].copy();
             update(i);

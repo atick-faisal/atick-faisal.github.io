@@ -1,34 +1,56 @@
 $theme-colors: (
-    "primary": #4527a0,
-    "secondary": #7e57c2,
+    "primary": #3f51b5,
+    "secondary": #e8eaf6,
     "warning": #ffca28,
     "danger": #c2185b,
     "dark": #2e3440,
     "background": #424242,
+    "text": #999999,
 );
 
 @import "~bootstrap/scss/bootstrap";
 
 body {
     font-family: "Roboto";
-    background-color: #2e3440;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
 }
 
 .banner {
-    width: 700px;
-    height: 500px;
-    border-radius: 24px;
+    width: 70%;
+    height: 600px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     // background-image: url("../assets/banner-bg.jpg");
-    background-color: #fff8e1;
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.quote {
+    font-size: large;
+    font-style: oblique;
+    text-align: center;
+    color: #2e3440;
 }
 
 .nav-btn {
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.btn {
+    border-radius: 1.2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.spacer {
+    width: 1rem;
 }
 
 .container {
