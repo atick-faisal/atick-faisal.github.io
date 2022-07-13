@@ -13,7 +13,7 @@ $theme-colors: (
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    font-family: "Roboto";
+    font-family: "Open Sans";
 }
 
 .container {
@@ -85,6 +85,33 @@ body {
     gap: 2rem;
     // margin-top: 3rem;
     // margin-bottom: 3rem;
+}
+
+.project-header {
+    width: 90%;
+    padding: 5rem;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    background-image: url("../assets/project-header.jpg");
+}
+
+.publication-header {
+    width: 90%;
+    padding: 5rem;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    background-image: url("../assets/publication-header.jpg");
+}
+
+.header-title {
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.header-text {
+    font-weight: 400;
+    line-height: 150%;
+    font-size: 1.5rem;
 }
 
 .card {
