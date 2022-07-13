@@ -12,7 +12,6 @@ $theme-colors: (
 
 body {
     font-family: "Roboto";
-    background-color: #e8eaf6;
 }
 
 .container {
@@ -52,21 +51,47 @@ body {
     padding-right: 1.5rem;
 }
 
+.icon-btn {
+    padding-left: 0.7rem;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn .icon {
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
 .spacer {
     width: 1rem;
 }
 
 .container {
-    width: 100%;
     padding-bottom: 200px;
+    gap: 2rem;
+}
+
+.row {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    // margin-top: 3rem;
+    // margin-bottom: 3rem;
 }
 
 .card {
+    flex: 1;
     border-radius: 1.5rem;
+    padding: 0;
 }
 
 .card-img {
-    border-radius: 1.5rem;
+    border-radius: 1.4rem;
 }
 
 .card-body {
