@@ -1,11 +1,13 @@
 $theme-colors: (
     "primary": #3f51b5,
     "secondary": #e8eaf6,
-    "warning": #ffca28,
+    "warning": #ffccbc,
     "danger": #c2185b,
     "dark": #2e3440,
     "background": #424242,
     "text": #999999,
+    "download": #ff8a65,
+    "use": #ffc107,
 );
 
 @import "~bootstrap/scss/bootstrap";
@@ -23,7 +25,7 @@ body {
 
 .banner {
     width: 70%;
-    height: 600px;
+    height: 700px;
     margin-top: 1rem;
     margin-bottom: 1rem;
     // background-image: url("../assets/banner-bg.jpg");
@@ -52,6 +54,7 @@ body {
 }
 
 .icon-btn {
+    margin: 0.2rem;
     padding-left: 0.7rem;
 }
 
@@ -98,22 +101,22 @@ body {
     padding: 2rem;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 2px;
-}
+// /* width */
+// ::-webkit-scrollbar {
+//     width: 2px;
+// }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #2e3440;
-}
+// /* Track */
+// ::-webkit-scrollbar-track {
+//     background: #2e3440;
+// }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #2e3440;
-}
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//     background: #2e3440;
+// }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #555;
+// }

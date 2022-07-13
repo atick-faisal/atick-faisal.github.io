@@ -14,7 +14,11 @@ export default function Projects() {
                             title={project.title}
                             description={project.description}
                             btnText={project.btn_text}
-                            link={project.link}
+                            github={project.github}
+                            web={project.web}
+                            download={project.download}
+                            use={project.use}
+                            youtube={project.youtube}
                         />
                     ))}
                 </Row>

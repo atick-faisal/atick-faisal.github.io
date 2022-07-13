@@ -3,144 +3,137 @@
         {
             "title": "Automatic I/V Dispenser Android App",
             "image": "iv-dispenser.jpg",
-            "description": "Android App for an Automatic I/V Dispenser Framework for Burn Patients.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Android app for an automatic I/V dispenser framework targeted towards burn patients",
+            "github": "https://github.com/atick-faisal/IV-Dispenser-Android/",
+            "download": "#"
         },
         {
-            "title": "Continuous Glucose Monitoring",
+            "title": "Continuous Glucose Level Monitoring",
             "image": "cgm.jpg",
-            "description": "Android App for Real-Time Glucose Level Monitoring and Critical Situation notification.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Android App for real-time glucose level monitoring and critical situation notification",
+            "github": "https://github.com/atick-faisal/Continuous-Glucose-Monitoring-Android/",
+            "download": "https://github.com/atick-faisal/Continuous-Glucose-Monitoring-Android/releases/"
         }
     ],
     [
         {
-            "title": "Jetpack Compose Material Color",
+            "title": "Jetpack Compose Material Color Library",
             "image": "compose-material.jpg",
-            "description": "A lightweight library for using Material Colors in Android Jetpack Compose Project.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "A lightweight library for using Material Colors in a Jetpack Compose project in Android",
+            "github": "https://github.com/atick-faisal/compose-material-color/",
+            "use": "https://jitpack.io/#atick-faisal/compose-material-color/"
         },
         {
-            "title": "Bluetooth Low Energy Android",
+            "title": "Bluetooth Low Energy Helper for Android",
             "image": "ble-starter.png",
-            "description": "Template for Bluetooth Low Energy (BLE) applications in Android with modern architecture.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "A template for Bluetooth Low Energy (BLE) applications in Android built with modern architecture components",
+            "github": "https://github.com/atick-faisal/Bluetooth-Low-Energy-Android/",
+            "use": "https://github.com/atick-faisal/BLE-Starter-Android#how-to-use/"
         }
     ],
     [
         {
-            "title": "12V Solar Charge Controller",
+            "title": "12V Solar Charge Controller PCB Design",
             "image": "solar.jpg",
-            "description": "A battery charge controller that protects it from overcharging and overdischarging.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "A PCB design for solar charge controller with overcharging and overdischarging protection",
+            "github": "https://github.com/atick-faisal/Solar-Charge-Controller/"
         },
         {
-            "title": "Sign Language Recognition",
+            "title": "Sign Language Recognition using Dataglove",
             "image": "glove.jpg",
-            "description": "A framework that classifies 24 static and 16 dynamic gestures using Flex and IMU sensors.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "A sensor dataglove for classifying 24 static and 16 dynamic ASL signs with Deep Learning",
+            "github": "https://github.com/atick-faisal/Sign-Language-Recognition/",
+            "youtube": "#"
         }
     ],
     [
         {
-            "title": "Sensor Data Visualization",
+            "title": "Sensor Data Visualization for Internet of Things",
             "image": "dashboard.jpg",
-            "description": "A full stack web application built using node.js and react.js to visualize sensor data comig from IoT devices.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "A full stack web application built using Node.js and React.js to visualize sensor data coming from IoT devices",
+            "github": "https://github.com/atick-faisal/Sensor-Dashboard/",
+            "web": "https://shrouded-meadow-04832.herokuapp.com/"
         },
         {
-            "title": "PIC16F877A Mini Projects",
+            "title": "PIC16F877A Programming and Interfacing",
             "image": "pic.gif",
-            "description": "Implementation of different functionalities and interfacing using PIC16F877A microcontroller.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Implementation of different functionalities and interfacing using PIC16F877A microcontroller",
+            "github": "https://github.com/atick-faisal/PIC16F877a/"
         }
     ],
     [
         {
-            "title": "Machine Learning Algorithms",
+            "title": "Interactive Machine Learning Algorithms",
             "image": "ml.gif",
-            "description": "Implementation of common machine learning algorithms in MATLAB, Javascript and Python.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Implementation of common machine learning algorithms in MATLAB, Javascript and Python",
+            "github": "https://github.com/atick-faisal/Machine-Learning/",
+            "web": "https://atick.dev/regression/"
         },
         {
             "title": "Bio AI: An AI Based Healthcare App",
             "image": "bioai.jpg",
-            "description": "Real time diagnosis using Artificial Intelligence, digital prescription system and more.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Real time diagnosis using Artificial Intelligence, digital prescription system and more",
+            "github": "https://github.com/atick-faisal/BioAI-Android/",
+            "download": "https://github.com/atick-faisal/BioAI-Android/releases/"
         }
     ],
     [
         {
-            "title": "SPWM Inverter using Arduino",
+            "title": "SPWM Signal Generator using Arduino",
             "image": "spwm.jpg",
-            "description": "Pure sine wave inverter using SPWM signal generated from Arduino.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Pure sine wave generation using SPWM technique for power inverter design with Arduino",
+            "github": "https://github.com/atick-faisal/sPWM-Sine-Wave-Inverter-Arduino/"
         },
         {
             "title": "Automatic I/V Dispenser Hardware",
             "image": "iv-dispenser-esp32.jpg",
-            "description": "ESP32 Code for an Automatic I/V Dispenser Framework for Burn Patients.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "ESP32 Code for an automatic I/V dispenser framework targeted towards burn patients",
+            "github": "https://github.com/atick-faisal/IV-Dispenser-ESP32/"
         }
     ],
     [
         {
             "title": "Cardiac Zone Android Application",
             "image": "cardiac-zone.jpg",
-            "description": "Pure sine wave inverter using SPWM signal generated from Arduino.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Android app for real-time monitoring of ECG signal from Movesense sensors and detecting anomalies in the cloud",
+            "github": "https://github.com/atick-faisal/Cardiac-Zone-Android/",
+            "download": "https://github.com/atick-faisal/Cardiac-Zone-Android/releases/"
         },
         {
             "title": "Encryption Algorithms Implementation",
             "image": "encryption.jpg",
-            "description": "Different encryption algorithm implementation in C and Kotlin.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Multiple symmetric encryption algorithm implementation in C and Kotlin.",
+            "github": "https://github.com/atick-faisal/Encryption-Algorithms/"
         }
     ],
     [
         {
-            "title": "Griffin: IoT-based Security App",
+            "title": "Griffin: IoT-based Security App for Android",
             "image": "griffin.png",
-            "description": "IoT-based home securty app for Android powered by ESP32 and MQTT.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "IoT-based home security app for Android powered by ESP32 and MQTT",
+            "github": "https://github.com/atick-faisal/Griffin-Android/",
+            "download": "https://github.com/atick-faisal/Griffin-Android/releases/"
         },
         {
-            "title": "Node Arduino Serial Monitor",
+            "title": "Arduino Serial Data Visualization",
             "image": "serial-monitor.jpg",
-            "description": "Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Real-time Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
+            "github": "https://github.com/atick-faisal/Node-Arduino-Serial-Monitor/",
+            "use": "https://github.com/atick-faisal/Node-Arduino-Serial-Monitor#how-to-use/"
         }
     ],
     [
         {
-            "title": "Dynamic Programing Algorithms Implementation in Kotlin",
+            "title": "Dynamic Programing Algorithms Implementation",
             "image": "dynamic-programming.gif",
-            "description": "Solving some common problems with Dynamic Programing and Kotlin.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Solving some competitive programming problems with Dynamic Programing and Kotlin",
+            "github": "https://github.com/atick-faisal/Dynamic-Programming/"
         },
         {
             "title": "Logistic Regression Implementation in Plain C",
             "image": "lr.gif",
-            "description": "Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
-            "btn_text": "More on GitHub",
-            "link": "#"
+            "description": "Logistic Regression Classifier implementation in plain C to classify different iris flower variants",
+            "github": "https://github.com/atick-faisal/Logistic-Regression/"
         }
     ]
 ]

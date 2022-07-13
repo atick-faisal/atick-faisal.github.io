@@ -2,10 +2,11 @@ import React from "react";
 import Sketch from "react-p5";
 
 const windowWidth = 600;
-const windowHeight = 400;
+const windowHeight = 500;
 
 let particles = [];
-const nParticles = 400;
+let colors = [];
+const nParticles = 700;
 
 class LorentzParticle {
     constructor(x, y, z) {
@@ -14,7 +15,7 @@ class LorentzParticle {
         this.z = z;
 
         this.sigma = 10;
-        this.beta = 8.0 / 3.0;
+        this.beta = 8.0 / 2.5;
         this.rho = 28;
         this.dt = 0.001;
     }
@@ -46,9 +47,9 @@ export default function Butterfly() {
     const setup = (p5, canvasParentRef) => {
         var mCanvas = p5.createCanvas(windowWidth, windowHeight);
         mCanvas.parent(canvasParentRef);
-        p5.strokeWeight(1);
+        p5.strokeWeight(1.5);
         p5.stroke(42);
-        initialize();
+        initialize(p5);
     };
 
     const draw = (p5) => {
@@ -58,19 +59,25 @@ export default function Butterfly() {
             let oldParticle = particles[i].copy();
             update(i);
             let newParticle = particles[i].copy();
+            p5.stroke(colors[i]);
             p5.line(
-                oldParticle.x * 13,
-                p5.height - oldParticle.z * 7,
-                newParticle.x * 13,
-                p5.height - newParticle.z * 7
+                oldParticle.x * 15,
+                p5.height - oldParticle.z * 8,
+                newParticle.x * 15,
+                p5.height - newParticle.z * 8
             );
         }
     };
 
-    const initialize = () => {
+    const initialize = (p5) => {
         for (let i = 0; i < nParticles; i++) {
             particles[i] = new LorentzParticle(0, 0, 0);
             particles[i].randomize();
+            colors[i] = p5.color(
+                p5.random(70, 200),
+                p5.random(70, 200),
+                p5.random(70, 200)
+            );
         }
     };
 

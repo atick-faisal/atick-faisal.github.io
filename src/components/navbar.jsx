@@ -26,8 +26,8 @@ export default function NavigationBar() {
                     <NavLink href="#">Contact</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Button className="nav-btn" color="primary" href="#">
-                        Contact
+                    <Button className="nav-btn" color="dark" href="#">
+                        Github
                     </Button>
                 </NavItem>
             </Nav>
