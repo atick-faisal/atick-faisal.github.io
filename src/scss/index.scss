@@ -1,10 +1,10 @@
 $theme-colors: (
-  	"primary": #4527A0,
-	"secondary": #7E57C2,
-	"warning": #FFCA28,
-  	"danger": #C2185B,
-	"dark": #2e3440,
-    "background": #424242
+    "primary": #4527a0,
+    "secondary": #7e57c2,
+    "warning": #ffca28,
+    "danger": #c2185b,
+    "dark": #2e3440,
+    "background": #424242,
 );
 
 @import "~bootstrap/scss/bootstrap";
@@ -12,7 +12,6 @@ $theme-colors: (
 body {
     font-family: "Roboto";
     background-color: #2e3440;
-    scrollbar-color: red yellow;
 }
 
 .banner {
@@ -20,7 +19,7 @@ body {
     height: 500px;
     border-radius: 24px;
     // background-image: url("../assets/banner-bg.jpg");
-    background-color: #FFF8E1;
+    background-color: #fff8e1;
 
     display: flex;
     justify-content: center;
@@ -40,19 +39,19 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 2px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: #2e3440;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #2e3440;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
+}
