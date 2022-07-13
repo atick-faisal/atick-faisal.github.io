@@ -1,6 +1,7 @@
 import Banner from "./components/banner";
 import NavigationBar from "./components/navbar";
 import Projects from "./components/projects";
+import Publications from "./components/publications";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <div className="container">
                 <Banner />
                 <Projects />
+                <Publications />
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import { Row } from "reactstrap";
-import Item from "./item";
+import ProjectItem from "./project-item";
 import projects from "../data/projects.json";
 
 export default function Projects() {
@@ -8,7 +8,7 @@ export default function Projects() {
             {projects.map((projectPair, i) => (
                 <Row key={i}>
                     {projectPair.map((project, j) => (
-                        <Item
+                        <ProjectItem
                             key={i + j}
                             image={project.image}
                             title={project.title}

@@ -12,7 +12,7 @@ import { BiDownload } from "react-icons/bi";
 import { TbWorld } from "react-icons/tb";
 import { DiGitBranch } from "react-icons/di";
 
-export default function Item({
+export default function ProjectItem({
     image,
     title,
     description,
