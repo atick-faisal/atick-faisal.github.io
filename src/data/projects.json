@@ -1,0 +1,146 @@
+[
+    [
+        {
+            "title": "Automatic I/V Dispenser Android App",
+            "image": "iv-dispenser.jpg",
+            "description": "Android App for an Automatic I/V Dispenser Framework for Burn Patients.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Continuous Glucose Monitoring",
+            "image": "cgm.jpg",
+            "description": "Android App for Real-Time Glucose Level Monitoring and Critical Situation notification.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "Jetpack Compose Material Color",
+            "image": "compose-material.jpg",
+            "description": "A lightweight library for using Material Colors in Android Jetpack Compose Project.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Bluetooth Low Energy Android",
+            "image": "ble-starter.png",
+            "description": "Template for Bluetooth Low Energy (BLE) applications in Android with modern architecture.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "12V Solar Charge Controller",
+            "image": "solar.jpg",
+            "description": "A battery charge controller that protects it from overcharging and overdischarging.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Sign Language Recognition",
+            "image": "glove.jpg",
+            "description": "A framework that classifies 24 static and 16 dynamic gestures using Flex and IMU sensors.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "Sensor Data Visualization",
+            "image": "dashboard.jpg",
+            "description": "A full stack web application built using node.js and react.js to visualize sensor data comig from IoT devices.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "PIC16F877A Mini Projects",
+            "image": "pic.gif",
+            "description": "Implementation of different functionalities and interfacing using PIC16F877A microcontroller.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "Machine Learning Algorithms",
+            "image": "ml.gif",
+            "description": "Implementation of common machine learning algorithms in MATLAB, Javascript and Python.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Bio AI: An AI Based Healthcare App",
+            "image": "bioai.jpg",
+            "description": "Real time diagnosis using Artificial Intelligence, digital prescription system and more.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "SPWM Inverter using Arduino",
+            "image": "spwm.jpg",
+            "description": "Pure sine wave inverter using SPWM signal generated from Arduino.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Automatic I/V Dispenser Hardware",
+            "image": "iv-dispenser-esp32.jpg",
+            "description": "ESP32 Code for an Automatic I/V Dispenser Framework for Burn Patients.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "Cardiac Zone Android Application",
+            "image": "cardiac-zone.jpg",
+            "description": "Pure sine wave inverter using SPWM signal generated from Arduino.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Encryption Algorithms Implementation",
+            "image": "encryption.jpg",
+            "description": "Different encryption algorithm implementation in C and Kotlin.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "Griffin: IoT-based Security App",
+            "image": "griffin.png",
+            "description": "IoT-based home securty app for Android powered by ESP32 and MQTT.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Node Arduino Serial Monitor",
+            "image": "serial-monitor.jpg",
+            "description": "Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ],
+    [
+        {
+            "title": "Dynamic Programing Algorithms Implementation in Kotlin",
+            "image": "dynamic-programming.gif",
+            "description": "Solving some common problems with Dynamic Programing and Kotlin.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        },
+        {
+            "title": "Logistic Regression Implementation in Plain C",
+            "image": "lr.gif",
+            "description": "Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
+            "btn_text": "More on GitHub",
+            "link": "#"
+        }
+    ]
+]

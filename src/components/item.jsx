@@ -9,10 +9,14 @@ import {
 
 import { AiFillGithub } from "react-icons/ai";
 
-export default function Item({ img, title, description, btnText, link }) {
+export default function Item({ image, title, description, btnText, link }) {
     return (
         <Card color="secondary">
-            <CardImg className="card-img" src={img} alt={title} />
+            <CardImg
+                className="card-img"
+                src={require("../assets/" + image)}
+                alt={title}
+            />
             <CardBody className="card-body">
                 <CardTitle tag="h2">{title}</CardTitle>
                 <CardText>{description}</CardText>
