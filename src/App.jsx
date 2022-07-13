@@ -1,12 +1,14 @@
 import Butterfly from "./components/butterfly";
-import { Card } from "reactstrap";
+// import { Card } from "reactstrap";
+import NavigationBar from "./components/navbar";
 
 function App() {
     return (
         <div className="App">
-            <Card className="banner">
+            <NavigationBar />
+            <div className="container">
                 <Butterfly />
-            </Card>
+            </div>
         </div>
     );
 }

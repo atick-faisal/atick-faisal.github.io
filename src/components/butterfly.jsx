@@ -5,9 +5,7 @@ const windowWidth = 600;
 const windowHeight = 400;
 
 let particles = [];
-const nParticles = 300;
-
-// let background;
+const nParticles = 700;
 
 class LorentzParticle {
     constructor(x, y, z) {
@@ -45,26 +43,17 @@ class LorentzParticle {
 }
 
 export default function Butterfly() {
-    const preload = (p5) => {
-        // background = p5.loadImage("../assets/banner-bg.jpg");
-        p5.loadImage("../assets/banner-bg.jpg", (img) => {
-            this.background = img;
-        });
-    };
-
     const setup = (p5, canvasParentRef) => {
         var mCanvas = p5.createCanvas(windowWidth, windowHeight);
         mCanvas.parent(canvasParentRef);
-        // background = p5.loadImage("../assets/banner-bg.jpg");
-
-        p5.stroke("#E65100");
+        p5.strokeWeight(1);
+        p5.stroke(200);
         initialize();
     };
 
     const draw = (p5) => {
-        p5.image(this.background, 0, 0);
         p5.translate(p5.width / 2, 0);
-        // p5.background(255, 248, 225, 50);
+        p5.background(46, 52, 64);
         for (let i = 0; i < nParticles; i++) {
             let oldParticle = particles[i].copy();
             update(i);
@@ -89,5 +78,5 @@ export default function Butterfly() {
         particles[i].update();
     };
 
-    return <Sketch preload={preload} setup={setup} draw={draw} />;
+    return <Sketch setup={setup} draw={draw} />;
 }
