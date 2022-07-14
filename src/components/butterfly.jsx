@@ -1,12 +1,14 @@
 import React from "react";
 import Sketch from "react-p5";
 
-const windowWidth = 600;
+const windowWidth = 700;
 const windowHeight = 500;
 
 let particles = [];
 let colors = [];
 const nParticles = 700;
+
+let alpha = 100;
 
 class LorentzParticle {
     constructor(x, y, z) {
@@ -53,8 +55,9 @@ export default function Butterfly() {
     };
 
     const draw = (p5) => {
+        if (alpha > 10) alpha -= 0.1;
         p5.translate(p5.width / 2, 0);
-        p5.background(255, 30);
+        p5.background(255, alpha);
         for (let i = 0; i < nParticles; i++) {
             let oldParticle = particles[i].copy();
             update(i);
@@ -74,9 +77,9 @@ export default function Butterfly() {
             particles[i] = new LorentzParticle(0, 0, 0);
             particles[i].randomize();
             colors[i] = p5.color(
-                p5.random(70, 200),
-                p5.random(70, 200),
-                p5.random(70, 200)
+                p5.random(26, 232),
+                p5.random(35, 234),
+                p5.random(126, 246)
             );
         }
     };
