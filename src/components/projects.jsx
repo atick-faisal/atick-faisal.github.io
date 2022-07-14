@@ -1,10 +1,12 @@
 import { Row } from "reactstrap";
 import ProjectItem from "./project-item";
 import projects from "../data/projects.json";
+import ProjectHeader from "./project-header";
 
 export default function Projects() {
     return (
         <>
+            <ProjectHeader />
             {projects.map((projectPair, i) => (
                 <Row key={i}>
                     {projectPair.map((project, j) => (
