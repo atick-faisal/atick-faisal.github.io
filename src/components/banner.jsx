@@ -12,14 +12,11 @@ export default function Banner() {
                 who's generous spirit, was the source of this good echo. Thats
                 the beauty of the <b>Butterfly Effect</b>
             </p>
-            <div className="actions">
-                <Button className=".mr-1" outline color="primary">
+            <div>
+                <Button outline color="primary">
                     Contact Me
                 </Button>
-                &nbsp;&nbsp;&nbsp;
-                <Button className=".ml-3" color="primary">
-                    Explore My Works
-                </Button>
+                <Button color="primary">Explore My Works</Button>
             </div>
         </div>
     );

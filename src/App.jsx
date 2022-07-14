@@ -3,9 +3,7 @@ import Banner from "./components/banner";
 import Bio from "./components/bio";
 import Footer from "./components/footer";
 import NavigationBar from "./components/navbar";
-import ProjectHeader from "./components/project-header";
 import Projects from "./components/projects";
-import PublicationHeader from "./components/publication-header";
 import Publications from "./components/publications";
 import Selector from "./components/selector";
 

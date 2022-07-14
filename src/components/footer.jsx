@@ -1,3 +1,4 @@
+import { Button, Card } from "reactstrap";
 import { SiGooglescholar } from "react-icons/si";
 import {
     AiFillMail,
@@ -5,11 +6,10 @@ import {
     AiFillLinkedin,
     AiFillFacebook,
 } from "react-icons/ai";
-import { Button, Card } from "reactstrap";
 
 export default function Footer() {
     return (
-        <Card className="footer">
+        <Card className="header-card footer">
             <p className="name">Contact Me</p>
             <div className="social">
                 <Button color="dark" href="#">

@@ -1,159 +1,62 @@
 $theme-colors: (
     "primary": #3f51b5,
-    "secondary": #e8eaf6,
-    "warning": #fffde7,
+    "primary-variant": #bbdefb,
+    "secondary": #ffca28,
+    "secondary-variant": #fff8e1,
+    "warning": #ffa726,
     "danger": #c2185b,
-    "dark": #2e3440,
-    "background": #424242,
-    "text": #999999,
-    "download": #ff8a65,
-    "use": #ffc107,
+    "background": #fafafa,
+    "surface": #e8eaf6,
+    "light": #e5e9f0,
+    "lighter": #eceff4,
+    "dark": #3b4252,
+    "darker": #2e3440,
 );
 
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    font-family: "Open Sans";
-}
+////////////////////////////////////////////////// Globals
 
 h1 {
-    font-size: 4rem;
-    font-weight: 100;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: #3b4252;
 }
 
 p {
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 150%;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.banner {
-    width: 70%;
-    height: 700px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    // background-image: url("../assets/banner-bg.jpg");
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.quote {
-    font-size: large;
-    font-style: oblique;
-    text-align: center;
     color: #2e3440;
 }
 
-.nav-btn {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
 .btn {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     border-radius: 1.2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
 
-.icon-btn {
-    margin: 0.2rem;
-    padding-left: 0.7rem;
-}
-
 .btn-content {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .btn .icon {
+    margin: 0;
+    padding: 0;
     margin-right: 1rem;
     vertical-align: middle;
 }
 
-.selector {
-    width: 90%;
-    margin-top: 3rem;
-}
-
-.selector .items {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.spacer {
-    width: 1rem;
-}
-
 .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding-bottom: 200px;
     gap: 2rem;
-}
-
-.row {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    // margin-top: 3rem;
-    // margin-bottom: 3rem;
-}
-
-.bio {
-    display: flex;
-    width: 90%;
-    // padding: 5rem;
-    border-radius: 3rem;
-    margin-top: 3rem;
-    background-image: url("../assets/bio-bg.jpg");
-    background-size: cover;
-}
-
-.bio .text {
-    flex: 1;
-    padding: 3rem;
-}
-
-// .bio .image {
-//     flex: 0.25;
-// }
-
-.flip {
-    transform: scaleX(-1);
-}
-
-.project-header {
-    width: 90%;
-    padding: 5rem;
-    border-radius: 3rem;
-    background-image: url("../assets/project-header.jpg");
-}
-
-.publication-header {
-    width: 90%;
-    padding: 5rem;
-    border-radius: 3rem;
-    background-image: url("../assets/publication-header.jpg");
-}
-
-.header-title {
-    font-weight: 300;
-    font-size: 3rem;
-}
-
-.header-text {
-    font-weight: 400;
-    line-height: 150%;
-    font-size: 1.5rem;
 }
 
 .card {
@@ -170,15 +73,97 @@ p {
     padding: 2rem;
 }
 
-.footer {
+.header-card {
     width: 90%;
     display: flex;
+    border-radius: 3rem;
+    background-size: cover;
+}
+
+.header-card .description {
+    flex: 3;
+    padding: 3rem;
+}
+
+.header-card .image {
+    max-width: 80vw;
+    flex: 1;
+}
+
+.flip {
+    transform: scaleX(-1);
+}
+
+////////////////////////////////////////////////// Banner
+
+.banner {
+    width: 70%;
+    height: 700px;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote {
+    font-style: oblique;
+    text-align: center;
+}
+
+////////////////////////////////////////////////// Bio
+
+.bio {
+    margin-top: 3rem;
+    background-image: url("../assets/bio-bg.jpg");
+}
+
+////////////////////////////////////////////////// Selector
+
+.selector {
+    width: 90%;
+    margin-top: 3rem;
+}
+
+.selector .items {
+    display: flex;
+    justify-content: center;
+}
+
+////////////////////////////////////////////////// Items
+
+.row {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+////////////////////////////////////////////////// Projects Header
+
+.project-header {
+    background-image: url("../assets/project-header.jpg");
+}
+
+////////////////////////////////////////////////// Publications Header
+
+.publication-header {
+    background-image: url("../assets/publication-header-alt.jpg");
+}
+
+.publication-header .description {
+    flex: none;
+    width: 60%;
+}
+
+////////////////////////////////////////////////// Footer
+
+.footer {
     flex-direction: column;
     align-items: center;
     margin-top: 5rem;
-    // margin-bottom: 5rem;
     padding: 3rem;
-    border-radius: 2rem;
 }
 
 .footer .name {
@@ -192,7 +177,6 @@ p {
 }
 
 .social .btn {
-    // border-radius: 2rem;
     margin: 1rem;
     padding: 0;
 }

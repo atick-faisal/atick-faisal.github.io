@@ -1,13 +1,13 @@
 import { Button } from "reactstrap";
-
 import { MdOutlineDesignServices } from "react-icons/md";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
 
 export default function Selector({ selection, setSelection }) {
     const getColor = (item) => {
-        if (selection === item) return "download";
+        if (selection === item) return "primary-variant";
         else return "white";
     };
+
     return (
         <div className="selector">
             <div className="items">
@@ -17,9 +17,9 @@ export default function Selector({ selection, setSelection }) {
                         setSelection("projects");
                     }}
                 >
-                    <div className="btn-content">
+                    <div>
                         <MdOutlineDesignServices
-                            size="1.2em"
+                            size="1.2rem"
                             className="icon"
                         />
                         Projects
@@ -31,9 +31,9 @@ export default function Selector({ selection, setSelection }) {
                         setSelection("publications");
                     }}
                 >
-                    <div className="btn-content">
+                    <div>
                         <BsFillJournalBookmarkFill
-                            size="1.2em"
+                            size="1.2rem"
                             className="icon"
                         />
                         Publications

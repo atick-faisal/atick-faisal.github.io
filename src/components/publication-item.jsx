@@ -18,7 +18,7 @@ export default function PublicationItem({
     pdf,
 }) {
     return (
-        <Card color="secondary">
+        <Card color="surface">
             <CardImg
                 className="card-img"
                 src={require("../assets/" + image)}

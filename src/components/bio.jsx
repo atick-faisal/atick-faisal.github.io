@@ -3,8 +3,8 @@ import profilePic from "../assets/atick-alt.png";
 
 export default function Bio() {
     return (
-        <div className="bio">
-            <div className="text">
+        <div className="header-card bio">
+            <div className="description">
                 <h1>
                     Hello! I'm <br />
                     <b>Atick</b> Faisal
@@ -16,8 +16,12 @@ export default function Bio() {
                 </p>
                 <Button color="primary">Get in Touch</Button>
             </div>
-            <div className="image">
-                <img className="flip" src={profilePic} alt="profile pic" />
+            <div>
+                <img
+                    className="image flip"
+                    src={profilePic}
+                    alt="profile pic"
+                />
             </div>
         </div>
     );

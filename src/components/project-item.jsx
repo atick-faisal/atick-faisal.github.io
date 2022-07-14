@@ -23,7 +23,7 @@ export default function ProjectItem({
     youtube,
 }) {
     return (
-        <Card color="secondary">
+        <Card color="surface">
             <CardImg
                 className="card-img"
                 src={require("../assets/" + image)}
@@ -33,45 +33,41 @@ export default function ProjectItem({
                 <CardTitle tag="h2">{title}</CardTitle>
                 <CardText>{description}</CardText>
                 {download && (
-                    <Button
-                        className="icon-btn"
-                        color="download"
-                        href={download}
-                    >
+                    <Button color="danger" href={download}>
                         <div className="btn-content">
-                            <BiDownload size="1.2em" className="icon" />
+                            <BiDownload size="1.2rem" className="icon" />
                             <b>Download</b>
                         </div>
                     </Button>
                 )}
                 {web && (
-                    <Button className="icon-btn" color="primary" href={web}>
+                    <Button color="primary" href={web}>
                         <div className="btn-content">
-                            <TbWorld size="1.2em" className="icon" />
+                            <TbWorld size="1.2rem" className="icon" />
                             Web Demo
                         </div>
                     </Button>
                 )}
                 {use && (
-                    <Button className="icon-btn" color="use" href={use}>
+                    <Button color="secondary" href={use}>
                         <div className="btn-content">
-                            <DiGitBranch size="1.2em" className="icon" />
+                            <DiGitBranch size="1.2rem" className="icon" />
                             <b>Use This</b>
                         </div>
                     </Button>
                 )}
                 {youtube && (
-                    <Button className="icon-btn" color="danger" href={youtube}>
+                    <Button color="danger" href={youtube}>
                         <div className="btn-content">
-                            <AiFillYoutube size="1.2em" className="icon" />
+                            <AiFillYoutube size="1.2rem" className="icon" />
                             YouTube Demo
                         </div>
                     </Button>
                 )}
                 {github && (
-                    <Button className="icon-btn" color="dark" href={github}>
+                    <Button color="dark" href={github}>
                         <div className="btn-content">
-                            <AiFillGithub size="1.2em" className="icon" />
+                            <AiFillGithub size="1.2rem" className="icon" />
                             Details on GitHub
                         </div>
                     </Button>
