@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Banner from "./components/banner";
 import Bio from "./components/bio";
+import Footer from "./components/footer";
 import NavigationBar from "./components/navbar";
 import ProjectHeader from "./components/project-header";
 import Projects from "./components/projects";
@@ -20,6 +21,7 @@ function App() {
                 <Selector selection={selection} setSelection={setSelection} />
                 {selection === "projects" && <Projects />}
                 {selection === "publications" && <Publications />}
+                <Footer />
             </div>
         </div>
     );

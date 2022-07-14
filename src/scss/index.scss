@@ -31,7 +31,6 @@ p {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 200px;
 }
 
 .banner {
@@ -169,6 +168,39 @@ p {
 
 .card-body {
     padding: 2rem;
+}
+
+.footer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    // margin-bottom: 5rem;
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.footer .name {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social .btn {
+    // border-radius: 2rem;
+    margin: 1rem;
+    padding: 0;
+}
+
+.social .icon {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
 }
 
 // /* width */
