@@ -1,4 +1,5 @@
 import Banner from "./components/banner";
+import Bio from "./components/bio";
 import NavigationBar from "./components/navbar";
 import ProjectHeader from "./components/project-header";
 import Projects from "./components/projects";
@@ -11,6 +12,7 @@ function App() {
             <NavigationBar />
             <div className="container">
                 <Banner />
+                <Bio />
                 <ProjectHeader />
                 <Projects />
                 <PublicationHeader />

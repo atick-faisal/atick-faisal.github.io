@@ -16,6 +16,17 @@ body {
     font-family: "Open Sans";
 }
 
+h1 {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -85,6 +96,29 @@ body {
     gap: 2rem;
     // margin-top: 3rem;
     // margin-bottom: 3rem;
+}
+
+.bio {
+    display: flex;
+    width: 90%;
+    // padding: 5rem;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    background-image: url("../assets/bio-bg.jpg");
+    background-size: cover;
+}
+
+.bio .text {
+    flex: 1;
+    padding: 3rem;
+}
+
+// .bio .image {
+//     flex: 0.25;
+// }
+
+.flip {
+    transform: scaleX(-1);
 }
 
 .project-header {
