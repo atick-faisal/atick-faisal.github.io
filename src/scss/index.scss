@@ -48,13 +48,16 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .btn .icon {
-    margin: 0;
     padding: 0;
-    margin-right: 1rem;
     vertical-align: middle;
+}
+
+.btn-github {
+    color: #e5e9f0;
 }
 
 .container {
@@ -103,6 +106,31 @@ p {
 
 .flip {
     transform: scaleX(-1);
+}
+
+////////////////////////////////////////////////// NavBar
+
+.navbar-nav .btn {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-btn-icon {
+    color: #3b4252;
+}
+
+.nav-btn-txt {
+    display: none;
+    color: #3b4252;
+}
+
+.github {
+    color: #fafafa;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    gap: 1rem;
 }
 
 ////////////////////////////////////////////////// Banner
@@ -269,5 +297,20 @@ p {
 
     .social {
         flex-direction: row;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-btn-txt {
+        display: contents;
+    }
+
+    .navbar-nav .btn {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
     }
 }

@@ -17,7 +17,7 @@ export default function Selector({ selection, setSelection }) {
                         setSelection("projects");
                     }}
                 >
-                    <div>
+                    <div className="btn-content">
                         <MdOutlineDesignServices
                             size="1.2rem"
                             className="icon"
@@ -31,7 +31,7 @@ export default function Selector({ selection, setSelection }) {
                         setSelection("publications");
                     }}
                 >
-                    <div>
+                    <div className="btn-content">
                         <BsFillJournalBookmarkFill
                             size="1.2rem"
                             className="icon"
