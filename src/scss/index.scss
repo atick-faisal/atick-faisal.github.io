@@ -37,8 +37,6 @@ p {
 }
 
 .btn {
-    // margin-left: 0.5rem;
-    // margin-right: 0.5rem;
     border-radius: 1.2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -137,10 +135,7 @@ p {
 
 .banner {
     width: 90%;
-    // height: 700px;
     display: flex;
-    // margin-top: 1rem;
-    // margin-bottom: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -252,14 +247,6 @@ p {
 // }
 
 @media (min-width: 481px) {
-    .row {
-        flex-direction: row;
-    }
-
-    .header-card {
-        flex-direction: row;
-    }
-
     h1 {
         font-size: 3.2rem;
     }
@@ -268,35 +255,8 @@ p {
         font-size: 2.2rem;
     }
 
-    .header-card .description {
-        padding-left: 3rem;
-        padding-right: 3rem;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
     p {
         font-size: 1.3rem;
-    }
-
-    .banner {
-        width: 70%;
-    }
-
-    .actions {
-        flex-direction: row;
-    }
-
-    .selector .items {
-        flex-direction: row;
-    }
-
-    .footer {
-        flex-direction: column;
-    }
-
-    .social {
-        flex-direction: row;
     }
 
     .navbar-nav {
@@ -312,5 +272,40 @@ p {
         padding-right: 1.5rem;
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
+    }
+
+    .header-card {
+        flex-direction: row;
+    }
+
+    .header-card .description {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .banner {
+        width: 70%;
+    }
+
+    .actions {
+        flex-direction: row;
+    }
+
+    .selector .items {
+        flex-direction: row;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .social {
+        flex-direction: row;
     }
 }
