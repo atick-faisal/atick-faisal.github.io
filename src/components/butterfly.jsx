@@ -76,6 +76,10 @@ export default function Butterfly() {
         }
     };
 
+    const mouseClicked = (p5) => {
+        initialize(p5);
+    };
+
     const initialize = (p5) => {
         for (let i = 0; i < nParticles; i++) {
             particles[i] = new LorentzParticle(0, 0, 0);
@@ -111,12 +115,12 @@ export default function Butterfly() {
     };
 
     const getWidthScaler = (canvasWidth) => {
-        return (15.0 / 600.0) * canvasWidth;
+        return (13.0 / 600.0) * canvasWidth;
     };
 
     const getHeightScaler = (canvasHeight) => {
-        return (8.0 / 400.0) * canvasHeight;
+        return (7.0 / 400.0) * canvasHeight;
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <Sketch setup={setup} draw={draw} mouseClicked={mouseClicked} />;
 }

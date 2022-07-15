@@ -8,7 +8,7 @@ export default function Banner() {
             <br></br>
             <p className="quote">
                 Each smallest act of kindness, reverberates across great
-                distances and spans of time --affecting lives unknown to the one
+                distances and spans of time, affecting lives unknown to the one
                 who's generous spirit, was the source of this good echo. Thats
                 the beauty of the <b>Butterfly Effect</b>
             </p>
