@@ -1,14 +1,13 @@
 import React from "react";
 import Sketch from "react-p5";
 
-const windowWidth = 700;
-const windowHeight = 500;
-
 let particles = [];
 let colors = [];
-const nParticles = 100;
+let nParticles = 300;
 
 let alpha = 100;
+let widthScaler = 13.0;
+let heightScaler = 8.0;
 
 class LorentzParticle {
     constructor(x, y, z) {
@@ -47,15 +46,20 @@ class LorentzParticle {
 
 export default function Butterfly() {
     const setup = (p5, canvasParentRef) => {
-        var mCanvas = p5.createCanvas(windowWidth, windowHeight);
-        mCanvas.parent(canvasParentRef);
+        let canvasWidth = getWidth();
+        let canvasHeight = getHeight();
+        widthScaler = getWidthScaler(canvasWidth);
+        heightScaler = getHeightScaler(canvasHeight);
+        nParticles = getNumberOfParticles();
+
+        p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
         p5.strokeWeight(1.5);
         p5.stroke(42);
         initialize(p5);
     };
 
     const draw = (p5) => {
-        if (alpha > 10) alpha -= 0.1;
+        if (alpha > 10) alpha -= 0.2;
         p5.translate(p5.width / 2, 0);
         p5.background(255, alpha);
         for (let i = 0; i < nParticles; i++) {
@@ -64,10 +68,10 @@ export default function Butterfly() {
             let newParticle = particles[i].copy();
             p5.stroke(colors[i]);
             p5.line(
-                oldParticle.x * 15,
-                p5.height - oldParticle.z * 8,
-                newParticle.x * 15,
-                p5.height - newParticle.z * 8
+                oldParticle.x * widthScaler,
+                p5.height - oldParticle.z * heightScaler,
+                newParticle.x * widthScaler,
+                p5.height - newParticle.z * heightScaler
             );
         }
     };
@@ -86,6 +90,32 @@ export default function Butterfly() {
 
     const update = (i) => {
         particles[i].update();
+    };
+
+    const getNumberOfParticles = () => {
+        let { innerWidth: width } = window;
+        if (width < 481) return 100;
+        else return 300;
+    };
+
+    const getWidth = () => {
+        let { innerWidth: width } = window;
+        if (width > 1370) return width * 0.5;
+        if (width > 720) return width * 0.6;
+        else return width * 0.9;
+    };
+
+    const getHeight = () => {
+        let width = getWidth();
+        return width * 0.6;
+    };
+
+    const getWidthScaler = (canvasWidth) => {
+        return (15.0 / 600.0) * canvasWidth;
+    };
+
+    const getHeightScaler = (canvasHeight) => {
+        return (8.0 / 400.0) * canvasHeight;
     };
 
     return <Sketch setup={setup} draw={draw} />;
