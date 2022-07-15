@@ -5,7 +5,8 @@
             "image": "iv-dispenser.jpg",
             "description": "Android app for an automatic I/V dispenser framework targeted towards burn patients",
             "github": "https://github.com/atick-faisal/IV-Dispenser-Android/",
-            "download": "#"
+            "download": "#",
+            "youtube": "#"
         },
         {
             "title": "Continuous Glucose Level Monitoring",

@@ -6,7 +6,7 @@ const windowHeight = 500;
 
 let particles = [];
 let colors = [];
-const nParticles = 700;
+const nParticles = 100;
 
 let alpha = 100;
 

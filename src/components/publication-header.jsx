@@ -1,5 +1,6 @@
 import { Button } from "reactstrap";
 import { SiGooglescholar } from "react-icons/si";
+import qu from "../assets/qu.jpg";
 
 export default function PublicationHeader() {
     return (
@@ -19,9 +20,12 @@ export default function PublicationHeader() {
                 >
                     <div className="btn-content">
                         <SiGooglescholar size="1.2rem" className="icon" />
-                        Explore on Google Scholar
+                        <div>Google Scholar</div>
                     </div>
                 </Button>
+            </div>
+            <div>
+                <img className="image" src={qu} alt="profile pic" />
             </div>
         </div>
     );

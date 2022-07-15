@@ -10,7 +10,7 @@ import {
 export default function Footer() {
     return (
         <Card className="header-card footer">
-            <p className="name">Contact Me</p>
+            <h3>Contacts</h3>
             <div className="social">
                 <Button color="dark" href="#">
                     <AiFillMail className="icon" />

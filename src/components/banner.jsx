@@ -12,7 +12,7 @@ export default function Banner() {
                 who's generous spirit, was the source of this good echo. Thats
                 the beauty of the <b>Butterfly Effect</b>
             </p>
-            <div>
+            <div className="actions">
                 <Button outline color="primary">
                     Contact Me
                 </Button>

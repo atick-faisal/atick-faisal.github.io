@@ -22,7 +22,7 @@ export default function ProjectHeader() {
                 </Button>
             </div>
             <div>
-                <img src={raspberryPi} alt="profile pic" />
+                <img className="image" src={raspberryPi} alt="profile pic" />
             </div>
         </div>
     );
