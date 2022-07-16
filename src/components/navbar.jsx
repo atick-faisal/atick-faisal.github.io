@@ -6,7 +6,7 @@ import { BsFillJournalBookmarkFill, BsFillPersonFill } from "react-icons/bs";
 
 import { ThemeContext } from "../contexts/theme-context";
 
-export default function NavigationBar({ toggleDarkMode }) {
+export default function NavigationBar({ setSelection, toggleDarkMode }) {
     const { darkMode } = useContext(ThemeContext);
 
     return (
@@ -24,7 +24,7 @@ export default function NavigationBar({ toggleDarkMode }) {
             </NavbarBrand>
             <Nav className="ms-auto" navbar>
                 <NavItem>
-                    <Button color={darkMode ? "dark" : "light"}>
+                    <Button href="#about" color={darkMode ? "dark" : "light"}>
                         <div className="btn-content">
                             <BsFillPersonFill
                                 size="1.2rem"
@@ -35,7 +35,11 @@ export default function NavigationBar({ toggleDarkMode }) {
                     </Button>
                 </NavItem>
                 <NavItem>
-                    <Button color={darkMode ? "dark" : "light"}>
+                    <Button
+                        href="#selector"
+                        color={darkMode ? "dark" : "light"}
+                        onClick={() => setSelection("projects")}
+                    >
                         <div className="btn-content">
                             <MdOutlineDesignServices
                                 size="1.2rem"
@@ -46,7 +50,11 @@ export default function NavigationBar({ toggleDarkMode }) {
                     </Button>
                 </NavItem>
                 <NavItem>
-                    <Button color={darkMode ? "dark" : "light"}>
+                    <Button
+                        href="#selector"
+                        color={darkMode ? "dark" : "light"}
+                        onClick={() => setSelection("publications")}
+                    >
                         <div className="btn-content">
                             <BsFillJournalBookmarkFill
                                 size="1.2rem"

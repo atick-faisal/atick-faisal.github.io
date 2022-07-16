@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BackToTop from "./components/back-to-top";
 import Banner from "./components/banner";
 import Bio from "./components/bio";
 import Footer from "./components/footer";
@@ -24,7 +25,10 @@ function App() {
     return (
         <ThemeContext.Provider value={{ darkMode }}>
             <div className="App" id={getTheme()}>
-                <NavigationBar toggleDarkMode={toggleDarkMode} />
+                <NavigationBar
+                    setSelection={setSelection}
+                    toggleDarkMode={toggleDarkMode}
+                />
                 <div className="container">
                     <Banner />
                     <Bio />
@@ -34,6 +38,7 @@ function App() {
                     />
                     {selection === "projects" && <Projects />}
                     {selection === "publications" && <Publications />}
+                    <BackToTop />
                     <Footer />
                 </div>
             </div>

@@ -15,6 +15,7 @@ export default function Bio() {
 
     return (
         <div
+            id="about"
             className="header-card bio"
             style={{ backgroundImage: `url(${getBackground()})` }}
         >
@@ -28,7 +29,10 @@ export default function Bio() {
                     Developer. Currently working as a Research Assistant at
                     Qatar University
                 </p>
-                <Button color={darkMode ? "primary-dark" : "primary"}>
+                <Button
+                    href="#contacts"
+                    color={darkMode ? "primary-dark" : "primary"}
+                >
                     Get in Touch
                 </Button>
             </div>

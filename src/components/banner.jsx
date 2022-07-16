@@ -18,7 +18,11 @@ export default function Banner() {
                 the beauty of the <b>Butterfly Effect</b>
             </p>
             <div className="actions">
-                <Button outline color={darkMode ? "primary-dark" : "primary"}>
+                <Button
+                    href="#contacts"
+                    outline
+                    color={darkMode ? "primary-dark" : "primary"}
+                >
                     Contact Me
                 </Button>
                 <Button color={darkMode ? "primary-dark" : "primary"}>

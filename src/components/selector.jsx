@@ -10,11 +10,11 @@ export default function Selector({ selection, setSelection }) {
 
     const getColor = (item) => {
         if (selection === item) return "primary-variant";
-        else return darkMode ? "darker" : "light";
+        else return darkMode ? "darker" : "lighter";
     };
 
     return (
-        <div className="selector">
+        <div id="selector" className="selector">
             <div className="items">
                 <Button
                     color={getColor("projects")}
