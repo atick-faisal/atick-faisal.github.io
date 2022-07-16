@@ -1,19 +1,10 @@
-import { ThemeContext } from "../contexts/theme-context";
-import {
-    Nav,
-    Navbar,
-    NavbarBrand,
-    NavbarToggler,
-    NavItem,
-    NavLink,
-    Collapse,
-    Button,
-} from "reactstrap";
-
+import { useContext } from "react";
+import { Nav, Navbar, NavbarBrand, NavItem, Button } from "reactstrap";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { BsFillJournalBookmarkFill, BsFillPersonFill } from "react-icons/bs";
-import { AiFillGithub } from "react-icons/ai";
-import { useContext } from "react";
+
+import { ThemeContext } from "../contexts/theme-context";
 
 export default function NavigationBar({ toggleDarkMode }) {
     const { darkMode } = useContext(ThemeContext);
@@ -31,11 +22,6 @@ export default function NavigationBar({ toggleDarkMode }) {
                     <b>Atick</b> Faisal
                 </div>
             </NavbarBrand>
-            {/* <NavbarToggler
-                onClick={function noRefCheck() {}}
-                className="mr-2"
-            /> */}
-            {/* <Collapse isOpen={false} navbar> */}
             <Nav className="ms-auto" navbar>
                 <NavItem>
                     <Button color={darkMode ? "dark" : "light"}>
@@ -72,19 +58,15 @@ export default function NavigationBar({ toggleDarkMode }) {
                 </NavItem>
                 <NavItem>
                     <Button
-                        color={darkMode ? "darker" : "dark"}
-                        onClick={() => {
-                            toggleDarkMode();
-                        }}
+                        className="dark-mode-toggle"
+                        color={darkMode ? "darker" : "lighter"}
+                        onClick={toggleDarkMode}
                     >
-                        <div className="btn-content">
-                            <AiFillGithub size="1.2rem" className="icon" />
-                            <div className="nav-btn-txt github">GitHub</div>
-                        </div>
+                        {darkMode && <FiSun size="1.2rem" className="icon" />}
+                        {!darkMode && <FiMoon size="1.2rem" className="icon" />}
                     </Button>
                 </NavItem>
             </Nav>
-            {/* </Collapse> */}
         </Navbar>
     );
 }

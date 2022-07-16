@@ -127,7 +127,7 @@ a #dark {
 
 #dark .card-img {
     border-radius: 1.4rem;
-    filter: brightness(90%);
+    filter: brightness(95%);
 }
 
 .card-body {
@@ -195,7 +195,15 @@ a #dark {
 
 .navbar-nav {
     flex-direction: row;
+    align-items: center;
     gap: 1rem;
+}
+
+.navbar-nav .dark-mode-toggle {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 
 ////////////////////////////////////////////////// Banner
@@ -306,26 +314,6 @@ a #dark {
     color: map.get($theme-colors, "primary-dark");
 }
 
-// /* width */
-// ::-webkit-scrollbar {
-//     width: 2px;
-// }
-
-// /* Track */
-// ::-webkit-scrollbar-track {
-//     background: #2e3440;
-// }
-
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//     background: #2e3440;
-// }
-
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//     background: #555;
-// }
-
 @media (min-width: 481px) {
     h1 {
         font-size: 3.2rem;
@@ -356,6 +344,11 @@ a #dark {
         padding-right: 1.5rem;
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
+    }
+
+    .navbar-nav .dark-mode-toggle {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .header-card {
