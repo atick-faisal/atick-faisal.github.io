@@ -1,11 +1,16 @@
+import { useContext } from "react";
 import { Button } from "reactstrap";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
 
+import { ThemeContext } from "../contexts/theme-context";
+
 export default function Selector({ selection, setSelection }) {
+    const { darkMode } = useContext(ThemeContext);
+
     const getColor = (item) => {
         if (selection === item) return "primary-variant";
-        else return "white";
+        else return darkMode ? "darker" : "light";
     };
 
     return (

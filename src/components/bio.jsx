@@ -1,9 +1,23 @@
+import { useContext } from "react";
 import { Button } from "reactstrap";
+import bgLight from "../assets/bio-bg.jpg";
+import bgDark from "../assets/bio-bg-dark.jpg";
 import profilePic from "../assets/atick-alt.png";
 
+import { ThemeContext } from "../contexts/theme-context";
+
 export default function Bio() {
+    const { darkMode } = useContext(ThemeContext);
+
+    const getBackground = () => {
+        return darkMode ? bgDark : bgLight;
+    };
+
     return (
-        <div className="header-card bio">
+        <div
+            className="header-card bio"
+            style={{ backgroundImage: `url(${getBackground()})` }}
+        >
             <div className="description">
                 <h1>
                     Hello! I'm <br />
@@ -14,7 +28,9 @@ export default function Bio() {
                     Developer. Currently working as a Research Assistant at
                     Qatar University
                 </p>
-                <Button color="primary">Get in Touch</Button>
+                <Button color={darkMode ? "primary-dark" : "primary"}>
+                    Get in Touch
+                </Button>
             </div>
             <div>
                 <img

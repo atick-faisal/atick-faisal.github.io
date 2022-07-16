@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
     Button,
     Card,
@@ -12,6 +13,8 @@ import { BiDownload } from "react-icons/bi";
 import { TbWorld } from "react-icons/tb";
 import { DiGitBranch } from "react-icons/di";
 
+import { ThemeContext } from "../contexts/theme-context";
+
 export default function ProjectItem({
     image,
     title,
@@ -22,8 +25,10 @@ export default function ProjectItem({
     use,
     youtube,
 }) {
+    const { darkMode } = useContext(ThemeContext);
+
     return (
-        <Card color="surface">
+        <Card color={darkMode ? "surface-dark" : "surface"}>
             <CardImg
                 className="card-img"
                 src={require("../assets/" + image)}
@@ -34,7 +39,10 @@ export default function ProjectItem({
                 <CardText>{description}</CardText>
                 <div className="actions">
                     {download && (
-                        <Button color="danger" href={download}>
+                        <Button
+                            color={darkMode ? "danger-dark" : "danger"}
+                            href={download}
+                        >
                             <div className="btn-content">
                                 <BiDownload size="1.2rem" className="icon" />
                                 <b>Download</b>
@@ -42,7 +50,10 @@ export default function ProjectItem({
                         </Button>
                     )}
                     {web && (
-                        <Button color="primary" href={web}>
+                        <Button
+                            color={darkMode ? "primary-dark" : "primary"}
+                            href={web}
+                        >
                             <div className="btn-content">
                                 <TbWorld size="1.2rem" className="icon" />
                                 Web Demo
@@ -50,7 +61,10 @@ export default function ProjectItem({
                         </Button>
                     )}
                     {use && (
-                        <Button color="secondary" href={use}>
+                        <Button
+                            color={darkMode ? "secondary-dark" : "secondary"}
+                            href={use}
+                        >
                             <div className="btn-content">
                                 <DiGitBranch size="1.2rem" className="icon" />
                                 <b>Use This</b>
@@ -58,7 +72,10 @@ export default function ProjectItem({
                         </Button>
                     )}
                     {youtube && (
-                        <Button color="danger" href={youtube}>
+                        <Button
+                            color={darkMode ? "danger-dark" : "danger"}
+                            href={youtube}
+                        >
                             <div className="btn-content">
                                 <AiFillYoutube size="1.2rem" className="icon" />
                                 YouTube Demo
@@ -66,7 +83,10 @@ export default function ProjectItem({
                         </Button>
                     )}
                     {github && (
-                        <Button color="dark" href={github}>
+                        <Button
+                            color={darkMode ? "darker" : "dark"}
+                            href={github}
+                        >
                             <div className="btn-content">
                                 <AiFillGithub size="1.2rem" className="icon" />
                                 GitHub

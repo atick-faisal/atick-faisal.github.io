@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
     Button,
     Card,
@@ -10,6 +11,8 @@ import {
 import { BsFillFileEarmarkPdfFill } from "react-icons/bs";
 import { TbWorld } from "react-icons/tb";
 
+import { ThemeContext } from "../contexts/theme-context";
+
 export default function PublicationItem({
     image,
     title,
@@ -17,8 +20,10 @@ export default function PublicationItem({
     online,
     pdf,
 }) {
+    const { darkMode } = useContext(ThemeContext);
+
     return (
-        <Card color="surface">
+        <Card color={darkMode ? "surface-dark" : "surface"}>
             <CardImg
                 className="card-img"
                 src={require("../assets/" + image)}
@@ -34,7 +39,7 @@ export default function PublicationItem({
                     {online && (
                         <Button
                             className="icon-btn"
-                            color="primary"
+                            color={darkMode ? "primary-dark" : "primary"}
                             href={online}
                         >
                             <div className="btn-content">
@@ -44,7 +49,11 @@ export default function PublicationItem({
                         </Button>
                     )}
                     {pdf && (
-                        <Button className="icon-btn" color="danger" href={pdf}>
+                        <Button
+                            className="icon-btn"
+                            color={darkMode ? "danger-dark" : "danger"}
+                            href={pdf}
+                        >
                             <div className="btn-content">
                                 <BsFillFileEarmarkPdfFill
                                     size="1.2em"
