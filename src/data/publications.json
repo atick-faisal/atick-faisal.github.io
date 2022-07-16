@@ -1,0 +1,34 @@
+[
+    [
+        {
+            "title": "An investigation to study the effects of Tai Chi on human gait dynamics using classical machine learning",
+            "image": "taichi.jpg",
+            "publisher": "Computers in Biology and Medicine, Elsevier",
+            "online": "https://www.sciencedirect.com/science/article/pii/S0010482521009781/",
+            "pdf": "https://www.sciencedirect.com/science/article/pii/S0010482521009781/pdfft?md5=e2e28943d70679e3cc44011f5da553c6&pid=1-s2.0-S0010482521009781-main.pdf"
+        },
+        {
+            "title": "UPIC: user and position independent classical approach for locomotion and transportation modes recognition",
+            "image": "upic.png",
+            "publisher": "UbiComp, 2020",
+            "online": "https://dl.acm.org/doi/abs/10.1145/3410530.3414343",
+            "pdf": "http://www.shl-dataset.org/wp-content/uploads/SHLChallenge2020/short_videos_presentations/07_ubicomp20q-sub1001-cam-i7.pdf"
+        }
+    ],
+    [
+        {
+            "title": "Contactless Human Activity Analysis: An Overview of Different Modalities",
+            "image": "contactless.jpeg",
+            "publisher": "Springer Book",
+            "online": "https://link.springer.com/chapter/10.1007/978-3-030-68590-4_3/",
+            "pdf": "https://ffabir.com/wp-content/uploads/2022/01/Contactless-Human-Activity-Analysis_-An-Overview-of-Different-Modalities.pdf"
+        },
+        {
+            "title": "Sensor dataglove for real-time static and dynamic hand gesture recognition",
+            "image": "slr.png",
+            "publisher": "IEEE Conference",
+            "online": "https://ieeexplore.ieee.org/abstract/document/9564226/",
+            "pdf": "https://ffabir.com/wp-content/uploads/2022/01/Sensor-Dataglove-for-Real-time-Static-and-Dynamic-Hand-Gesture-Recognition.pdf"
+        }
+    ]
+]
