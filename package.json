@@ -1,5 +1,6 @@
 {
     "name": "atick-faisal.github.io",
+    "homepage": "https://atick.dev",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -8,6 +9,7 @@
         "@testing-library/user-event": "^13.5.0",
         "autoprefixer": "10.4.5",
         "bootstrap": "^5.1.3",
+        "gh-pages": "^4.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^4.4.0",
@@ -22,6 +24,8 @@
         "autoprefixer": "10.4.5"
     },
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -b master -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
