@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/theme-context";
 import Sketch from "react-p5";
 
 let particles = [];
@@ -45,6 +46,8 @@ class LorentzParticle {
 }
 
 export default function Butterfly() {
+    const { darkMode } = useContext(ThemeContext);
+
     const setup = (p5, canvasParentRef) => {
         let canvasWidth = getWidth();
         let canvasHeight = getHeight();
@@ -61,7 +64,13 @@ export default function Butterfly() {
     const draw = (p5) => {
         if (alpha > 10) alpha -= 0.2;
         p5.translate(p5.width / 2, 0);
-        p5.background(255, alpha);
+
+        if (darkMode) {
+            p5.background(46, 52, 54, alpha);
+        } else {
+            p5.background(255, alpha);
+        }
+
         for (let i = 0; i < nParticles; i++) {
             let oldParticle = particles[i].copy();
             update(i);
@@ -90,6 +99,7 @@ export default function Butterfly() {
                 p5.random(126, 246)
             );
         }
+        alpha = 100;
     };
 
     const update = (i) => {

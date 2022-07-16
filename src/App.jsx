@@ -6,22 +6,38 @@ import NavigationBar from "./components/navbar";
 import Projects from "./components/projects";
 import Publications from "./components/publications";
 import Selector from "./components/selector";
+import { ThemeContext } from "./contexts/theme-context";
 
 function App() {
     const [selection, setSelection] = useState("projects");
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
+    const getTheme = () => {
+        if (darkMode) return "dark";
+        else return "light";
+    };
 
     return (
-        <div className="App">
-            <NavigationBar />
-            <div className="container">
-                <Banner />
-                <Bio />
-                <Selector selection={selection} setSelection={setSelection} />
-                {selection === "projects" && <Projects />}
-                {selection === "publications" && <Publications />}
-                <Footer />
+        <ThemeContext.Provider value={{ darkMode }}>
+            <div className="App" id={getTheme()}>
+                <NavigationBar toggleDarkMode={toggleDarkMode} />
+                <div className="container">
+                    <Banner />
+                    <Bio />
+                    <Selector
+                        selection={selection}
+                        setSelection={setSelection}
+                    />
+                    {selection === "projects" && <Projects />}
+                    {selection === "publications" && <Publications />}
+                    <Footer />
+                </div>
             </div>
-        </div>
+        </ThemeContext.Provider>
     );
 }
 

@@ -1,14 +1,33 @@
+@use "sass:map";
+
 $theme-colors: (
-    "primary": #3f51b5,
+    "primary": #512da8,
+    "primary-dark": #9575cd,
+
     "primary-variant": #bbdefb,
+    "primary-variant-dark": #7e57c2,
+
     "secondary": #ffca28,
+    "secondary-dark": #ffb300,
+
     "secondary-variant": #fff8e1,
+    "secondary-variant-dark": #ffca28,
+
     "warning": #ffa726,
+    "warning-dark": #fb8c00,
+
     "danger": #c2185b,
+    "danger-dark": #ec407a,
+
     "background": #fafafa,
+    "background-dark": #2e3440,
+
     "surface": #e8eaf6,
+    "surface-dark": #3b4252,
+
     "light": #e5e9f0,
     "lighter": #eceff4,
+
     "dark": #3b4252,
     "darker": #2e3440,
 );
@@ -17,23 +36,53 @@ $theme-colors: (
 
 ////////////////////////////////////////////////// Globals
 
-h1 {
+body #light {
+    background-color: map.get($theme-colors, "lighter");
+    color: map.get($theme-colors, "dark");
+}
+
+body #dark {
+    background-color: map.get($theme-colors, "darker");
+    color: map.get($theme-colors, "light");
+}
+
+h1 #light {
     font-size: 2rem;
     font-weight: 300;
-    color: #3b4252;
+    color: map.get($theme-colors, "dark");
 }
 
-h3 {
+h1 #dark {
+    color: map.get($theme-colors, "light");
+}
+
+h3 #light {
     font-size: 1.7rem;
     font-weight: 400;
-    color: #3b4252;
+    color: map.get($theme-colors, "dark");
 }
 
-p {
+h3 #dark {
+    color: map.get($theme-colors, "light");
+}
+
+p #light {
     font-size: 1rem;
     font-weight: 400;
     line-height: 150%;
-    color: #2e3440;
+    color: map.get($theme-colors, "darker");
+}
+
+p #dark {
+    color: map.get($theme-colors, "lighter");
+}
+
+a #light {
+    color: map.get($theme-colors, "dark");
+}
+
+a #dark {
+    color: map.get($theme-colors, "light");
 }
 
 .btn {
@@ -113,13 +162,21 @@ p {
     padding: 0;
 }
 
-.nav-btn-icon {
-    color: #3b4252;
+.nav-btn-icon #light {
+    color: map.get($theme-colors, "dark");
 }
 
-.nav-btn-txt {
+.nav-btn-icon #dark {
+    color: map.get($theme-colors, "light");
+}
+
+.nav-btn-txt #light {
     display: none;
-    color: #3b4252;
+    color: map.get($theme-colors, "dark");
+}
+
+.nav-btn-txt #dark {
+    color: map.get($theme-colors, "light");
 }
 
 .github {
@@ -129,6 +186,14 @@ p {
 .navbar-nav {
     flex-direction: row;
     gap: 1rem;
+}
+
+.nav-brand #light {
+    color: map.get($theme-colors, "dark");
+}
+
+.nav-brand #dark {
+    color: map.get($theme-colors, "light");
 }
 
 ////////////////////////////////////////////////// Banner
