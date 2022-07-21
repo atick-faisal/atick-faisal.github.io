@@ -19,7 +19,7 @@ $theme-colors: (
     "danger": #c2185b,
     "danger-dark": #ad1457,
 
-    "background": #fafafa,
+    "background": #ffffff,
     "background-dark": #2e3440,
 
     "surface": #e8eaf6,
@@ -37,7 +37,7 @@ $theme-colors: (
 ////////////////////////////////////////////////// Globals
 
 body #light {
-    background-color: map.get($theme-colors, "lighter");
+    background-color: map.get($theme-colors, "background");
     color: map.get($theme-colors, "darker");
 }
 

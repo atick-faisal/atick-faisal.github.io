@@ -10,7 +10,7 @@ export default function Selector({ selection, setSelection }) {
 
     const getColor = (item) => {
         if (selection === item) return "primary-variant";
-        else return darkMode ? "darker" : "lighter";
+        else return darkMode ? "darker" : "background";
     };
 
     return (
