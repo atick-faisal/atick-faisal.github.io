@@ -68,7 +68,7 @@ export default function Butterfly() {
         if (darkMode) {
             p5.background(46, 52, 64, alpha);
         } else {
-            p5.background(236, 239, 244, alpha);
+            p5.background(255, alpha);
         }
 
         for (let i = 0; i < nParticles; i++) {

@@ -30,7 +30,7 @@ export default function PublicationItem({
                 alt={title}
             />
             <CardBody className="card-body">
-                <CardTitle tag="h3">{title}</CardTitle>
+                <CardTitle tag="h2">{title}</CardTitle>
                 <CardSubtitle className="mb-2 text-muted" tag="h5">
                     {publisher}
                 </CardSubtitle>
