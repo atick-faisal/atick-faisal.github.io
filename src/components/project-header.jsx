@@ -22,11 +22,13 @@ export default function ProjectHeader() {
             <div className="description">
                 <h1>Projects</h1>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    I am a robotics enthusiast and a native Android developer
+                    (Kotlin, Java) with experience in modern architectural
+                    components and MVVM design pattern. I have developed several
+                    mobile applications to communicate with IoT devices via
+                    Bluetooth, BLE, HTTP and MQTT protocols. I also have
+                    experience in design and deployment of Machine Learning
+                    based solutions for IoT devices.
                 </p>
                 <Button color="dark" href="https://github.com/atick-faisal/">
                     <div className="btn-content">
