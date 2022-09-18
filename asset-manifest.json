@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7bb45331.css",
-    "main.js": "/static/js/main.305f0ab0.js",
+    "main.js": "/static/js/main.706529dc.js",
     "static/media/glove.svg": "/static/media/glove.9f5cb40b9e9ac4bedce3.svg",
     "static/media/glove.png": "/static/media/glove.d2b60b6278a7d4650c4f.png",
     "static/media/portfolio.svg": "/static/media/portfolio.f0cf19cc04f12a0866b5.svg",
@@ -14,6 +14,7 @@
     "static/media/raspberry-pi-dark.png": "/static/media/raspberry-pi-dark.fe5b84bb00cb96fae060.png",
     "static/media/raspberry-pi.png": "/static/media/raspberry-pi.310e1f99136b3ae13d90.png",
     "static/media/solar.png": "/static/media/solar.b26dad523a5c1e81b173.png",
+    "static/media/nurse-care.png": "/static/media/nurse-care.203a100b37425c442367.png",
     "static/media/ml.gif": "/static/media/ml.a303a68fa14d2f606202.gif",
     "static/media/raspberry-pi-alt.png": "/static/media/raspberry-pi-alt.df42d0cb30884fc6699e.png",
     "static/media/upic.png": "/static/media/upic.da919afc24f6d3bcd5f6.png",
@@ -43,6 +44,7 @@
     "static/media/bioai.jpg": "/static/media/bioai.c0a07860293211d65e9e.jpg",
     "static/media/weather.png": "/static/media/weather.622d3c593d7b61ab6f5a.png",
     "static/media/qu.jpg": "/static/media/qu.1f4f74e44ca53393bdee.jpg",
+    "static/media/crowd-emotion.jpg": "/static/media/crowd-emotion.67692979f898394ed2be.jpg",
     "static/media/dynamic-programming.gif": "/static/media/dynamic-programming.3ab062dd0ad572343cc3.gif",
     "static/media/spwm.jpg": "/static/media/spwm.1642351c6ab5c75bb50d.jpg",
     "static/media/dashboard.jpg": "/static/media/dashboard.a54281e99c29713306b7.jpg",
@@ -58,10 +60,10 @@
     "static/media/favicon.ico": "/static/media/favicon.c2b6eb5d0a8e27729936.ico",
     "index.html": "/index.html",
     "main.7bb45331.css.map": "/static/css/main.7bb45331.css.map",
-    "main.305f0ab0.js.map": "/static/js/main.305f0ab0.js.map"
+    "main.706529dc.js.map": "/static/js/main.706529dc.js.map"
   },
   "entrypoints": [
     "static/css/main.7bb45331.css",
-    "static/js/main.305f0ab0.js"
+    "static/js/main.706529dc.js"
   ]
 }
