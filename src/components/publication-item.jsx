@@ -10,6 +10,7 @@ import {
 
 import { BsFillFileEarmarkPdfFill } from "react-icons/bs";
 import { TbWorld } from "react-icons/tb";
+import { BiDownload } from "react-icons/bi";
 
 import { ThemeContext } from "../contexts/theme-context";
 
@@ -19,6 +20,7 @@ export default function PublicationItem({
     publisher,
     online,
     pdf,
+    dataset
 }) {
     const { darkMode } = useContext(ThemeContext);
 
@@ -60,6 +62,21 @@ export default function PublicationItem({
                                     className="icon"
                                 />
                                 <b>PDF</b>
+                            </div>
+                        </Button>
+                    )}
+                    {dataset && (
+                        <Button
+                            className="icon-btn"
+                            color={darkMode ? "secondary-dark" : "secondary"}
+                            href={dataset}
+                        >
+                            <div className="btn-content">
+                                <BiDownload
+                                    size="1.2em"
+                                    className="icon"
+                                />
+                                <b>Download Dataset</b>
                             </div>
                         </Button>
                     )}

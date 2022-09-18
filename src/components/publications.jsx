@@ -17,6 +17,7 @@ export default function Publications() {
                             publisher={publication.publisher}
                             online={publication.online}
                             pdf={publication.pdf}
+                            dataset={publication.dataset}
                         />
                     ))}
                 </Row>
