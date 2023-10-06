@@ -1,6 +1,38 @@
 [
     [
         {
+            "title": "Jetpack Compose Starter",
+            "image": "jetpack-starter.jpg",
+            "description": "Starter code for Android Kotlin Project with Jetpack Compose 🚀🚀🚀",
+            "github": "https://github.com/atick-faisal/Jetpack-Compose-Starter/",
+            "use": "https://github.com/atick-faisal/Jetpack-Compose-Starter#building"
+        },
+        {
+            "title": "Safety",
+            "image": "safety-android.jpg",
+            "description": "Android app to interface with wearable sensors to detect fall and send emergency messages",
+            "github": "https://github.com/atick-faisal/Safety-/",
+            "download": "https://github.com/atick-faisal/Safety-Android/releases/"
+        }
+    ],
+    [
+        {
+            "title": "Jetpack Ai Starter",
+            "image": "jetpack-ai.jpg",
+            "description": "Starter code for AnStarter Code for Deploying an Machine Learning App to the Google Cloud Run",
+            "github": "https://github.com/atick-faisal/Jetpack-AI-Starter/",
+            "web": "https://jetpackai.atick.dev/"
+        },
+        {
+            "title": "Smart Insole",
+            "image": "thermogram.jpg",
+            "description": "GUI Application for IR Thermogram Platfrom based on MLX90614 and ESP32",
+            "github": "https://github.com/atick-faisal/Thermogram-Platform-App",
+            "download": "https://github.com/atick-faisal/Thermogram-Platform-App/releases/"
+        }
+    ],
+    [
+        {
             "title": "Automatic I/V Dispenser Android App",
             "image": "iv-dispenser.jpg",
             "description": "Android app for an automatic I/V dispenser framework targeted towards burn patients",
