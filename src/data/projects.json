@@ -37,7 +37,7 @@
             "image": "iv-dispenser.jpg",
             "description": "Android app for an automatic I/V dispenser framework targeted towards burn patients",
             "github": "https://github.com/atick-faisal/IV-Dispenser-Android/",
-            "download": "#"
+            "download": "https://github.com/atick-faisal/IV-Dispenser-Android/releases"
         },
         {
             "title": "Continuous Glucose Level Monitoring",
@@ -75,7 +75,7 @@
             "image": "glove.jpg",
             "description": "A sensor dataglove for classifying 24 static and 16 dynamic ASL signs with Deep Learning",
             "github": "https://github.com/atick-faisal/Sign-Language-Recognition/",
-            "youtube": "#"
+            "youtube": "https://youtu.be/tvK_erSh6AQ?si=uVGbcgr2yG_Z31tE"
         }
     ],
     [
