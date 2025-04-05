@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Button } from "reactstrap";
 import { SiGooglescholar } from "react-icons/si";
-import quLight from "../assets/qu.jpg";
-import quDark from "../assets/qu-dark.jpg";
-import bgLight from "../assets/publication-header.png";
-import bgDark from "../assets/publication-header-dark.jpg";
+import quLight from "../assets/qu.webp";
+import quDark from "../assets/qu-dark.webp";
+import bgLight from "../assets/publication-header.webp";
+import bgDark from "../assets/publication-header-dark.webp";
 
 import { ThemeContext } from "../contexts/theme-context";
 

@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Button } from "reactstrap";
 import { AiFillGithub } from "react-icons/ai";
-import raspberryPi from "../assets/raspberry-pi-alt.png";
-import bgLight from "../assets/project-header.jpg";
-import bgDark from "../assets/project-header-dark.jpg";
+import raspberryPi from "../assets/raspberry-pi-alt.webp";
+import bgLight from "../assets/project-header.webp";
+import bgDark from "../assets/project-header-dark.webp";
 
 import { ThemeContext } from "../contexts/theme-context";
 

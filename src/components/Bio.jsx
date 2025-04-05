@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Button } from "reactstrap";
-import bgLight from "../assets/bio-bg.jpg";
-import bgDark from "../assets/bio-bg-dark.jpg";
-import profilePic from "../assets/atick-alt.png";
+import bgLight from "../assets/bio-bg.webp";
+import bgDark from "../assets/bio-bg-dark.webp";
+import profilePic from "../assets/atick.webp";
 
 import { ThemeContext } from "../contexts/theme-context";
 
