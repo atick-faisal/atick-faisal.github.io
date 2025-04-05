@@ -14,9 +14,11 @@
   "dependencies": {
     "@tanstack/react-query": "^5.52.0",
     "axios": "^1.7.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-ga4": "^2.1.0"
+    "bootstrap": "^5.3.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-ga4": "^2.1.0",
+    "reactstrap": "^9.2.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
