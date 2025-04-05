@@ -1,48 +1,14 @@
-import { useState } from "react";
-import BackToTop from "./components/back-to-top";
-import Banner from "./components/banner";
-import Bio from "./components/bio";
-import Footer from "./components/footer";
-import NavigationBar from "./components/navbar";
-import Projects from "./components/projects";
-import Publications from "./components/publications";
-import Selector from "./components/selector";
-import { ThemeContext } from "./contexts/theme-context";
+import ErrorBoundary from "./utils/ErrorBoundary";
+import AppContent from "./components/AppContent";
+import "./App.css";
 
 function App() {
-    const [selection, setSelection] = useState("projects");
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
-
-    const getTheme = () => {
-        if (darkMode) return "dark";
-        else return "light";
-    };
-
     return (
-        <ThemeContext.Provider value={{ darkMode }}>
-            <div className="App" id={getTheme()}>
-                <NavigationBar
-                    setSelection={setSelection}
-                    toggleDarkMode={toggleDarkMode}
-                />
-                <div className="container">
-                    <Banner />
-                    <Bio />
-                    <Selector
-                        selection={selection}
-                        setSelection={setSelection}
-                    />
-                    {selection === "projects" && <Projects />}
-                    {selection === "publications" && <Publications />}
-                    <BackToTop />
-                    <Footer />
-                </div>
-            </div>
-        </ThemeContext.Provider>
+        <div className="h-screen flex flex-col p-8 items-center gap-8 justify-center">
+            <ErrorBoundary>
+                <AppContent/>
+            </ErrorBoundary>
+        </div>
     );
 }
 
