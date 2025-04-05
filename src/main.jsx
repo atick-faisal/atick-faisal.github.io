@@ -6,7 +6,7 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {initializeErrorTracking} from "./utils/errorTracking.js";
 
 import App from "./App.jsx";
-import "./index.css";
+import "./scss/index.scss";
 
 initializeErrorTracking();
 const queryClient = new QueryClient();
