@@ -113,7 +113,6 @@ export default function Butterfly() {
                 : `rgba(255, 255, 255, ${alphaRef.current / 100})`;
 
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            console.log("Drawing with fillStyle:", ctx.fillStyle);
 
             ctx.save();
             ctx.translate(canvas.width / 2, 0);
