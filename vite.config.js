@@ -46,14 +46,4 @@ export default defineConfig({
             },
         }),
     ],
-    server: {
-        proxy: {
-            "/api": {
-                target: "https://xkcd.com/",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ""),
-                secure: false,
-            },
-        },
-    },
 });
