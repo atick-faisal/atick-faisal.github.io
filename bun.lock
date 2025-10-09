@@ -26,7 +26,7 @@
         "daisyui": "^5.0.0",
         "eslint": "^9.8.0",
         "eslint-plugin-react": "^7.35.0",
-        "eslint-plugin-react-hooks": "^6.0.0",
+        "eslint-plugin-react-hooks": "^7.0.0",
         "eslint-plugin-react-refresh": "^0.4.9",
         "gh-pages": "^6.3.0",
         "globals": "^16.0.0",
@@ -105,8 +105,6 @@
     "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining": ["@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.24.7", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.24.7", "@babel/helper-skip-transparent-expression-wrappers": "^7.24.7", "@babel/plugin-transform-optional-chaining": "^7.24.7" }, "peerDependencies": { "@babel/core": "^7.13.0" } }, "sha512-+izXIbke1T33mY4MSNnrqhPXDz01WYhEf3yF5NbnUtkiNnm+XBZJl3kNfoK6NKmYlz/D07+l2GWVK/QfDkNCuQ=="],
 
     "@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly": ["@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@7.25.0", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.24.8", "@babel/traverse": "^7.25.0" }, "peerDependencies": { "@babel/core": "^7.0.0" } }, "sha512-tggFrk1AIShG/RUQbEwt2Tr/E+ObkfwrPjR6BjbRvsx24+PSjK8zrq0GWPNCjo8qpRx4DuJzlcvWJqlm+0h3kw=="],
-
-    "@babel/plugin-proposal-private-methods": ["@babel/plugin-proposal-private-methods@7.18.6", "", { "dependencies": { "@babel/helper-create-class-features-plugin": "^7.18.6", "@babel/helper-plugin-utils": "^7.18.6" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA=="],
 
     "@babel/plugin-proposal-private-property-in-object": ["@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2", "", { "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-SOSkfJDddaM7mak6cPEpswyTRnuRltl429hMraQEglW+OkovnCzsiszTmsrlY//qLFjCpQDFRvjdm2wA5pPm9w=="],
 
@@ -764,7 +762,7 @@
 
     "eslint-plugin-react": ["eslint-plugin-react@7.37.4", "", { "dependencies": { "array-includes": "^3.1.8", "array.prototype.findlast": "^1.2.5", "array.prototype.flatmap": "^1.3.3", "array.prototype.tosorted": "^1.1.4", "doctrine": "^2.1.0", "es-iterator-helpers": "^1.2.1", "estraverse": "^5.3.0", "hasown": "^2.0.2", "jsx-ast-utils": "^2.4.1 || ^3.0.0", "minimatch": "^3.1.2", "object.entries": "^1.1.8", "object.fromentries": "^2.0.8", "object.values": "^1.2.1", "prop-types": "^15.8.1", "resolve": "^2.0.0-next.5", "semver": "^6.3.1", "string.prototype.matchall": "^4.0.12", "string.prototype.repeat": "^1.0.0" }, "peerDependencies": { "eslint": "^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7" } }, "sha512-BGP0jRmfYyvOyvMoRX/uoUeW+GqNj9y16bPQzqAHf3AYII/tDs+jMN0dBVkl88/OZwNGwrVFxE7riHsXVfy/LQ=="],
 
-    "eslint-plugin-react-hooks": ["eslint-plugin-react-hooks@6.1.0", "", { "dependencies": { "@babel/core": "^7.24.4", "@babel/parser": "^7.24.4", "@babel/plugin-proposal-private-methods": "^7.18.6", "hermes-parser": "^0.25.1", "zod": "^3.22.4", "zod-validation-error": "^3.0.3" }, "peerDependencies": { "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0" } }, "sha512-72mucw/WLzEqGvL2vwE6fWR6geO6UbmDjz3eAb3pezxTpFzgbfyUeFKzmZKr9LhwUWMXfTVh1g0rKEJoyKNdoA=="],
+    "eslint-plugin-react-hooks": ["eslint-plugin-react-hooks@7.0.0", "", { "dependencies": { "@babel/core": "^7.24.4", "@babel/parser": "^7.24.4", "hermes-parser": "^0.25.1", "zod": "^3.22.4 || ^4.0.0", "zod-validation-error": "^3.0.3 || ^4.0.0" }, "peerDependencies": { "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0" } }, "sha512-fNXaOwvKwq2+pXiRpXc825Vd63+KM4DLL40Rtlycb8m7fYpp6efrTp1sa6ZbP/Ap58K2bEKFXRmhURE+CJAQWw=="],
 
     "eslint-plugin-react-refresh": ["eslint-plugin-react-refresh@0.4.19", "", { "peerDependencies": { "eslint": ">=8.40" } }, "sha512-eyy8pcr/YxSYjBoqIFSrlbn9i/xvxUFa8CjzAYo9cFjgGXqq1hyjihcpZvxRLalpaWmueWR81xn7vuKmAFijDQ=="],
 
