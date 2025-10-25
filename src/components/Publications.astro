@@ -25,6 +25,9 @@ const publications = publicationsData as Publication[];
         <div class="publication-header-light absolute inset-0 bg-cover bg-center dark:opacity-0 transition-opacity duration-300"></div>
         <div class="publication-header-dark absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-300"></div>
 
+        <!-- Semi-transparent overlay for better text contrast in dark mode -->
+        <div class="absolute inset-0 bg-black/50 opacity-0 dark:opacity-100"></div>
+
         <!-- Description -->
         <div class="description relative z-10 flex-[2] px-6 py-8 md:px-12 md:py-12">
             <h1 class="text-4xl font-bold mb-4">Publications</h1>
