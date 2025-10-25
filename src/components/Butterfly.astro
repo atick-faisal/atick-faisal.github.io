@@ -5,6 +5,62 @@
 <canvas id="butterfly-canvas" class="mx-auto rounded-lg cursor-pointer"></canvas>
 
 <script>
+    // Lorentz Attractor Configuration
+    // See: https://en.wikipedia.org/wiki/Lorenz_system
+    const CONFIG = {
+        // Particle system
+        PARTICLE_COUNT_MOBILE: 100,
+        PARTICLE_COUNT_DESKTOP: 300,
+        MOBILE_BREAKPOINT: 481, // px
+
+        // Canvas sizing (multipliers of viewport width)
+        CANVAS_WIDTH_LARGE: 0.5, // > 1370px
+        CANVAS_WIDTH_MEDIUM: 0.6, // > 720px
+        CANVAS_WIDTH_SMALL: 0.9, // < 720px
+        CANVAS_HEIGHT_RATIO: 0.6, // Height as ratio of width
+        BREAKPOINT_LARGE: 1370, // px
+        BREAKPOINT_MEDIUM: 720, // px
+
+        // Coordinate scaling factors
+        WIDTH_SCALE_FACTOR: 13.0 / 600.0,
+        HEIGHT_SCALE_FACTOR: 7.0 / 400.0,
+
+        // Particle color ranges (RGB)
+        COLOR_R_MIN: 26,
+        COLOR_R_MAX: 232,
+        COLOR_G_MIN: 35,
+        COLOR_G_MAX: 234,
+        COLOR_B_MIN: 126,
+        COLOR_B_MAX: 246,
+
+        // Lorenz attractor parameters
+        // https://en.wikipedia.org/wiki/Lorenz_system
+        SIGMA: 10, // Prandtl number (convection rate)
+        BETA: 8.0 / 2.5, // Geometric factor
+        RHO: 28, // Rayleigh number (temperature difference)
+        DELTA_T_INITIAL: 0.001, // Initial time step
+        DELTA_T_MAX: 0.01, // Maximum time step
+        DELTA_T_INCREMENT: 0.00001, // Time step increment
+
+        // Animation parameters
+        ALPHA_INITIAL: 100, // Initial fade opacity
+        ALPHA_MIN: 10, // Minimum fade opacity
+        ALPHA_DECREMENT: 0.2, // Fade rate
+        LINE_WIDTH: 1.5, // Particle trail width
+
+        // Background colors
+        BG_LIGHT: 'rgb(255, 255, 255)',
+        BG_DARK: 'rgb(40, 44, 52)', // #282c34 - One Dark theme
+
+        // Particle initialization ranges
+        PARTICLE_X_MIN: -100,
+        PARTICLE_X_MAX: 100,
+        PARTICLE_Y_MIN: -10,
+        PARTICLE_Y_MAX: 10,
+        PARTICLE_Z_MIN: -100,
+        PARTICLE_Z_MAX: 100,
+    } as const;
+
     class LorentzParticle {
         x: number;
         y: number;
@@ -18,10 +74,10 @@
             this.x = x;
             this.y = y;
             this.z = z;
-            this.sigma = 10;
-            this.beta = 8.0 / 2.5;
-            this.rho = 28;
-            this.dt = 0.001;
+            this.sigma = CONFIG.SIGMA;
+            this.beta = CONFIG.BETA;
+            this.rho = CONFIG.RHO;
+            this.dt = CONFIG.DELTA_T_INITIAL;
         }
 
         randInt(min: number, max: number): number {
@@ -29,17 +85,17 @@
         }
 
         randomize(): void {
-            this.x = this.randInt(-100, 100);
-            this.y = this.randInt(-10, 10);
-            this.z = this.randInt(-100, 100);
-            this.dt = 0.001;
+            this.x = this.randInt(CONFIG.PARTICLE_X_MIN, CONFIG.PARTICLE_X_MAX);
+            this.y = this.randInt(CONFIG.PARTICLE_Y_MIN, CONFIG.PARTICLE_Y_MAX);
+            this.z = this.randInt(CONFIG.PARTICLE_Z_MIN, CONFIG.PARTICLE_Z_MAX);
+            this.dt = CONFIG.DELTA_T_INITIAL;
         }
 
         update(): void {
             this.x += this.sigma * (this.y - this.x) * this.dt;
             this.y += (this.x * (this.rho - this.z) - this.y) * this.dt;
             this.z += (this.x * this.y - this.beta * this.z) * this.dt;
-            if (this.dt < 0.01) this.dt += 0.00001;
+            if (this.dt < CONFIG.DELTA_T_MAX) this.dt += CONFIG.DELTA_T_INCREMENT;
         }
 
         copy(): LorentzParticle {
@@ -68,27 +124,29 @@
         }
 
         getNumberOfParticles(): number {
-            return window.innerWidth < 481 ? 100 : 300;
+            return window.innerWidth < CONFIG.MOBILE_BREAKPOINT
+                ? CONFIG.PARTICLE_COUNT_MOBILE
+                : CONFIG.PARTICLE_COUNT_DESKTOP;
         }
 
         getWidth(): number {
             const width = window.innerWidth;
-            if (width > 1370) return width * 0.5;
-            if (width > 720) return width * 0.6;
-            return width * 0.9;
+            if (width > CONFIG.BREAKPOINT_LARGE) return width * CONFIG.CANVAS_WIDTH_LARGE;
+            if (width > CONFIG.BREAKPOINT_MEDIUM) return width * CONFIG.CANVAS_WIDTH_MEDIUM;
+            return width * CONFIG.CANVAS_WIDTH_SMALL;
         }
 
         getHeight(): number {
             const width = this.getWidth();
-            return width * 0.6;
+            return width * CONFIG.CANVAS_HEIGHT_RATIO;
         }
 
         getWidthScaler(canvasWidth: number): number {
-            return (13.0 / 600.0) * canvasWidth;
+            return CONFIG.WIDTH_SCALE_FACTOR * canvasWidth;
         }
 
         getHeightScaler(canvasHeight: number): number {
-            return (7.0 / 400.0) * canvasHeight;
+            return CONFIG.HEIGHT_SCALE_FACTOR * canvasHeight;
         }
 
         initialize(): void {
@@ -101,15 +159,13 @@
                 p.randomize();
                 this.particles.push(p);
                 this.colors.push(
-                    `rgb(${rand(26, 232)}, ${rand(35, 234)}, ${rand(126, 246)})`,
+                    `rgb(${rand(CONFIG.COLOR_R_MIN, CONFIG.COLOR_R_MAX)}, ${rand(CONFIG.COLOR_G_MIN, CONFIG.COLOR_G_MAX)}, ${rand(CONFIG.COLOR_B_MIN, CONFIG.COLOR_B_MAX)})`,
                 );
             }
 
             const canvasWidth = this.canvas.width;
             const canvasHeight = this.canvas.height;
-            this.ctx.fillStyle = this.isDark
-                ? `rgb(40, 44, 52)` // #282c34 - One Dark theme
-                : `rgb(255, 255, 255)`;
+            this.ctx.fillStyle = this.isDark ? CONFIG.BG_DARK : CONFIG.BG_LIGHT;
             this.ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         }
 
@@ -119,7 +175,7 @@
 
             this.canvas.width = canvasWidth;
             this.canvas.height = canvasHeight;
-            this.alpha = 100;
+            this.alpha = CONFIG.ALPHA_INITIAL;
 
             this.initialize();
             this.animate();
@@ -131,10 +187,10 @@
             const heightScaler = this.getHeightScaler(this.canvas.height);
 
             const draw = () => {
-                if (this.alpha > 10) this.alpha -= 0.2;
+                if (this.alpha > CONFIG.ALPHA_MIN) this.alpha -= CONFIG.ALPHA_DECREMENT;
 
                 this.ctx.fillStyle = this.isDark
-                    ? `rgba(40, 44, 52, ${this.alpha / 100})` // #282c34 - One Dark theme
+                    ? `rgba(40, 44, 52, ${this.alpha / 100})`
                     : `rgba(255, 255, 255, ${this.alpha / 100})`;
 
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -148,7 +204,7 @@
                     const newP = this.particles[i].copy();
 
                     this.ctx.strokeStyle = this.colors[i];
-                    this.ctx.lineWidth = 1.5;
+                    this.ctx.lineWidth = CONFIG.LINE_WIDTH;
                     this.ctx.beginPath();
                     this.ctx.moveTo(
                         oldP.x * widthScaler,
@@ -169,7 +225,7 @@
         }
 
         reset(): void {
-            this.alpha = 100;
+            this.alpha = CONFIG.ALPHA_INITIAL;
             this.initialize();
         }
 

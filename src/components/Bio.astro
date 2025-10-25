@@ -1,8 +1,9 @@
 ---
 import { Mail } from 'lucide-astro';
-import profileImage from '../assets/atick.webp';
-import bioBgLight from '../assets/bio-bg.webp';
+import { ICON_SIZES } from '../constants/ui';
 import bioBgDark from '../assets/bio-bg-dark.webp';
+import bioBgLight from '../assets/bio-bg.webp';
+import profileImage from '../assets/atick.webp';
 ---
 
 <section class="container mx-auto px-6 py-16">
@@ -40,7 +41,7 @@ import bioBgDark from '../assets/bio-bg-dark.webp';
                         href="#footer"
                         class="btn btn-primary inline-flex items-center gap-2"
                     >
-                        <Mail size={20} />
+                        <Mail size={ICON_SIZES.MD} />
                         Get in Touch
                     </a>
                 </div>

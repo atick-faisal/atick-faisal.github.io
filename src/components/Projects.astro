@@ -1,7 +1,8 @@
 ---
 import { Github } from 'lucide-astro';
-import projectHeaderLight from '../assets/project-header.webp';
+import { ICON_SIZES } from '../constants/ui';
 import projectHeaderDark from '../assets/project-header-dark.webp';
+import projectHeaderLight from '../assets/project-header.webp';
 import raspberryPi from '../assets/raspberry-pi-alt.webp';
 import projectsData from '../data/projects.json';
 import type { Project } from '../types';
@@ -27,7 +28,7 @@ const projects = projectsData as Project[];
                 href="https://github.com/atick-faisal/"
                 class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-text-light dark:bg-text-dark text-bg-light dark:text-bg-dark hover:opacity-90 transition-opacity"
             >
-                <Github class="icon" size={20} />
+                <Github class="icon" size={ICON_SIZES.MD} />
                 <span>Explore on GitHub</span>
             </a>
         </div>

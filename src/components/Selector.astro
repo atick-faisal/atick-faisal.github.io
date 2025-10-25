@@ -1,5 +1,6 @@
 ---
 import { BookOpen, Code2 } from 'lucide-astro';
+import { ICON_SIZES, SELECTOR } from '../constants/ui';
 ---
 
 <section class="container mx-auto px-6 mt-12">
@@ -9,7 +10,7 @@ import { BookOpen, Code2 } from 'lucide-astro';
             class="selector-btn active inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-selector-active text-selector-active-text border-0"
             data-target="projects"
         >
-            <Code2 size={20} />
+            <Code2 size={ICON_SIZES.MD} />
             Projects
         </button>
         <button
@@ -17,7 +18,7 @@ import { BookOpen, Code2 } from 'lucide-astro';
             class="selector-btn inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-transparent text-text dark:text-text-dark border-0"
             data-target="publications"
         >
-            <BookOpen size={20} />
+            <BookOpen size={ICON_SIZES.MD} />
             Publications
         </button>
     </div>
@@ -65,9 +66,9 @@ import { BookOpen, Code2 } from 'lucide-astro';
     document.addEventListener('astro:page-load', initSelector);
 </script>
 
-<style>
+<style define:vars={{ minWidth: `${SELECTOR.MIN_WIDTH}px` }}>
     .selector-btn {
-        min-width: 140px;
+        min-width: var(--minWidth);
         /* No shadows - clean flat design */
         box-shadow: none;
         outline: none;

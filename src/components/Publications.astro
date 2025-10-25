@@ -1,7 +1,8 @@
 ---
 import { GraduationCap } from 'lucide-astro';
-import publicationHeaderLight from '../assets/publication-header.webp';
+import { ICON_SIZES } from '../constants/ui';
 import publicationHeaderDark from '../assets/publication-header-dark.webp';
+import publicationHeaderLight from '../assets/publication-header.webp';
 import quImage from '../assets/qu.webp';
 import publicationsData from '../data/publications.json';
 import type { Publication } from '../types';
@@ -27,7 +28,7 @@ const publications = publicationsData as Publication[];
                 href="https://scholar.google.com/citations?user=ZiPKjAgAAAAJ&hl=en"
                 class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-text-light dark:bg-text-dark text-bg-light dark:text-bg-dark hover:opacity-90 transition-opacity"
             >
-                <GraduationCap class="icon" size={20} />
+                <GraduationCap class="icon" size={ICON_SIZES.MD} />
                 <span>View Publications</span>
             </a>
         </div>
