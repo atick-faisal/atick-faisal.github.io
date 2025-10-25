@@ -7,15 +7,17 @@ import Navbar from '../components/Navbar.astro';
 import Projects from '../components/Projects.astro';
 import Publications from '../components/Publications.astro';
 import Selector from '../components/Selector.astro';
+import SkipToContent from '../components/SkipToContent.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
 <Layout title="Atick Faisal - Portfolio">
+    <SkipToContent />
     <Navbar />
 
-    <main id="top" class="min-h-screen">
-        <Hero />
+    <main id="main-content" class="min-h-screen">
+        <Hero id="top" />
         <Bio />
         <Selector />
         <Projects />

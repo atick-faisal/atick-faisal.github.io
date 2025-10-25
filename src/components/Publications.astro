@@ -18,7 +18,7 @@ import Card from './Card.astro';
 const publications = publicationsData as Publication[];
 ---
 
-<section id="publications-section" class="hidden container mx-auto px-6 py-12">
+<section id="publications-section" role="tabpanel" aria-labelledby="publications-btn" class="hidden container mx-auto px-6 py-12">
     <!-- Header Card -->
     <div class="header-card publication-header flex rounded-header overflow-hidden flex-col md:flex-row mb-12">
         <!-- Background Images -->

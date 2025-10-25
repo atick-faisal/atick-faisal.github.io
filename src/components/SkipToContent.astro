@@ -1,0 +1,27 @@
+---
+/**
+ * Skip to Content Link
+ *
+ * Accessibility feature that allows keyboard users to skip navigation and jump to main content.
+ * Only visible when focused via keyboard (Tab key).
+ */
+---
+
+<a
+    href="#main-content"
+    class="skip-to-content fixed top-4 left-4 z-[100] bg-primary text-white px-6 py-3 rounded-lg font-medium transition-transform -translate-y-20 focus:translate-y-0"
+>
+    Skip to main content
+</a>
+
+<style>
+    .skip-to-content {
+        /* Hidden by default (moved off-screen) */
+        transform: translateY(-100vh);
+    }
+
+    .skip-to-content:focus {
+        /* Visible when focused via keyboard */
+        transform: translateY(0);
+    }
+</style>

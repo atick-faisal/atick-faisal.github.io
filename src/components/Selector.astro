@@ -9,22 +9,30 @@ import { BookOpen, Code2 } from 'lucide-astro';
 import { ICON_SIZES, SELECTOR } from '../constants/ui';
 ---
 
-<section class="container mx-auto px-6 mt-12">
-    <div class="flex justify-center items-center gap-4 pb-4">
+<section id="selector" class="container mx-auto px-6 mt-12">
+    <div class="flex justify-center items-center gap-4 pb-4" role="tablist" aria-label="Content selector">
         <button
             id="projects-btn"
+            role="tab"
+            aria-controls="projects-section"
+            aria-selected="true"
+            aria-label="Show projects"
             class="selector-btn active inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-selector-active text-selector-active-text border-0"
             data-target="projects"
         >
-            <Code2 size={ICON_SIZES.MD} />
+            <Code2 size={ICON_SIZES.MD} aria-hidden="true" />
             Projects
         </button>
         <button
             id="publications-btn"
+            role="tab"
+            aria-controls="publications-section"
+            aria-selected="false"
+            aria-label="Show publications"
             class="selector-btn inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-transparent text-text dark:text-text-dark border-0"
             data-target="publications"
         >
-            <BookOpen size={ICON_SIZES.MD} />
+            <BookOpen size={ICON_SIZES.MD} aria-hidden="true" />
             Publications
         </button>
     </div>
@@ -47,9 +55,11 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
             // Update button styles - active has colored background, inactive is transparent
             activeBtn.classList.remove('bg-transparent', 'text-text', 'dark:text-text-dark');
             activeBtn.classList.add('bg-selector-active', 'text-selector-active-text', 'active');
+            activeBtn.setAttribute('aria-selected', 'true');
 
             inactiveBtn.classList.remove('bg-selector-active', 'text-selector-active-text', 'active');
             inactiveBtn.classList.add('bg-transparent', 'text-text', 'dark:text-text-dark');
+            inactiveBtn.setAttribute('aria-selected', 'false');
         }
 
         projectsBtn.addEventListener('click', () => {
@@ -77,14 +87,15 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
         min-width: var(--minWidth);
         /* No shadows - clean flat design */
         box-shadow: none;
-        outline: none;
     }
 
     .selector-btn:hover {
         opacity: 0.8;
     }
 
-    .selector-btn:focus {
-        outline: none;
+    /* Visible focus indicator for keyboard navigation */
+    .selector-btn:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
     }
 </style>
