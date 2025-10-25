@@ -19,6 +19,7 @@ import {
 } from 'lucide-astro';
 import { ICON_SIZES } from '../constants/ui';
 import type { Project, Publication } from '../types';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
     item: Project | Publication;
@@ -28,6 +29,16 @@ interface Props {
 const { item, type } = Astro.props;
 
 type IconComponent = typeof Github;
+
+// Import all images from assets directory at build time
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/*.{webp,gif,png,jpg,jpeg}', {
+    eager: true,
+});
+
+// Get the correct image for this item
+const imagePath = `../assets/${item.image}`;
+const imageModule = images[imagePath];
+const imageSrc = imageModule?.default;
 
 /**
  * Returns button configuration (label, icon, styles) for a given link type.
@@ -105,7 +116,7 @@ if ('github' in item && item.github) {
     <!-- Image -->
     <div class="relative overflow-hidden aspect-video card-img-container">
         <img
-            src={`/src/assets/${item.image}`}
+            src={imageSrc?.src}
             alt={item.title}
             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 card-img rounded-t-card-image"
         />
