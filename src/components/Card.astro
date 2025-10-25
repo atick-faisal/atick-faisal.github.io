@@ -85,19 +85,18 @@ if ('github' in item && item.github) {
 }
 ---
 
-<div class="card group bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark" style="border-radius: 1.5rem; padding: 0;">
+<div class="card group bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark rounded-card p-0">
     <!-- Image -->
     <div class="relative overflow-hidden aspect-video card-img-container">
         <img
             src={`/src/assets/${item.image}`}
             alt={item.title}
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 card-img"
-            style="border-radius: 1.4rem 1.4rem 0 0;"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 card-img rounded-t-card-image"
         />
     </div>
 
     <!-- Content -->
-    <div class="space-y-4" style="padding: 2rem;">
+    <div class="space-y-4 p-8">
         <!-- Title -->
         <h5 class="text-gray-900 dark:text-white">
             {item.title}
@@ -120,8 +119,7 @@ if ('github' in item && item.github) {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class={`inline-flex items-center gap-2 font-medium transition-all duration-200 text-sm ${config.class}`}
-                            style="border-radius: 1.2rem; padding: 0.375rem 1.5rem;"
+                            class={`inline-flex items-center gap-2 font-medium transition-all duration-200 text-sm rounded-button py-1.5 px-6 ${config.class}`}
                         >
                             <Icon size={16} />
                             {config.label}

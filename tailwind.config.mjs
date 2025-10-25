@@ -57,6 +57,12 @@ export default {
                 'text-muted-dark': '#5c6370',
                 'border-dark': '#3e4451',
             },
+            borderRadius: {
+                card: '1.5rem', // Card outer wrapper
+                'card-image': '1.4rem', // Card image corners
+                button: '1.2rem', // Button pill shape
+                header: '3rem', // Header cards (Bio, Projects, Publications)
+            },
             container: {
                 center: true,
                 padding: '1rem',
