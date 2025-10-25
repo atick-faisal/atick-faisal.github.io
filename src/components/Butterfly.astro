@@ -136,8 +136,8 @@
         /**
          * Create a copy of this particle at its current position
          */
-        copy(): LorentzParticle {
-            return new LorentzParticle(this.x, this.y, this.z);
+        copy(): ButterflyAnimation {
+            return new ButterflyAnimation(this.x, this.y, this.z);
         }
     }
 
@@ -148,13 +148,13 @@
         Math.floor(Math.random() * (max - min + 1) + min);
 
     /**
-     * Lorentz particle implementing the Lorenz attractor differential equations.
-     * Each particle traces a chaotic path creating the characteristic butterfly pattern.
+     * Animation manager for the Lorentz Attractor visualization.
+     * Manages canvas, particle system, rendering loop, and event handling.
      */
     class LorentzParticle {
         canvas: HTMLCanvasElement;
         ctx: CanvasRenderingContext2D;
-        particles: LorentzParticle[] = [];
+        particles: ButterflyAnimation[] = [];
         colors: string[] = [];
         animationId: number | null = null;
         alpha: number = 100;
@@ -220,7 +220,7 @@
             this.colors = [];
 
             for (let i = 0; i < nParticles; i++) {
-                const p = new LorentzParticle(0, 0, 0);
+                const p = new ButterflyAnimation(0, 0, 0);
                 p.randomize();
                 this.particles.push(p);
                 this.colors.push(
@@ -335,7 +335,7 @@
             'butterfly-canvas',
         ) as HTMLCanvasElement;
         if (canvas) {
-            new ButterflyAnimation(canvas);
+            new LorentzParticle(canvas);
         }
     });
 </script>
