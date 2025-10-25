@@ -14,8 +14,8 @@ const publications = publicationsData as Publication[];
     <!-- Header Card -->
     <div class="header-card publication-header flex rounded-header overflow-hidden flex-col md:flex-row mb-12">
         <!-- Background Images -->
-        <div class="absolute inset-0 bg-cover bg-center dark:opacity-0 transition-opacity duration-300" style={`background-image: url(${publicationHeaderLight.src});`}></div>
-        <div class="absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-300" style={`background-image: url(${publicationHeaderDark.src});`}></div>
+        <div class="publication-header-light absolute inset-0 bg-cover bg-center dark:opacity-0 transition-opacity duration-300"></div>
+        <div class="publication-header-dark absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-300"></div>
 
         <!-- Description -->
         <div class="description relative z-10 flex-[2] px-6 py-8 md:px-12 md:py-12">
@@ -50,10 +50,18 @@ const publications = publicationsData as Publication[];
     </div>
 </section>
 
-<style>
+<style define:vars={{ publicationHeaderLight: `url(${publicationHeaderLight.src})`, publicationHeaderDark: `url(${publicationHeaderDark.src})` }}>
     .header-card {
         position: relative;
         background-size: cover;
         background-position: center;
+    }
+
+    .publication-header-light {
+        background-image: var(--publicationHeaderLight);
+    }
+
+    .publication-header-dark {
+        background-image: var(--publicationHeaderDark);
     }
 </style>
