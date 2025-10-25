@@ -19,8 +19,8 @@ export default {
                     'download-hover': '#b91c1c', // Red-700
                     web: '#2563eb', // Blue-600
                     'web-hover': '#1d4ed8', // Blue-700
-                    use: '#eab308', // Yellow-500
-                    'use-hover': '#ca8a04', // Yellow-600
+                    use: '#7CB342', // Green-600
+                    'use-hover': '#689f38', // Green-700
                     youtube: '#dc2626', // Red-600
                     'youtube-hover': '#b91c1c', // Red-700
                     pdf: '#374151', // Gray-700
