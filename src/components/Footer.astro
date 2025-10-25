@@ -8,7 +8,7 @@
 import { Facebook, Github, GraduationCap, Linkedin, Mail } from 'lucide-astro';
 ---
 
-<footer id="footer" class="footer-container">
+<footer id="footer" class="container mx-auto px-6 mt-20 mb-12">
     <div class="footer-card bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark">
         <h3 id="contacts" class="footer-title">Contacts</h3>
 
@@ -82,14 +82,6 @@ import { Facebook, Github, GraduationCap, Linkedin, Mail } from 'lucide-astro';
 </footer>
 
 <style>
-    .footer-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 5rem;
-        margin-bottom: 3rem;
-        width: 100%;
-    }
-
     .footer-card {
         display: flex;
         flex-direction: column;
@@ -97,7 +89,6 @@ import { Facebook, Github, GraduationCap, Linkedin, Mail } from 'lucide-astro';
         padding: 3rem;
         border-radius: 3rem;
         width: 100%;
-        max-width: 1200px;
     }
 
     .footer-title {
