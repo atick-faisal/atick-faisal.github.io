@@ -24,7 +24,7 @@ body {
 }
 
 .btn-primary {
-    @apply bg-primary hover:bg-primary-hover text-white shadow-lg hover:shadow-xl;
+    @apply bg-primary hover:bg-[#2563eb] text-white shadow-lg hover:shadow-xl;
 }
 
 .btn-secondary {
