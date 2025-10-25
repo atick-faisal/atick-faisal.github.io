@@ -67,11 +67,11 @@ export default {
                 center: true,
                 padding: '1rem',
                 screens: {
-                    sm: '540px',
-                    md: '720px',
-                    lg: '960px',
-                    xl: '1140px',
-                    '2xl': '1320px',
+                    sm: '486px', // 540px * 0.9
+                    md: '648px', // 720px * 0.9
+                    lg: '864px', // 960px * 0.9
+                    xl: '1026px', // 1140px * 0.9
+                    '2xl': '1188px', // 1320px * 0.9
                 },
             },
         },
