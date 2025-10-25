@@ -1,0 +1,208 @@
+---
+// Butterfly Effect Canvas - Pure Astro component
+---
+
+<canvas id="butterfly-canvas" class="mx-auto rounded-lg cursor-pointer"></canvas>
+
+<script>
+    class LorentzParticle {
+        x: number;
+        y: number;
+        z: number;
+        sigma: number;
+        beta: number;
+        rho: number;
+        dt: number;
+
+        constructor(x: number, y: number, z: number) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.sigma = 10;
+            this.beta = 8.0 / 2.5;
+            this.rho = 28;
+            this.dt = 0.001;
+        }
+
+        randInt(min: number, max: number): number {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        randomize(): void {
+            this.x = this.randInt(-100, 100);
+            this.y = this.randInt(-10, 10);
+            this.z = this.randInt(-100, 100);
+            this.dt = 0.001;
+        }
+
+        update(): void {
+            this.x += this.sigma * (this.y - this.x) * this.dt;
+            this.y += (this.x * (this.rho - this.z) - this.y) * this.dt;
+            this.z += (this.x * this.y - this.beta * this.z) * this.dt;
+            if (this.dt < 0.01) this.dt += 0.00001;
+        }
+
+        copy(): LorentzParticle {
+            return new LorentzParticle(this.x, this.y, this.z);
+        }
+    }
+
+    const rand = (min: number, max: number): number =>
+        Math.floor(Math.random() * (max - min + 1) + min);
+
+    class ButterflyAnimation {
+        canvas: HTMLCanvasElement;
+        ctx: CanvasRenderingContext2D;
+        particles: LorentzParticle[] = [];
+        colors: string[] = [];
+        animationId: number | null = null;
+        alpha: number = 100;
+        isDark: boolean = false;
+
+        constructor(canvas: HTMLCanvasElement) {
+            this.canvas = canvas;
+            this.ctx = canvas.getContext('2d')!;
+            this.isDark = document.documentElement.classList.contains('dark');
+            this.init();
+            this.setupEventListeners();
+        }
+
+        getNumberOfParticles(): number {
+            return window.innerWidth < 481 ? 100 : 300;
+        }
+
+        getWidth(): number {
+            const width = window.innerWidth;
+            if (width > 1370) return width * 0.5;
+            if (width > 720) return width * 0.6;
+            return width * 0.9;
+        }
+
+        getHeight(): number {
+            const width = this.getWidth();
+            return width * 0.6;
+        }
+
+        getWidthScaler(canvasWidth: number): number {
+            return (13.0 / 600.0) * canvasWidth;
+        }
+
+        getHeightScaler(canvasHeight: number): number {
+            return (7.0 / 400.0) * canvasHeight;
+        }
+
+        initialize(): void {
+            const nParticles = this.getNumberOfParticles();
+            this.particles = [];
+            this.colors = [];
+
+            for (let i = 0; i < nParticles; i++) {
+                const p = new LorentzParticle(0, 0, 0);
+                p.randomize();
+                this.particles.push(p);
+                this.colors.push(
+                    `rgb(${rand(26, 232)}, ${rand(35, 234)}, ${rand(126, 246)})`,
+                );
+            }
+
+            const canvasWidth = this.canvas.width;
+            const canvasHeight = this.canvas.height;
+            this.ctx.fillStyle = this.isDark
+                ? `rgb(46, 52, 64)`
+                : `rgb(255, 255, 255)`;
+            this.ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        }
+
+        init(): void {
+            const canvasWidth = this.getWidth();
+            const canvasHeight = this.getHeight();
+
+            this.canvas.width = canvasWidth;
+            this.canvas.height = canvasHeight;
+            this.alpha = 100;
+
+            this.initialize();
+            this.animate();
+        }
+
+        animate(): void {
+            const nParticles = this.getNumberOfParticles();
+            const widthScaler = this.getWidthScaler(this.canvas.width);
+            const heightScaler = this.getHeightScaler(this.canvas.height);
+
+            const draw = () => {
+                if (this.alpha > 10) this.alpha -= 0.2;
+
+                this.ctx.fillStyle = this.isDark
+                    ? `rgba(46, 52, 64, ${this.alpha / 100})`
+                    : `rgba(255, 255, 255, ${this.alpha / 100})`;
+
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.ctx.save();
+                this.ctx.translate(this.canvas.width / 2, 0);
+
+                for (let i = 0; i < nParticles; i++) {
+                    const oldP = this.particles[i].copy();
+                    this.particles[i].update();
+                    const newP = this.particles[i].copy();
+
+                    this.ctx.strokeStyle = this.colors[i];
+                    this.ctx.lineWidth = 1.5;
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(
+                        oldP.x * widthScaler,
+                        this.canvas.height - oldP.z * heightScaler,
+                    );
+                    this.ctx.lineTo(
+                        newP.x * widthScaler,
+                        this.canvas.height - newP.z * heightScaler,
+                    );
+                    this.ctx.stroke();
+                }
+
+                this.ctx.restore();
+                this.animationId = requestAnimationFrame(draw);
+            };
+
+            draw();
+        }
+
+        reset(): void {
+            this.alpha = 100;
+            this.initialize();
+        }
+
+        updateTheme(): void {
+            this.isDark = document.documentElement.classList.contains('dark');
+            this.reset();
+        }
+
+        setupEventListeners(): void {
+            this.canvas.addEventListener('click', () => this.reset());
+            window.addEventListener('themechange', () => this.updateTheme());
+        }
+
+        destroy(): void {
+            if (this.animationId) {
+                cancelAnimationFrame(this.animationId);
+            }
+        }
+    }
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById(
+            'butterfly-canvas',
+        ) as HTMLCanvasElement;
+        if (canvas) {
+            new ButterflyAnimation(canvas);
+        }
+    });
+</script>
+
+<style>
+    #butterfly-canvas {
+        display: block;
+    }
+</style>
