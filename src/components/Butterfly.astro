@@ -1,5 +1,15 @@
 ---
-// Butterfly Effect Canvas - Pure Astro component
+/**
+ * Butterfly Effect Canvas - Interactive Lorentz Attractor Visualization
+ *
+ * Pure Astro component that renders an animated Lorentz attractor (butterfly effect)
+ * using HTML5 Canvas. Features dark mode support, responsive sizing, and click-to-reset.
+ *
+ * The Lorentz system is a set of differential equations that exhibits chaotic behavior,
+ * creating the characteristic "butterfly" pattern.
+ *
+ * @see https://en.wikipedia.org/wiki/Lorenz_system
+ */
 ---
 
 <canvas id="butterfly-canvas" class="mx-auto rounded-lg cursor-pointer"></canvas>
@@ -61,7 +71,11 @@
         PARTICLE_Z_MAX: 100,
     } as const;
 
-    class LorentzParticle {
+    /**
+     * Manages the Butterfly animation including canvas setup, particle system,
+     * rendering loop, and event handling.
+     */
+    class ButterflyAnimation {
         x: number;
         y: number;
         z: number;
@@ -80,10 +94,16 @@
             this.dt = CONFIG.DELTA_T_INITIAL;
         }
 
+        /**
+         * Generate random integer in range [min, max] inclusive
+         */
         randInt(min: number, max: number): number {
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
 
+        /**
+         * Randomize particle position within configured bounds
+         */
         randomize(): void {
             this.x = this.randInt(CONFIG.PARTICLE_X_MIN, CONFIG.PARTICLE_X_MAX);
             this.y = this.randInt(CONFIG.PARTICLE_Y_MIN, CONFIG.PARTICLE_Y_MAX);
@@ -91,6 +111,16 @@
             this.dt = CONFIG.DELTA_T_INITIAL;
         }
 
+        /**
+         * Update particle position using Lorenz attractor differential equations.
+         *
+         * The equations are:
+         * - dx/dt = σ(y - x)
+         * - dy/dt = x(ρ - z) - y
+         * - dz/dt = xy - βz
+         *
+         * Time step gradually increases to create expanding pattern.
+         */
         update(): void {
             this.x += this.sigma * (this.y - this.x) * this.dt;
             this.y += (this.x * (this.rho - this.z) - this.y) * this.dt;
@@ -98,15 +128,25 @@
             if (this.dt < CONFIG.DELTA_T_MAX) this.dt += CONFIG.DELTA_T_INCREMENT;
         }
 
+        /**
+         * Create a copy of this particle at its current position
+         */
         copy(): LorentzParticle {
             return new LorentzParticle(this.x, this.y, this.z);
         }
     }
 
+    /**
+     * Generate random integer in range [min, max] inclusive
+     */
     const rand = (min: number, max: number): number =>
         Math.floor(Math.random() * (max - min + 1) + min);
 
-    class ButterflyAnimation {
+    /**
+     * Lorentz particle implementing the Lorenz attractor differential equations.
+     * Each particle traces a chaotic path creating the characteristic butterfly pattern.
+     */
+    class LorentzParticle {
         canvas: HTMLCanvasElement;
         ctx: CanvasRenderingContext2D;
         particles: LorentzParticle[] = [];
@@ -123,12 +163,20 @@
             this.setupEventListeners();
         }
 
+        /**
+         * Calculate number of particles based on viewport width.
+         * Fewer particles on mobile for better performance.
+         */
         getNumberOfParticles(): number {
             return window.innerWidth < CONFIG.MOBILE_BREAKPOINT
                 ? CONFIG.PARTICLE_COUNT_MOBILE
                 : CONFIG.PARTICLE_COUNT_DESKTOP;
         }
 
+        /**
+         * Calculate canvas width based on viewport width.
+         * Responsive sizing: 50% on large screens, 60% on medium, 90% on small.
+         */
         getWidth(): number {
             const width = window.innerWidth;
             if (width > CONFIG.BREAKPOINT_LARGE) return width * CONFIG.CANVAS_WIDTH_LARGE;
@@ -136,19 +184,31 @@
             return width * CONFIG.CANVAS_WIDTH_SMALL;
         }
 
+        /**
+         * Calculate canvas height maintaining aspect ratio
+         */
         getHeight(): number {
             const width = this.getWidth();
             return width * CONFIG.CANVAS_HEIGHT_RATIO;
         }
 
+        /**
+         * Calculate scaling factor for X coordinate mapping
+         */
         getWidthScaler(canvasWidth: number): number {
             return CONFIG.WIDTH_SCALE_FACTOR * canvasWidth;
         }
 
+        /**
+         * Calculate scaling factor for Z coordinate mapping
+         */
         getHeightScaler(canvasHeight: number): number {
             return CONFIG.HEIGHT_SCALE_FACTOR * canvasHeight;
         }
 
+        /**
+         * Initialize particle system with random positions and colors
+         */
         initialize(): void {
             const nParticles = this.getNumberOfParticles();
             this.particles = [];
@@ -169,6 +229,9 @@
             this.ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         }
 
+        /**
+         * Initialize canvas and start animation
+         */
         init(): void {
             const canvasWidth = this.getWidth();
             const canvasHeight = this.getHeight();
@@ -181,6 +244,9 @@
             this.animate();
         }
 
+        /**
+         * Main animation loop - updates and renders all particles
+         */
         animate(): void {
             const nParticles = this.getNumberOfParticles();
             const widthScaler = this.getWidthScaler(this.canvas.width);
@@ -224,21 +290,33 @@
             draw();
         }
 
+        /**
+         * Reset animation by reinitializing particles (triggered by canvas click)
+         */
         reset(): void {
             this.alpha = CONFIG.ALPHA_INITIAL;
             this.initialize();
         }
 
+        /**
+         * Update background colors when theme changes
+         */
         updateTheme(): void {
             this.isDark = document.documentElement.classList.contains('dark');
             this.reset();
         }
 
+        /**
+         * Set up event listeners for user interaction and theme changes
+         */
         setupEventListeners(): void {
             this.canvas.addEventListener('click', () => this.reset());
             window.addEventListener('themechange', () => this.updateTheme());
         }
 
+        /**
+         * Clean up animation frame on component destruction
+         */
         destroy(): void {
             if (this.animationId) {
                 cancelAnimationFrame(this.animationId);

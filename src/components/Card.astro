@@ -1,4 +1,12 @@
 ---
+/**
+ * Card Component
+ *
+ * Reusable card component for displaying projects and publications.
+ * Dynamically generates action buttons based on available link properties in the data.
+ *
+ * Supported link types: github, download, web, use, youtube, pdf, online, dataset
+ */
 import {
     Database,
     Download,
@@ -19,7 +27,13 @@ interface Props {
 
 const { item, type } = Astro.props;
 
-// Helper function to get button config based on link type
+/**
+ * Returns button configuration (label, icon, styles) for a given link type.
+ *
+ * @param linkType - Type of link (github, download, web, use, youtube, pdf, online, dataset)
+ * @param url - URL for the button action (currently unused but reserved for future use)
+ * @returns Button configuration object with label, icon component, and CSS classes
+ */
 function getButtonConfig(linkType: string, url: string) {
     const configs: Record<string, { label: string; icon: any; class: string }> = {
         github: {
