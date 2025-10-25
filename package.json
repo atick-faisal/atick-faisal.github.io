@@ -17,5 +17,8 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write ."
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "lucide-astro": "^0.548.0"
+  }
 }
