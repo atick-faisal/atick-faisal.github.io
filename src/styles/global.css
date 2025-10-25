@@ -41,7 +41,7 @@ body {
 
 /* Card styles */
 .card {
-    @apply bg-white dark:bg-dark-surface rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl;
+    @apply bg-surface-light dark:bg-surface-elevated-dark rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl;
 }
 
 /* Header card styles */
