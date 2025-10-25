@@ -8,33 +8,33 @@ export default {
                 // Primary brand colors (Deep Purple from original site)
                 primary: {
                     DEFAULT: '#512da8', // Deep Purple
-                    hover: '#45278f',   // Darker Purple
-                    light: '#bbdefb',   // Light Blue (for selector active state)
+                    hover: '#45278f', // Darker Purple
+                    light: '#bbdefb', // Light Blue (for selector active state)
                 },
                 // Button colors
                 button: {
-                    github: '#1f2937',       // Gray-800
+                    github: '#1f2937', // Gray-800
                     'github-hover': '#111827', // Gray-900
-                    download: '#dc2626',     // Red-600
+                    download: '#dc2626', // Red-600
                     'download-hover': '#b91c1c', // Red-700
-                    web: '#2563eb',          // Blue-600
-                    'web-hover': '#1d4ed8',  // Blue-700
-                    use: '#eab308',          // Yellow-500
-                    'use-hover': '#ca8a04',  // Yellow-600
-                    youtube: '#dc2626',      // Red-600
+                    web: '#2563eb', // Blue-600
+                    'web-hover': '#1d4ed8', // Blue-700
+                    use: '#eab308', // Yellow-500
+                    'use-hover': '#ca8a04', // Yellow-600
+                    youtube: '#dc2626', // Red-600
                     'youtube-hover': '#b91c1c', // Red-700
-                    pdf: '#374151',          // Gray-700
-                    'pdf-hover': '#1f2937',  // Gray-800
-                    online: '#2563eb',       // Blue-600
+                    pdf: '#374151', // Gray-700
+                    'pdf-hover': '#1f2937', // Gray-800
+                    online: '#2563eb', // Blue-600
                     'online-hover': '#1d4ed8', // Blue-700
-                    dataset: '#16a34a',      // Green-600
+                    dataset: '#16a34a', // Green-600
                     'dataset-hover': '#15803d', // Green-700
                 },
                 // Selector toggle colors
                 selector: {
-                    active: '#bbdefb',       // Light Blue (from original)
+                    active: '#bbdefb', // Light Blue (from original)
                     'active-text': '#000000', // Black text on light blue
-                    inactive: '#e5e7eb',     // Gray-200
+                    inactive: '#e5e7eb', // Gray-200
                     'inactive-dark': '#374151', // Gray-700
                     'inactive-text': '#1f2937', // Gray-800
                     'inactive-text-dark': '#e5e7eb', // Gray-200

@@ -1,5 +1,14 @@
 ---
-import { Github, Download, Globe, GitBranch, Youtube, FileText, Link as LinkIcon, Database } from 'lucide-astro';
+import {
+    Database,
+    Download,
+    FileText,
+    GitBranch,
+    Github,
+    Globe,
+    Link as LinkIcon,
+    Youtube,
+} from 'lucide-astro';
 import type { Project, Publication } from '../types';
 
 interface Props {
@@ -12,21 +21,62 @@ const { item, type } = Astro.props;
 // Helper function to get button config based on link type
 function getButtonConfig(linkType: string, url: string) {
     const configs: Record<string, { label: string; icon: any; class: string }> = {
-        github: { label: 'GitHub', icon: Github, class: 'bg-button-github hover:bg-button-github-hover text-white' },
-        download: { label: 'Download', icon: Download, class: 'bg-button-download hover:bg-button-download-hover text-white' },
-        web: { label: 'Visit', icon: Globe, class: 'bg-button-web hover:bg-button-web-hover text-white' },
-        use: { label: 'Use This', icon: GitBranch, class: 'bg-button-use hover:bg-button-use-hover text-white' },
-        youtube: { label: 'YouTube', icon: Youtube, class: 'bg-button-youtube hover:bg-button-youtube-hover text-white' },
-        pdf: { label: 'PDF', icon: FileText, class: 'bg-button-pdf hover:bg-button-pdf-hover text-white' },
-        online: { label: 'Online', icon: LinkIcon, class: 'bg-button-online hover:bg-button-online-hover text-white' },
-        dataset: { label: 'Dataset', icon: Database, class: 'bg-button-dataset hover:bg-button-dataset-hover text-white' },
+        github: {
+            label: 'GitHub',
+            icon: Github,
+            class: 'bg-button-github hover:bg-button-github-hover text-white',
+        },
+        download: {
+            label: 'Download',
+            icon: Download,
+            class: 'bg-button-download hover:bg-button-download-hover text-white',
+        },
+        web: {
+            label: 'Visit',
+            icon: Globe,
+            class: 'bg-button-web hover:bg-button-web-hover text-white',
+        },
+        use: {
+            label: 'Use This',
+            icon: GitBranch,
+            class: 'bg-button-use hover:bg-button-use-hover text-white',
+        },
+        youtube: {
+            label: 'YouTube',
+            icon: Youtube,
+            class: 'bg-button-youtube hover:bg-button-youtube-hover text-white',
+        },
+        pdf: {
+            label: 'PDF',
+            icon: FileText,
+            class: 'bg-button-pdf hover:bg-button-pdf-hover text-white',
+        },
+        online: {
+            label: 'Online',
+            icon: LinkIcon,
+            class: 'bg-button-online hover:bg-button-online-hover text-white',
+        },
+        dataset: {
+            label: 'Dataset',
+            icon: Database,
+            class: 'bg-button-dataset hover:bg-button-dataset-hover text-white',
+        },
     };
     return configs[linkType];
 }
 
 // Get all available links (excluding github which goes last)
 const links = Object.entries(item)
-    .filter(([key, value]) => value && typeof value === 'string' && key !== 'title' && key !== 'image' && key !== 'description' && key !== 'publisher' && key !== 'github')
+    .filter(
+        ([key, value]) =>
+            value &&
+            typeof value === 'string' &&
+            key !== 'title' &&
+            key !== 'image' &&
+            key !== 'description' &&
+            key !== 'publisher' &&
+            key !== 'github',
+    )
     .map(([key, value]) => ({ type: key, url: value as string }));
 
 // Add github last if it exists

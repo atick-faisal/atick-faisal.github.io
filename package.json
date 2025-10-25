@@ -1,24 +1,24 @@
 {
-  "name": "atick.dev",
-  "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
-    "@biomejs/biome": "^2.3.0",
-    "@types/bun": "latest",
-    "astro": "^5.15.1",
-    "tailwindcss": "^3",
-    "typescript": "^5.9.3"
-  },
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write ."
-  },
-  "type": "module",
-  "dependencies": {
-    "lucide-astro": "^0.548.0"
-  }
+    "name": "atick.dev",
+    "devDependencies": {
+        "@astrojs/tailwind": "^6.0.2",
+        "@biomejs/biome": "^2.3.0",
+        "@types/bun": "latest",
+        "astro": "^5.15.1",
+        "tailwindcss": "^3",
+        "typescript": "^5.9.3"
+    },
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "lint": "biome check .",
+        "lint:fix": "biome check --write .",
+        "format": "biome format --write ."
+    },
+    "type": "module",
+    "dependencies": {
+        "lucide-astro": "^0.548.0"
+    }
 }

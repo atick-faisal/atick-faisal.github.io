@@ -1,11 +1,11 @@
 ---
-import Card from './Card.astro';
-import projectsData from '../data/projects.json';
-import type { Project } from '../types';
 import { Github } from 'lucide-astro';
 import projectHeaderLight from '../assets/project-header.webp';
 import projectHeaderDark from '../assets/project-header-dark.webp';
 import raspberryPi from '../assets/raspberry-pi-alt.webp';
+import projectsData from '../data/projects.json';
+import type { Project } from '../types';
+import Card from './Card.astro';
 
 const projects = projectsData as Project[];
 ---

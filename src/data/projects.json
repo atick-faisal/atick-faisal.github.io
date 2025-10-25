@@ -1,149 +1,149 @@
 [
-  {
-    "title": "Jetpack Compose Starter",
-    "image": "jetpack-starter.webp",
-    "description": "Starter code for Android Kotlin Project with Jetpack Compose 🚀🚀🚀",
-    "github": "https://github.com/atick-faisal/Jetpack-Compose-Starter/",
-    "use": "https://github.com/atick-faisal/Jetpack-Compose-Starter#building"
-  },
-  {
-    "title": "Safety",
-    "image": "safety-android.webp",
-    "description": "Android app to interface with wearable sensors to detect fall and send emergency messages",
-    "github": "https://github.com/atick-faisal/Safety-/",
-    "download": "https://github.com/atick-faisal/Safety-Android/releases/"
-  },
-  {
-    "title": "Jetpack Ai Starter",
-    "image": "jetpack-ai.webp",
-    "description": "Starter code for AnStarter Code for Deploying an Machine Learning App to the Google Cloud Run",
-    "github": "https://github.com/atick-faisal/Jetpack-AI-Starter/",
-    "web": "https://jetpackai.atick.dev/"
-  },
-  {
-    "title": "Smart Insole",
-    "image": "thermogram.webp",
-    "description": "GUI Application for IR Thermogram Platfrom based on MLX90614 and ESP32",
-    "github": "https://github.com/atick-faisal/Thermogram-Platform-App",
-    "download": "https://github.com/atick-faisal/Thermogram-Platform-App/releases/"
-  },
-  {
-    "title": "Automatic I/V Dispenser Android App",
-    "image": "iv-dispenser.webp",
-    "description": "Android app for an automatic I/V dispenser framework targeted towards burn patients",
-    "github": "https://github.com/atick-faisal/IV-Dispenser-Android/",
-    "download": "https://github.com/atick-faisal/IV-Dispenser-Android/releases"
-  },
-  {
-    "title": "Continuous Glucose Level Monitoring",
-    "image": "cgm.webp",
-    "description": "Android App for real-time glucose level monitoring and critical situation notification",
-    "github": "https://github.com/atick-faisal/Continuous-Glucose-Monitoring-Android/",
-    "download": "https://github.com/atick-faisal/Continuous-Glucose-Monitoring-Android/releases/"
-  },
-  {
-    "title": "Jetpack Compose Material Color Library",
-    "image": "compose-material.webp",
-    "description": "A lightweight library for using Material Colors in a Jetpack Compose project in Android",
-    "github": "https://github.com/atick-faisal/compose-material-color/",
-    "use": "https://jitpack.io/#atick-faisal/compose-material-color/"
-  },
-  {
-    "title": "Bluetooth Low Energy Helper for Android",
-    "image": "ble-starter.webp",
-    "description": "A template for Bluetooth Low Energy (BLE) applications in Android built with modern architecture components",
-    "github": "https://github.com/atick-faisal/Bluetooth-Low-Energy-Android/",
-    "use": "https://github.com/atick-faisal/BLE-Starter-Android#how-to-use/"
-  },
-  {
-    "title": "12V Solar Charge Controller PCB Design",
-    "image": "solar.webp",
-    "description": "A PCB design for solar charge controller with overcharging and overdischarging protection",
-    "github": "https://github.com/atick-faisal/Solar-Charge-Controller/"
-  },
-  {
-    "title": "Sign Language Recognition using Dataglove",
-    "image": "glove.webp",
-    "description": "A sensor dataglove for classifying 24 static and 16 dynamic ASL signs with Deep Learning",
-    "github": "https://github.com/atick-faisal/Sign-Language-Recognition/",
-    "youtube": "https://youtu.be/tvK_erSh6AQ?si=uVGbcgr2yG_Z31tE"
-  },
-  {
-    "title": "Sensor Data Visualization for Internet of Things",
-    "image": "dashboard.webp",
-    "description": "A full stack web application built using Node.js and React.js to visualize sensor data coming from IoT devices",
-    "github": "https://github.com/atick-faisal/Sensor-Dashboard/",
-    "web": "https://shrouded-meadow-04832.herokuapp.com/"
-  },
-  {
-    "title": "PIC16F877A Programming and Interfacing",
-    "image": "pic.gif",
-    "description": "Implementation of different functionalities and interfacing using PIC16F877A microcontroller",
-    "github": "https://github.com/atick-faisal/PIC16F877a/"
-  },
-  {
-    "title": "Interactive Machine Learning Algorithms",
-    "image": "ml.gif",
-    "description": "Implementation of common machine learning algorithms in MATLAB, Javascript and Python",
-    "github": "https://github.com/atick-faisal/Machine-Learning/",
-    "web": "https://atick.dev/regression/"
-  },
-  {
-    "title": "Bio AI: An AI Based Healthcare App",
-    "image": "bioai.webp",
-    "description": "Real time diagnosis using Artificial Intelligence, digital prescription system and more",
-    "github": "https://github.com/atick-faisal/BioAI-Android/",
-    "download": "https://github.com/atick-faisal/BioAI-Android/releases/"
-  },
-  {
-    "title": "SPWM Signal Generator using Arduino",
-    "image": "spwm.webp",
-    "description": "Pure sine wave generation using SPWM technique for power inverter design with Arduino",
-    "github": "https://github.com/atick-faisal/sPWM-Sine-Wave-Inverter-Arduino/"
-  },
-  {
-    "title": "Automatic I/V Dispenser Hardware",
-    "image": "iv-dispenser-esp32.webp",
-    "description": "ESP32 Code for an automatic I/V dispenser framework targeted towards burn patients",
-    "github": "https://github.com/atick-faisal/IV-Dispenser-ESP32/"
-  },
-  {
-    "title": "Cardiac Zone Android Application",
-    "image": "cardiac-zone.webp",
-    "description": "Android app for real-time monitoring of ECG signal from Movesense sensors and detecting anomalies in the cloud",
-    "github": "https://github.com/atick-faisal/Cardiac-Zone-Android/",
-    "download": "https://github.com/atick-faisal/Cardiac-Zone-Android/releases/"
-  },
-  {
-    "title": "Encryption Algorithms Implementation",
-    "image": "encryption.webp",
-    "description": "Multiple symmetric encryption algorithm implementation in C and Kotlin.",
-    "github": "https://github.com/atick-faisal/Encryption-Algorithms/"
-  },
-  {
-    "title": "Griffin: IoT-based Security App for Android",
-    "image": "griffin.webp",
-    "description": "IoT-based home security app for Android powered by ESP32 and MQTT",
-    "github": "https://github.com/atick-faisal/Griffin-Android/",
-    "download": "https://github.com/atick-faisal/Griffin-Android/releases/"
-  },
-  {
-    "title": "Arduino Serial Data Visualization",
-    "image": "serial-monitor.webp",
-    "description": "Real-time Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
-    "github": "https://github.com/atick-faisal/Node-Arduino-Serial-Monitor/",
-    "use": "https://github.com/atick-faisal/Node-Arduino-Serial-Monitor#how-to-use/"
-  },
-  {
-    "title": "Dynamic Programing Algorithms Implementation",
-    "image": "dynamic-programming.gif",
-    "description": "Solving some competitive programming problems with Dynamic Programing and Kotlin",
-    "github": "https://github.com/atick-faisal/Dynamic-Programming/"
-  },
-  {
-    "title": "Logistic Regression Implementation in Plain C",
-    "image": "lr.gif",
-    "description": "Logistic Regression Classifier implementation in plain C to classify different iris flower variants",
-    "github": "https://github.com/atick-faisal/Logistic-Regression/"
-  }
+    {
+        "title": "Jetpack Compose Starter",
+        "image": "jetpack-starter.webp",
+        "description": "Starter code for Android Kotlin Project with Jetpack Compose 🚀🚀🚀",
+        "github": "https://github.com/atick-faisal/Jetpack-Compose-Starter/",
+        "use": "https://github.com/atick-faisal/Jetpack-Compose-Starter#building"
+    },
+    {
+        "title": "Safety",
+        "image": "safety-android.webp",
+        "description": "Android app to interface with wearable sensors to detect fall and send emergency messages",
+        "github": "https://github.com/atick-faisal/Safety-/",
+        "download": "https://github.com/atick-faisal/Safety-Android/releases/"
+    },
+    {
+        "title": "Jetpack Ai Starter",
+        "image": "jetpack-ai.webp",
+        "description": "Starter code for AnStarter Code for Deploying an Machine Learning App to the Google Cloud Run",
+        "github": "https://github.com/atick-faisal/Jetpack-AI-Starter/",
+        "web": "https://jetpackai.atick.dev/"
+    },
+    {
+        "title": "Smart Insole",
+        "image": "thermogram.webp",
+        "description": "GUI Application for IR Thermogram Platfrom based on MLX90614 and ESP32",
+        "github": "https://github.com/atick-faisal/Thermogram-Platform-App",
+        "download": "https://github.com/atick-faisal/Thermogram-Platform-App/releases/"
+    },
+    {
+        "title": "Automatic I/V Dispenser Android App",
+        "image": "iv-dispenser.webp",
+        "description": "Android app for an automatic I/V dispenser framework targeted towards burn patients",
+        "github": "https://github.com/atick-faisal/IV-Dispenser-Android/",
+        "download": "https://github.com/atick-faisal/IV-Dispenser-Android/releases"
+    },
+    {
+        "title": "Continuous Glucose Level Monitoring",
+        "image": "cgm.webp",
+        "description": "Android App for real-time glucose level monitoring and critical situation notification",
+        "github": "https://github.com/atick-faisal/Continuous-Glucose-Monitoring-Android/",
+        "download": "https://github.com/atick-faisal/Continuous-Glucose-Monitoring-Android/releases/"
+    },
+    {
+        "title": "Jetpack Compose Material Color Library",
+        "image": "compose-material.webp",
+        "description": "A lightweight library for using Material Colors in a Jetpack Compose project in Android",
+        "github": "https://github.com/atick-faisal/compose-material-color/",
+        "use": "https://jitpack.io/#atick-faisal/compose-material-color/"
+    },
+    {
+        "title": "Bluetooth Low Energy Helper for Android",
+        "image": "ble-starter.webp",
+        "description": "A template for Bluetooth Low Energy (BLE) applications in Android built with modern architecture components",
+        "github": "https://github.com/atick-faisal/Bluetooth-Low-Energy-Android/",
+        "use": "https://github.com/atick-faisal/BLE-Starter-Android#how-to-use/"
+    },
+    {
+        "title": "12V Solar Charge Controller PCB Design",
+        "image": "solar.webp",
+        "description": "A PCB design for solar charge controller with overcharging and overdischarging protection",
+        "github": "https://github.com/atick-faisal/Solar-Charge-Controller/"
+    },
+    {
+        "title": "Sign Language Recognition using Dataglove",
+        "image": "glove.webp",
+        "description": "A sensor dataglove for classifying 24 static and 16 dynamic ASL signs with Deep Learning",
+        "github": "https://github.com/atick-faisal/Sign-Language-Recognition/",
+        "youtube": "https://youtu.be/tvK_erSh6AQ?si=uVGbcgr2yG_Z31tE"
+    },
+    {
+        "title": "Sensor Data Visualization for Internet of Things",
+        "image": "dashboard.webp",
+        "description": "A full stack web application built using Node.js and React.js to visualize sensor data coming from IoT devices",
+        "github": "https://github.com/atick-faisal/Sensor-Dashboard/",
+        "web": "https://shrouded-meadow-04832.herokuapp.com/"
+    },
+    {
+        "title": "PIC16F877A Programming and Interfacing",
+        "image": "pic.gif",
+        "description": "Implementation of different functionalities and interfacing using PIC16F877A microcontroller",
+        "github": "https://github.com/atick-faisal/PIC16F877a/"
+    },
+    {
+        "title": "Interactive Machine Learning Algorithms",
+        "image": "ml.gif",
+        "description": "Implementation of common machine learning algorithms in MATLAB, Javascript and Python",
+        "github": "https://github.com/atick-faisal/Machine-Learning/",
+        "web": "https://atick.dev/regression/"
+    },
+    {
+        "title": "Bio AI: An AI Based Healthcare App",
+        "image": "bioai.webp",
+        "description": "Real time diagnosis using Artificial Intelligence, digital prescription system and more",
+        "github": "https://github.com/atick-faisal/BioAI-Android/",
+        "download": "https://github.com/atick-faisal/BioAI-Android/releases/"
+    },
+    {
+        "title": "SPWM Signal Generator using Arduino",
+        "image": "spwm.webp",
+        "description": "Pure sine wave generation using SPWM technique for power inverter design with Arduino",
+        "github": "https://github.com/atick-faisal/sPWM-Sine-Wave-Inverter-Arduino/"
+    },
+    {
+        "title": "Automatic I/V Dispenser Hardware",
+        "image": "iv-dispenser-esp32.webp",
+        "description": "ESP32 Code for an automatic I/V dispenser framework targeted towards burn patients",
+        "github": "https://github.com/atick-faisal/IV-Dispenser-ESP32/"
+    },
+    {
+        "title": "Cardiac Zone Android Application",
+        "image": "cardiac-zone.webp",
+        "description": "Android app for real-time monitoring of ECG signal from Movesense sensors and detecting anomalies in the cloud",
+        "github": "https://github.com/atick-faisal/Cardiac-Zone-Android/",
+        "download": "https://github.com/atick-faisal/Cardiac-Zone-Android/releases/"
+    },
+    {
+        "title": "Encryption Algorithms Implementation",
+        "image": "encryption.webp",
+        "description": "Multiple symmetric encryption algorithm implementation in C and Kotlin.",
+        "github": "https://github.com/atick-faisal/Encryption-Algorithms/"
+    },
+    {
+        "title": "Griffin: IoT-based Security App for Android",
+        "image": "griffin.webp",
+        "description": "IoT-based home security app for Android powered by ESP32 and MQTT",
+        "github": "https://github.com/atick-faisal/Griffin-Android/",
+        "download": "https://github.com/atick-faisal/Griffin-Android/releases/"
+    },
+    {
+        "title": "Arduino Serial Data Visualization",
+        "image": "serial-monitor.webp",
+        "description": "Real-time Serial Data visualization for Arduino using Node.js, React.js and Chart.js.",
+        "github": "https://github.com/atick-faisal/Node-Arduino-Serial-Monitor/",
+        "use": "https://github.com/atick-faisal/Node-Arduino-Serial-Monitor#how-to-use/"
+    },
+    {
+        "title": "Dynamic Programing Algorithms Implementation",
+        "image": "dynamic-programming.gif",
+        "description": "Solving some competitive programming problems with Dynamic Programing and Kotlin",
+        "github": "https://github.com/atick-faisal/Dynamic-Programming/"
+    },
+    {
+        "title": "Logistic Regression Implementation in Plain C",
+        "image": "lr.gif",
+        "description": "Logistic Regression Classifier implementation in plain C to classify different iris flower variants",
+        "github": "https://github.com/atick-faisal/Logistic-Regression/"
+    }
 ]
