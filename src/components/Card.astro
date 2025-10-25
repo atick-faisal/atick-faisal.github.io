@@ -27,15 +27,16 @@ interface Props {
 
 const { item, type } = Astro.props;
 
+type IconComponent = typeof Github;
+
 /**
  * Returns button configuration (label, icon, styles) for a given link type.
  *
  * @param linkType - Type of link (github, download, web, use, youtube, pdf, online, dataset)
- * @param url - URL for the button action (currently unused but reserved for future use)
  * @returns Button configuration object with label, icon component, and CSS classes
  */
-function getButtonConfig(linkType: string, url: string) {
-    const configs: Record<string, { label: string; icon: any; class: string }> = {
+function getButtonConfig(linkType: string) {
+    const configs: Record<string, { label: string; icon: IconComponent; class: string }> = {
         github: {
             label: 'GitHub',
             icon: Github,
@@ -126,7 +127,7 @@ if ('github' in item && item.github) {
         {links.length > 0 && (
             <div class="flex flex-wrap gap-3 pt-2">
                 {links.map(({ type: linkType, url }) => {
-                    const config = getButtonConfig(linkType, url);
+                    const config = getButtonConfig(linkType);
                     if (!config) return null;
                     const Icon = config.icon;
                     return (

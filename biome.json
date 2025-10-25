@@ -7,7 +7,7 @@
     },
     "files": {
         "ignoreUnknown": false,
-        "includes": ["**", "!**/node_modules", "!**/dist", "!**/.astro"]
+        "includes": ["src/**/*.astro", "src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
     },
     "formatter": {
         "enabled": true,
@@ -22,9 +22,26 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true
+            "recommended": true,
+            "correctness": {
+                "noUnusedImports": "warn",
+                "noUnusedVariables": "warn"
+            }
         }
     },
+    "overrides": [
+        {
+            "includes": ["**/*.astro"],
+            "linter": {
+                "rules": {
+                    "correctness": {
+                        "noUnusedImports": "off",
+                        "noUnusedVariables": "off"
+                    }
+                }
+            }
+        }
+    ],
     "javascript": {
         "formatter": {
             "quoteStyle": "single",
