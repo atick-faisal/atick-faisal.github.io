@@ -9,6 +9,11 @@ export default {
                     DEFAULT: '#6366f1',
                     dark: '#4f46e5',
                 },
+                dark: {
+                    bg: '#282c34',
+                    surface: '#2c313a',
+                    border: '#3e4451',
+                },
             },
             container: {
                 center: true,

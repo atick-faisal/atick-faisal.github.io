@@ -2,7 +2,7 @@
 import { User, Wrench, BookMarked, Sun, Moon } from 'lucide-astro';
 ---
 
-<nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm border-b border-gray-200 dark:border-dark-border transition-colors duration-300">
     <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <!-- Brand -->
@@ -16,7 +16,7 @@ import { User, Wrench, BookMarked, Sun, Moon } from 'lucide-astro';
                 <li>
                     <a
                         href="#about"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors"
                     >
                         <User size={20} />
                         <span class="hidden sm:inline">About</span>
@@ -25,7 +25,7 @@ import { User, Wrench, BookMarked, Sun, Moon } from 'lucide-astro';
                 <li>
                     <a
                         href="#selector"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors"
                     >
                         <Wrench size={20} />
                         <span class="hidden sm:inline">Projects</span>
@@ -34,7 +34,7 @@ import { User, Wrench, BookMarked, Sun, Moon } from 'lucide-astro';
                 <li>
                     <a
                         href="#selector"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors"
                     >
                         <BookMarked size={20} />
                         <span class="hidden sm:inline">Publications</span>
@@ -44,7 +44,7 @@ import { User, Wrench, BookMarked, Sun, Moon } from 'lucide-astro';
                     <button
                         id="theme-toggle"
                         aria-label="Toggle dark mode"
-                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors"
                     >
                         <Sun id="sun-icon" size={20} class="hidden dark:block" />
                         <Moon id="moon-icon" size={20} class="block dark:hidden" />

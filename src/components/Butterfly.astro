@@ -108,7 +108,7 @@
             const canvasWidth = this.canvas.width;
             const canvasHeight = this.canvas.height;
             this.ctx.fillStyle = this.isDark
-                ? `rgb(46, 52, 64)`
+                ? `rgb(40, 44, 52)` // #282c34 - One Dark theme
                 : `rgb(255, 255, 255)`;
             this.ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         }
@@ -134,7 +134,7 @@
                 if (this.alpha > 10) this.alpha -= 0.2;
 
                 this.ctx.fillStyle = this.isDark
-                    ? `rgba(46, 52, 64, ${this.alpha / 100})`
+                    ? `rgba(40, 44, 52, ${this.alpha / 100})` // #282c34 - One Dark theme
                     : `rgba(255, 255, 255, ${this.alpha / 100})`;
 
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
