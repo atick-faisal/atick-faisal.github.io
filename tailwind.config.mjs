@@ -5,10 +5,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Primary brand colors
+                // Primary brand colors (Deep Purple from original site)
                 primary: {
-                    DEFAULT: '#3b82f6', // Blue-500
-                    hover: '#2563eb',   // Blue-600
+                    DEFAULT: '#512da8', // Deep Purple
+                    hover: '#45278f',   // Darker Purple
+                    light: '#bbdefb',   // Light Blue (for selector active state)
                 },
                 // Button colors
                 button: {
@@ -31,7 +32,8 @@ export default {
                 },
                 // Selector toggle colors
                 selector: {
-                    active: '#3b82f6',       // Blue-500
+                    active: '#bbdefb',       // Light Blue (from original)
+                    'active-text': '#000000', // Black text on light blue
                     inactive: '#e5e7eb',     // Gray-200
                     'inactive-dark': '#374151', // Gray-700
                     'inactive-text': '#1f2937', // Gray-800
@@ -40,6 +42,8 @@ export default {
                 // Light mode colors
                 'surface-light': '#ffffff',
                 'surface-hover-light': '#f3f4f6',
+                'card-light': 'rgb(232, 234, 246)', // Card surface color
+                'card-border-light': 'rgba(0, 0, 0, 0.175)', // Subtle card border
                 'text-light': '#111827',
                 'text-muted-light': '#6b7280',
                 'border-light': '#e5e7eb',
@@ -47,6 +51,8 @@ export default {
                 'surface-dark': '#282c34',
                 'surface-elevated-dark': '#2c313a',
                 'surface-hover-dark': '#2c313a',
+                'card-dark': 'rgb(59, 66, 82)', // Card surface color dark
+                'card-border-dark': 'rgba(255, 255, 255, 0.15)', // Subtle card border dark
                 'text-dark': '#abb2bf',
                 'text-muted-dark': '#5c6370',
                 'border-dark': '#3e4451',
@@ -54,6 +60,13 @@ export default {
             container: {
                 center: true,
                 padding: '1rem',
+                screens: {
+                    sm: '540px',
+                    md: '720px',
+                    lg: '960px',
+                    xl: '1140px',
+                    '2xl': '1320px',
+                },
             },
         },
     },

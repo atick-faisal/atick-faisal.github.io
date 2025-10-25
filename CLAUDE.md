@@ -105,3 +105,5 @@ bun --hot ./index.ts
 For more information, read the Bun API docs in `node_modules/bun-types/docs/**.md`.
 
 -   Always use icons from lucide-astro. no hardcoded svgs. never install/use react. this project is astro and vanilla js/ts only.
+-   Always keep the colors in a centralized location and reference them through the project
+-   Always check for build or dev server erros before committing

@@ -6,7 +6,7 @@ import profileImage from '../assets/atick.webp';
 ---
 
 <section class="container mx-auto px-6 py-16">
-    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+    <div class="relative rounded-3xl overflow-hidden">
         <!-- Background images with dark mode toggle -->
         <div class="absolute inset-0 dark:hidden">
             <img
@@ -24,14 +24,14 @@ import profileImage from '../assets/atick.webp';
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center p-8 md:p-12 lg:p-16">
+        <div class="relative z-10 flex flex-col md:flex-row">
             <!-- Left side - Text content -->
-            <div class="space-y-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            <div class="flex-[3] space-y-6 p-8 md:p-12">
+                <h2 class="text-gray-900 dark:text-white">
                     Hello! I'm<br />
                     <span class="text-gray-900 dark:text-white">Atick Faisal</span>
                 </h2>
-                <p class="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                <p class="text-gray-800 dark:text-gray-200">
                     Machine Learning Researcher, Robotic Enthusiast and Software Developer.
                     Currently working as a Research Assistant at Qatar University
                 </p>
@@ -47,11 +47,11 @@ import profileImage from '../assets/atick.webp';
             </div>
 
             <!-- Right side - Profile image -->
-            <div class="flex justify-center md:justify-end">
+            <div class="flex-1 flex items-end justify-center md:justify-end">
                 <img
                     src={profileImage.src}
                     alt="Atick Faisal"
-                    class="w-64 md:w-80 lg:w-96 h-auto rounded-2xl -scale-x-100"
+                    class="w-full h-auto rounded-3xl -scale-x-100"
                 />
             </div>
         </div>

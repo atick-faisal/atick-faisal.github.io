@@ -1,0 +1,59 @@
+---
+import Card from './Card.astro';
+import projectsData from '../data/projects.json';
+import type { Project } from '../types';
+import { Github } from 'lucide-astro';
+import projectHeaderLight from '../assets/project-header.webp';
+import projectHeaderDark from '../assets/project-header-dark.webp';
+import raspberryPi from '../assets/raspberry-pi-alt.webp';
+
+const projects = projectsData as Project[];
+---
+
+<section id="projects-section" class="container mx-auto px-6 py-12">
+    <!-- Header Card -->
+    <div class="header-card project-header flex rounded-[3rem] overflow-hidden flex-col md:flex-row mb-12">
+        <!-- Background Images -->
+        <div class="absolute inset-0 bg-cover bg-center dark:opacity-0 transition-opacity duration-300" style={`background-image: url(${projectHeaderLight.src});`}></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-300" style={`background-image: url(${projectHeaderDark.src});`}></div>
+
+        <!-- Description -->
+        <div class="description relative z-10 flex-[3] px-6 py-8 md:px-12 md:py-12">
+            <h1 class="text-4xl font-bold mb-4">Projects</h1>
+            <p class="text-lg mb-6">
+                I am a robotics enthusiast and a native Android developer (Kotlin, Java) with experience in modern architectural components and MVVM design pattern. I have developed several mobile applications to communicate with IoT devices via Bluetooth, BLE, HTTP and MQTT protocols. I also have experience in design and deployment of Machine Learning based solutions for IoT devices.
+            </p>
+            <a
+                href="https://github.com/atick-faisal/"
+                class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-text-light dark:bg-text-dark text-bg-light dark:text-bg-dark hover:opacity-90 transition-opacity"
+            >
+                <Github class="icon" size={20} />
+                <span>Explore on GitHub</span>
+            </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative z-10 flex-1 flex items-center justify-center p-6 md:p-8">
+            <img
+                class="image w-full max-w-full h-auto"
+                alt="Raspberry Pi"
+                src={raspberryPi.src}
+            />
+        </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+            <Card item={project} type="project" />
+        ))}
+    </div>
+</section>
+
+<style>
+    .header-card {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+</style>

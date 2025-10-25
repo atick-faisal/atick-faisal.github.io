@@ -3,6 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Bio from '../components/Bio.astro';
+import Selector from '../components/Selector.astro';
+import Projects from '../components/Projects.astro';
+import Publications from '../components/Publications.astro';
+import BackToTop from '../components/BackToTop.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
 
@@ -12,12 +17,11 @@ import '../styles/global.css';
     <main id="top" class="min-h-screen">
         <Hero />
         <Bio />
-
-        <!-- Placeholder for other sections -->
-        <div class="container mx-auto px-6 py-20">
-            <div class="text-center text-text-muted-light dark:text-text-muted-dark">
-                <p>More sections coming soon...</p>
-            </div>
-        </div>
+        <Selector />
+        <Projects />
+        <Publications />
+        <BackToTop />
     </main>
+
+    <Footer />
 </Layout>

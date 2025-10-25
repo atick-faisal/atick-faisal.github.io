@@ -1,0 +1,59 @@
+---
+import Card from './Card.astro';
+import publicationsData from '../data/publications.json';
+import type { Publication } from '../types';
+import { GraduationCap } from 'lucide-astro';
+import publicationHeaderLight from '../assets/publication-header.webp';
+import publicationHeaderDark from '../assets/publication-header-dark.webp';
+import quImage from '../assets/qu.webp';
+
+const publications = publicationsData as Publication[];
+---
+
+<section id="publications-section" class="hidden container mx-auto px-6 py-12">
+    <!-- Header Card -->
+    <div class="header-card publication-header flex rounded-[3rem] overflow-hidden flex-col md:flex-row mb-12">
+        <!-- Background Images -->
+        <div class="absolute inset-0 bg-cover bg-center dark:opacity-0 transition-opacity duration-300" style={`background-image: url(${publicationHeaderLight.src});`}></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-300" style={`background-image: url(${publicationHeaderDark.src});`}></div>
+
+        <!-- Description -->
+        <div class="description relative z-10 flex-[3] px-6 py-8 md:px-12 md:py-12">
+            <h1 class="text-4xl font-bold mb-4">Publications</h1>
+            <p class="text-lg mb-6">
+                My research focuses on applying machine learning and deep learning techniques to solve real-world problems in healthcare, robotics, and IoT systems. I have published papers in reputable conferences and journals, exploring topics such as fall detection, gait analysis, and sensor-based human activity recognition.
+            </p>
+            <a
+                href="https://scholar.google.com/citations?user=ZiPKjAgAAAAJ&hl=en"
+                class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-text-light dark:bg-text-dark text-bg-light dark:text-bg-dark hover:opacity-90 transition-opacity"
+            >
+                <GraduationCap class="icon" size={20} />
+                <span>View Publications</span>
+            </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative z-10 flex-1 flex items-center justify-center p-6 md:p-8">
+            <img
+                class="image w-full max-w-full h-auto"
+                alt="Qatar University"
+                src={quImage.src}
+            />
+        </div>
+    </div>
+
+    <!-- Publications Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {publications.map((publication) => (
+            <Card item={publication} type="publication" />
+        ))}
+    </div>
+</section>
+
+<style>
+    .header-card {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+</style>

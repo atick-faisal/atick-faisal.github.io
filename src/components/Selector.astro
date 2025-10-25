@@ -2,11 +2,11 @@
 import { Code2, BookOpen } from 'lucide-astro';
 ---
 
-<section class="container mx-auto px-6 py-12">
-    <div class="flex justify-center gap-4">
+<section class="container mx-auto px-6 mt-12">
+    <div class="flex justify-center items-center gap-4 pb-4">
         <button
             id="projects-btn"
-            class="selector-btn active inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-selector-active text-white"
+            class="selector-btn active inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-selector-active text-selector-active-text border-0"
             data-target="projects"
         >
             <Code2 size={20} />
@@ -14,13 +14,14 @@ import { Code2, BookOpen } from 'lucide-astro';
         </button>
         <button
             id="publications-btn"
-            class="selector-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-selector-inactive dark:bg-selector-inactive-dark text-selector-inactive-text dark:text-selector-inactive-text-dark"
+            class="selector-btn inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-transparent text-text dark:text-text-dark border-0"
             data-target="publications"
         >
             <BookOpen size={20} />
             Publications
         </button>
     </div>
+    <hr class="border-t border-gray-300 dark:border-gray-600" />
 </section>
 
 <script>
@@ -36,12 +37,12 @@ import { Code2, BookOpen } from 'lucide-astro';
         }
 
         function setActive(activeBtn: HTMLButtonElement, inactiveBtn: HTMLButtonElement) {
-            // Update button styles
-            activeBtn.classList.remove('bg-selector-inactive', 'dark:bg-selector-inactive-dark', 'text-selector-inactive-text', 'dark:text-selector-inactive-text-dark');
-            activeBtn.classList.add('bg-selector-active', 'text-white');
+            // Update button styles - active has colored background, inactive is transparent
+            activeBtn.classList.remove('bg-transparent', 'text-text', 'dark:text-text-dark');
+            activeBtn.classList.add('bg-selector-active', 'text-selector-active-text', 'active');
 
-            inactiveBtn.classList.remove('bg-selector-active', 'text-white');
-            inactiveBtn.classList.add('bg-selector-inactive', 'dark:bg-selector-inactive-dark', 'text-selector-inactive-text', 'dark:text-selector-inactive-text-dark');
+            inactiveBtn.classList.remove('bg-selector-active', 'text-selector-active-text', 'active');
+            inactiveBtn.classList.add('bg-transparent', 'text-text', 'dark:text-text-dark');
         }
 
         projectsBtn.addEventListener('click', () => {
@@ -66,16 +67,17 @@ import { Code2, BookOpen } from 'lucide-astro';
 
 <style>
     .selector-btn {
-        min-width: 150px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        min-width: 140px;
+        /* No shadows - clean flat design */
+        box-shadow: none;
+        outline: none;
     }
 
     .selector-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        opacity: 0.8;
     }
 
-    .selector-btn.active {
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    .selector-btn:focus {
+        outline: none;
     }
 </style>
