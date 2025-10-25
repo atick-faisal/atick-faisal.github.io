@@ -1,0 +1,81 @@
+---
+import { Code2, BookOpen } from 'lucide-astro';
+---
+
+<section class="container mx-auto px-6 py-12">
+    <div class="flex justify-center gap-4">
+        <button
+            id="projects-btn"
+            class="selector-btn active inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-selector-active text-white"
+            data-target="projects"
+        >
+            <Code2 size={20} />
+            Projects
+        </button>
+        <button
+            id="publications-btn"
+            class="selector-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-selector-inactive dark:bg-selector-inactive-dark text-selector-inactive-text dark:text-selector-inactive-text-dark"
+            data-target="publications"
+        >
+            <BookOpen size={20} />
+            Publications
+        </button>
+    </div>
+</section>
+
+<script>
+    // Selector toggle logic
+    function initSelector() {
+        const projectsBtn = document.getElementById('projects-btn');
+        const publicationsBtn = document.getElementById('publications-btn');
+        const projectsSection = document.getElementById('projects-section');
+        const publicationsSection = document.getElementById('publications-section');
+
+        if (!projectsBtn || !publicationsBtn || !projectsSection || !publicationsSection) {
+            return;
+        }
+
+        function setActive(activeBtn: HTMLButtonElement, inactiveBtn: HTMLButtonElement) {
+            // Update button styles
+            activeBtn.classList.remove('bg-selector-inactive', 'dark:bg-selector-inactive-dark', 'text-selector-inactive-text', 'dark:text-selector-inactive-text-dark');
+            activeBtn.classList.add('bg-selector-active', 'text-white');
+
+            inactiveBtn.classList.remove('bg-selector-active', 'text-white');
+            inactiveBtn.classList.add('bg-selector-inactive', 'dark:bg-selector-inactive-dark', 'text-selector-inactive-text', 'dark:text-selector-inactive-text-dark');
+        }
+
+        projectsBtn.addEventListener('click', () => {
+            setActive(projectsBtn, publicationsBtn);
+            projectsSection.classList.remove('hidden');
+            publicationsSection.classList.add('hidden');
+        });
+
+        publicationsBtn.addEventListener('click', () => {
+            setActive(publicationsBtn, projectsBtn);
+            publicationsSection.classList.remove('hidden');
+            projectsSection.classList.add('hidden');
+        });
+    }
+
+    // Initialize on page load
+    initSelector();
+
+    // Re-initialize after page transitions (if using Astro view transitions)
+    document.addEventListener('astro:page-load', initSelector);
+</script>
+
+<style>
+    .selector-btn {
+        min-width: 150px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .selector-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .selector-btn.active {
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+</style>

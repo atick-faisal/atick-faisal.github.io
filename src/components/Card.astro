@@ -1,0 +1,82 @@
+---
+import { Github, Download, Globe, GitBranch, Youtube, FileText, Link as LinkIcon, Database } from 'lucide-astro';
+import type { Project, Publication } from '../types';
+
+interface Props {
+    item: Project | Publication;
+    type: 'project' | 'publication';
+}
+
+const { item, type } = Astro.props;
+
+// Helper function to get button config based on link type
+function getButtonConfig(linkType: string, url: string) {
+    const configs: Record<string, { label: string; icon: any; class: string }> = {
+        github: { label: 'GitHub', icon: Github, class: 'bg-button-github hover:bg-button-github-hover text-white' },
+        download: { label: 'Download', icon: Download, class: 'bg-button-download hover:bg-button-download-hover text-white' },
+        web: { label: 'Visit', icon: Globe, class: 'bg-button-web hover:bg-button-web-hover text-white' },
+        use: { label: 'Use This', icon: GitBranch, class: 'bg-button-use hover:bg-button-use-hover text-white' },
+        youtube: { label: 'YouTube', icon: Youtube, class: 'bg-button-youtube hover:bg-button-youtube-hover text-white' },
+        pdf: { label: 'PDF', icon: FileText, class: 'bg-button-pdf hover:bg-button-pdf-hover text-white' },
+        online: { label: 'Online', icon: LinkIcon, class: 'bg-button-online hover:bg-button-online-hover text-white' },
+        dataset: { label: 'Dataset', icon: Database, class: 'bg-button-dataset hover:bg-button-dataset-hover text-white' },
+    };
+    return configs[linkType];
+}
+
+// Get all available links (excluding github which goes last)
+const links = Object.entries(item)
+    .filter(([key, value]) => value && typeof value === 'string' && key !== 'title' && key !== 'image' && key !== 'description' && key !== 'publisher' && key !== 'github')
+    .map(([key, value]) => ({ type: key, url: value as string }));
+
+// Add github last if it exists
+if ('github' in item && item.github) {
+    links.push({ type: 'github', url: item.github });
+}
+---
+
+<div class="card group">
+    <!-- Image -->
+    <div class="relative overflow-hidden aspect-video bg-gray-100 dark:bg-gray-800">
+        <img
+            src={`/src/assets/${item.image}`}
+            alt={item.title}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+        />
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 space-y-4">
+        <!-- Title -->
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+            {item.title}
+        </h3>
+
+        <!-- Description or Publisher -->
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            {type === 'publication' && 'publisher' in item ? item.publisher : item.description}
+        </p>
+
+        <!-- Action Buttons -->
+        {links.length > 0 && (
+            <div class="flex flex-wrap gap-3 pt-2">
+                {links.map(({ type: linkType, url }) => {
+                    const config = getButtonConfig(linkType, url);
+                    if (!config) return null;
+                    const Icon = config.icon;
+                    return (
+                        <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm ${config.class}`}
+                        >
+                            <Icon size={16} />
+                            {config.label}
+                        </a>
+                    );
+                })}
+            </div>
+        )}
+    </div>
+</div>
