@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
     margin: 0;
@@ -13,4 +15,36 @@ html {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+/* Custom button styles */
+.btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white;
+}
+
+.btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+}
+
+.btn-dark {
+    @apply bg-gray-800 hover:bg-gray-900 text-white;
+}
+
+/* Card styles */
+.card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl;
+}
+
+/* Header card styles */
+.header-card {
+    @apply rounded-3xl overflow-hidden shadow-xl p-8 md:p-12;
 }

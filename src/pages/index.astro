@@ -1,15 +1,30 @@
 ---
-// Temporary test page
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Atick Faisal</title>
-    </head>
-    <body>
-        <h1>Atick Faisal - Portfolio</h1>
-        <p>Astro setup successful!</p>
-    </body>
-</html>
+<Layout title="Atick Faisal - Portfolio">
+    <Navbar />
+
+    <main id="top" class="min-h-screen">
+        <div class="container mx-auto px-6 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-4">
+                    Atick Faisal
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                    Machine Learning Researcher, Robotic Enthusiast and Software Developer
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <a href="#about" class="btn btn-primary">
+                        Get Started
+                    </a>
+                    <a href="#contacts" class="btn btn-outline-primary">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
