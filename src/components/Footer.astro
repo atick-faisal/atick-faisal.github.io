@@ -2,126 +2,153 @@
 import { Mail, Github, Linkedin, GraduationCap, Facebook } from 'lucide-astro';
 ---
 
-<div class="header-card footer card bg-surface-light dark:bg-surface-dark">
-    <h3 id="contacts" class="text-2xl md:text-3xl font-light text-text-light dark:text-text-dark mb-8">Contacts</h3>
+<footer class="footer-container">
+    <div class="footer-card bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark">
+        <h3 id="contacts" class="footer-title">Contacts</h3>
 
-    <div class="social">
+        <div class="footer-social">
+            <a
+                href="mailto:atickfaisal@gmail.com"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email"
+            >
+                <Mail class="social-icon" />
+            </a>
+
+            <a
+                href="https://github.com/atick-faisal/"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+            >
+                <Github class="social-icon" />
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/atick-faisal/"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
+                <Linkedin class="social-icon" />
+            </a>
+
+            <a
+                href="https://scholar.google.com/citations?user=p4I3Sa0AAAAJ&hl=en"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Scholar"
+            >
+                <GraduationCap class="social-icon" />
+            </a>
+
+            <a
+                href="https://www.facebook.com/atick.faisal/"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+                <Facebook class="social-icon" />
+            </a>
+        </div>
+
+        <br />
+
+        <p class="footer-copyright">
+            Atick Faisal, {new Date().getFullYear()}
+        </p>
+
         <a
-            href="mailto:atickfaisal@gmail.com"
-            class="btn btn-dark"
+            class="footer-source-link"
+            href="https://github.com/atick-faisal/atick.dev"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Email"
         >
-            <Mail class="icon" />
-        </a>
-
-        <a
-            href="https://github.com/atick-faisal/"
-            class="btn btn-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-        >
-            <Github class="icon" />
-        </a>
-
-        <a
-            href="https://www.linkedin.com/in/atick-faisal/"
-            class="btn btn-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-        >
-            <Linkedin class="icon" />
-        </a>
-
-        <a
-            href="https://scholar.google.com/citations?user=p4I3Sa0AAAAJ&hl=en"
-            class="btn btn-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Google Scholar"
-        >
-            <GraduationCap class="icon" />
-        </a>
-
-        <a
-            href="https://www.facebook.com/atick.faisal/"
-            class="btn btn-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-        >
-            <Facebook class="icon" />
+            &lt; source code /&gt;
         </a>
     </div>
-
-    <br />
-
-    <p class="text-center text-text-light dark:text-text-dark">
-        Atick Faisal, {new Date().getFullYear()}
-    </p>
-
-    <a
-        class="source-code"
-        href="https://github.com/atick-faisal/atick.dev"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        &lt; source code /&gt;
-    </a>
-</div>
+</footer>
 
 <style>
-    .header-card {
-        width: 90%;
+    .footer-container {
         display: flex;
-        border-radius: 3rem;
-        background-size: cover;
-        flex-direction: column;
+        justify-content: center;
+        margin-top: 5rem;
+        width: 100%;
     }
 
-    .footer {
+    .footer-card {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 5rem;
         padding: 3rem;
+        border-radius: 3rem;
+        width: 90%;
+        max-width: 1200px;
     }
 
-    .social {
+    .footer-title {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--text-light);
+    }
+
+    :global(.dark) .footer-title {
+        color: var(--text-dark);
+    }
+
+    .footer-social {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        align-items: center;
     }
 
-    .social .btn {
+    .footer-social .btn {
         margin: 1rem;
         padding: 0;
     }
 
-    .social .icon {
+    .social-icon {
         width: 2rem;
         height: 2rem;
         margin: 1rem;
     }
 
-    .source-code {
+    .footer-copyright {
+        text-align: center;
+        color: var(--text-light);
+    }
+
+    :global(.dark) .footer-copyright {
+        color: var(--text-dark);
+    }
+
+    .footer-source-link {
         font-family: monospace;
         text-decoration: none;
         color: #512da8;
+        margin-top: 0.5rem;
     }
 
-    :global(.dark) .source-code {
+    :global(.dark) .footer-source-link {
         color: #b39ddb;
     }
 
     @media (min-width: 481px) {
-        .footer {
-            flex-direction: column;
+        .footer-title {
+            font-size: 1.875rem;
         }
 
-        .social {
+        .footer-social {
             flex-direction: row;
         }
     }
