@@ -31,6 +31,7 @@ import { ICON_SIZES } from '../constants/ui';
                 </li>
                 <li>
                     <a
+                        id="nav-projects-link"
                         href="#selector"
                         class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-hover-light dark:hover:bg-surface-hover-dark transition-colors"
                     >
@@ -40,6 +41,7 @@ import { ICON_SIZES } from '../constants/ui';
                 </li>
                 <li>
                     <a
+                        id="nav-publications-link"
                         href="#selector"
                         class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-hover-light dark:hover:bg-surface-hover-dark transition-colors"
                     >
@@ -65,11 +67,33 @@ import { ICON_SIZES } from '../constants/ui';
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.getElementById('theme-toggle');
+        const navProjectsLink = document.getElementById('nav-projects-link');
+        const navPublicationsLink = document.getElementById('nav-publications-link');
 
         themeToggle?.addEventListener('click', () => {
             if (typeof window.toggleTheme === 'function') {
                 window.toggleTheme();
             }
+        });
+
+        // Handle Projects navbar link - trigger the projects button click
+        navProjectsLink?.addEventListener('click', (e) => {
+            // Allow default navigation to #selector
+            // After navigation, trigger the projects button
+            setTimeout(() => {
+                const projectsBtn = document.getElementById('projects-btn');
+                projectsBtn?.click();
+            }, 100);
+        });
+
+        // Handle Publications navbar link - trigger the publications button click
+        navPublicationsLink?.addEventListener('click', (e) => {
+            // Allow default navigation to #selector
+            // After navigation, trigger the publications button
+            setTimeout(() => {
+                const publicationsBtn = document.getElementById('publications-btn');
+                publicationsBtn?.click();
+            }, 100);
         });
     });
 </script>
