@@ -1,7 +1,43 @@
 [
     {
+        "title": "Deep learning in automated power line inspection: A review",
+        "image": "power-line-review.webp",
+        "publisher": "Applied Energy, Elsevier",
+        "online": "https://www.sciencedirect.com/science/article/pii/S0306261925002375",
+        "pdf": "https://manara.qnl.qa/ndownloader/files/52825343/1"
+    },
+    {
+        "title": "Rapid wall shear stress prediction for aortic aneurysms using deep learning: a fast alternative to CFD",
+        "image": "aneurysm.webp",
+        "publisher": "Medical & Biomedical Engineering & Computing, Springer",
+        "online": "https://link.springer.com/article/10.1007/s11517-025-03311-3",
+        "pdf": "https://link.springer.com/content/pdf/10.1007/s11517-025-03311-3.pdf",
+        "github": "https://github.com/atick-faisal/MultiViewUNet-Aneurysm"
+    },
+    {
+        "title": "Robust and novel attention guided MultiResUnet model for 3D ground reaction force and moment prediction from foot kinematics",
+        "image": "grf-synthesis.webp",
+        "publisher": "Neural Computing and Applications, Springer",
+        "online": "https://link.springer.com/article/10.1007/s00521-023-09081-z",
+        "pdf": "https://link.springer.com/content/pdf/10.1007/s00521-023-09081-z.pdf"
+    },
+    {
+        "title": "Laser-induced graphene-based smart insole to measure plantar temperature",
+        "image": "lig.webp",
+        "publisher": "IEEE Sensors Journal, IEEE",
+        "online": "https://ieeexplore.ieee.org/abstract/document/10264816",
+        "pdf": "https://ieeexplore.ieee.org/abstract/document/10264816"
+    },
+    {
+        "title": "Machine learning for predicting outcomes of transcatheter aortic valve implantation: A systematic review",
+        "image": "tavi-review.webp",
+        "publisher": "International Journal of Medical Informatics, Elsevier",
+        "online": "https://www.sciencedirect.com/science/article/pii/S1386505625000577",
+        "pdf": "https://www.sciencedirect.com/science/article/pii/S1386505625000577"
+    },
+    {
         "title": "Exploiting domain transformation and deep learning for hand gesture recognition using a low-cost dataglove",
-        "image": "spatial-projection.webp",
+        "image": "dataglove.webp",
         "publisher": "Scientific Reports, Nature",
         "online": "https://www.nature.com/articles/s41598-022-25108-2/",
         "pdf": "https://www.nature.com/articles/s41598-022-25108-2.pdf"

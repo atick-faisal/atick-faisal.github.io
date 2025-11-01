@@ -7,11 +7,46 @@
         "use": "https://github.com/atick-faisal/Jetpack-Compose-Starter#building"
     },
     {
+        "title": "SpendWise",
+        "image": "spend-wise.webp",
+        "description": "AI-powered expense tracking that reads your bank notifications, so you don't have to 📱✨",
+        "github": "https://github.com/atick-faisal/Expense-Tracker-Android/",
+        "download": "https://github.com/atick-faisal/Expense-Tracker-Android/releases/"
+    },
+    {
         "title": "Safety",
         "image": "safety-android.webp",
         "description": "Android app to interface with wearable sensors to detect fall and send emergency messages",
-        "github": "https://github.com/atick-faisal/Safety-/",
+        "github": "https://github.com/atick-faisal/Safety-Android/",
         "download": "https://github.com/atick-faisal/Safety-Android/releases/"
+    },
+    {
+        "title": "Image 2 GIF CLI",
+        "image": "img2gif.webp",
+        "description": "🎬 A playful Python library for converting image sequences into animated GIFs",
+        "github": "https://github.com/atick-faisal/img2gif/",
+        "use": "https://pypi.org/project/imgif"
+    },
+    {
+        "title": "Peter Explains Linux!",
+        "image": "peter.webp",
+        "description": "Linux commands explained the only way a Griffin could. Powered by Google Gemini Pro LLM 🔥",
+        "github": "https://github.com/atick-faisal/peter-explains/",
+        "use": "https://pypi.org/project/peter-explains"
+    },
+    {
+        "title": "Berry Oximeter Python SDK",
+        "image": "berry-oximeter.webp",
+        "description": "A simple Python library for real-time HR, PPG and SPO2 data collection",
+        "github": "https://github.com/atick-faisal/berry-oximeter/",
+        "use": "https://pypi.org/project/berry-oximeter/"
+    },
+    {
+        "title": "LLM README Tester",
+        "image": "llm-readme.webp",
+        "description": "Linux commands explained the only way a Griffin could. Powered by Google Gemini Pro LLM 🔥",
+        "github": "https://github.com/atick-faisal/llm-readme-tester/",
+        "use": "https://github.com/marketplace/actions/llm-readme-tester"
     },
     {
         "title": "Jetpack Ai Starter",
