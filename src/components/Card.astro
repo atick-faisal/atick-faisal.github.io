@@ -114,11 +114,11 @@ if ('github' in item && item.github) {
 
 <div class="card group bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark rounded-card p-0">
     <!-- Image -->
-    <div class="relative overflow-hidden aspect-video card-img-container">
+    <div class="relative overflow-hidden aspect-video rounded-card-image">
         <img
             src={imageSrc?.src}
             alt={item.title}
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 card-img rounded-t-card-image"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
     </div>
 
@@ -146,7 +146,7 @@ if ('github' in item && item.github) {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class={`inline-flex items-center gap-2 font-medium transition-all duration-200 text-sm rounded-button py-1.5 px-6 ${config.class}`}
+                            class={`inline-flex items-center gap-2 font-medium transition-all duration-200 text-sm rounded-button py-2 px-7 ${config.class}`}
                         >
                             <Icon size={ICON_SIZES.SM} />
                             {config.label}

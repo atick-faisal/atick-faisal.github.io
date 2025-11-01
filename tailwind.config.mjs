@@ -10,11 +10,13 @@ export default {
                     DEFAULT: '#512da8', // Deep Purple
                     hover: '#45278f', // Darker Purple
                     light: '#bbdefb', // Light Blue (for selector active state)
+                    dark: '#9575cd', // Lighter purple for dark mode
+                    'dark-hover': '#7e57c2', // Hover state for dark mode
                 },
                 // Button colors
                 button: {
-                    github: '#181717',          // Neutral variant (like M3 neutral-40)
-                    'github-hover': '#0D1117',  // Neutral variant darker tone (neutral-30)
+                    github: '#424242',          // Neutral variant (like M3 neutral-40)
+                    'github-hover': '#666666',  // Neutral variant darker tone (neutral-30)
                     download: '#D32F2F',        // M3 error main
                     'download-hover': '#B71C1C',// M3 error dark
                     web: '#1E88E5',             // M3 primary (blue tone)
@@ -59,7 +61,7 @@ export default {
             },
             borderRadius: {
                 card: '1.5rem', // Card outer wrapper
-                'card-image': '1.4rem', // Card image corners
+                'card-image': '1.5rem', // Card image corners
                 button: '1.2rem', // Button pill shape
                 header: '3rem', // Header cards (Bio, Projects, Publications)
             },

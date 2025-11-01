@@ -67,7 +67,7 @@ p {
 }
 
 .btn-primary {
-    @apply bg-primary hover:bg-primary-hover text-white shadow-lg hover:shadow-xl;
+    @apply bg-primary hover:bg-primary-hover dark:bg-primary-dark dark:hover:bg-primary-dark-hover text-white shadow-lg hover:shadow-xl;
 }
 
 .btn-secondary {
@@ -75,7 +75,7 @@ p {
 }
 
 .btn-outline-primary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-primary-dark dark:text-primary-dark dark:hover:bg-primary-dark;
 }
 
 .btn-dark {

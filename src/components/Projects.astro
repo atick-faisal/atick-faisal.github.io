@@ -3,11 +3,9 @@
  * Projects Section Component
  *
  * Displays header card with description and GitHub CTA, followed by a grid of project cards.
- * Header background image switches based on dark/light mode.
+ * Header background uses gradient that switches based on dark/light mode.
  */
 import { Github } from 'lucide-astro';
-import projectHeaderLight from '../assets/project-header.webp';
-import projectHeaderDark from '../assets/project-header-dark.webp';
 import raspberryPi from '../assets/raspberry-pi-alt.webp';
 import { ICON_SIZES } from '../constants/ui';
 import projectsData from '../data/projects.json';
@@ -20,22 +18,15 @@ const projects = projectsData as Project[];
 <section id="projects-section" role="tabpanel" aria-labelledby="projects-btn" class="container mx-auto px-6 py-12">
     <!-- Header Card -->
     <div class="header-card project-header flex rounded-header overflow-hidden flex-col md:flex-row mb-12">
-        <!-- Background Images -->
-        <div class="project-header-light absolute inset-0 bg-cover bg-center dark:opacity-0 transition-opacity duration-300"></div>
-        <div class="project-header-dark absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-300"></div>
-
-        <!-- Semi-transparent overlay for better text contrast in dark mode -->
-        <div class="absolute inset-0 bg-black/50 opacity-0 dark:opacity-100"></div>
-
         <!-- Description -->
         <div class="description relative z-10 flex-[2] px-6 py-8 md:px-12 md:py-12">
-            <h1 class="text-4xl font-bold mb-4">Projects</h1>
-            <p class="text-lg mb-6">
+            <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Projects</h1>
+            <p class="text-lg mb-6 text-gray-700 dark:text-gray-200">
                 I am a robotics enthusiast and a native Android developer (Kotlin, Java) with experience in modern architectural components and MVVM design pattern. I have developed several mobile applications to communicate with IoT devices via Bluetooth, BLE, HTTP and MQTT protocols. I also have experience in design and deployment of Machine Learning based solutions for IoT devices.
             </p>
             <a
                 href="https://github.com/atick-faisal/"
-                class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-text-light dark:bg-text-dark text-bg-light dark:text-bg-dark hover:opacity-90 transition-opacity"
+                class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 dark:bg-gray-700 text-white hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors"
             >
                 <Github class="icon" size={ICON_SIZES.MD} />
                 <span>Explore on GitHub</span>
@@ -60,18 +51,13 @@ const projects = projectsData as Project[];
     </div>
 </section>
 
-<style define:vars={{ projectHeaderLight: `url(${projectHeaderLight.src})`, projectHeaderDark: `url(${projectHeaderDark.src})` }}>
+<style>
     .header-card {
         position: relative;
-        background-size: cover;
-        background-position: center;
+        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
     }
 
-    .project-header-light {
-        background-image: var(--projectHeaderLight);
-    }
-
-    .project-header-dark {
-        background-image: var(--projectHeaderDark);
+    :global(.dark) .header-card {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
     }
 </style>
