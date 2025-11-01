@@ -5,6 +5,7 @@
  * Displays personal introduction with background image, profile photo, and CTA button.
  * Background images switch based on dark/light mode.
  */
+import { Image } from 'astro:assets';
 import { Mail } from 'lucide-astro';
 import profileImage from '../assets/atick.webp';
 import bioBgLight from '../assets/bio-bg.webp';
@@ -16,17 +17,21 @@ import { ICON_SIZES } from '../constants/ui';
     <div class="relative rounded-header overflow-hidden">
         <!-- Background images with dark mode toggle -->
         <div class="absolute inset-0 dark:hidden">
-            <img
-                src={bioBgLight.src}
+            <Image
+                src={bioBgLight}
                 alt=""
                 class="w-full h-full object-cover"
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 800px) 100vw, 1200px"
             />
         </div>
         <div class="absolute inset-0 hidden dark:block">
-            <img
-                src={bioBgDark.src}
+            <Image
+                src={bioBgDark}
                 alt=""
                 class="w-full h-full object-cover"
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 800px) 100vw, 1200px"
             />
         </div>
 
@@ -58,10 +63,12 @@ import { ICON_SIZES } from '../constants/ui';
 
             <!-- Right side - Profile image -->
             <div class="flex-1 self-end">
-                <img
-                    src={profileImage.src}
+                <Image
+                    src={profileImage}
                     alt="Atick Faisal"
                     class="image w-full max-w-full rounded-3xl -scale-x-100 block"
+                    widths={[200, 400, 500]}
+                    sizes="(max-width: 800px) 100vw, 500px"
                 />
             </div>
         </div>
