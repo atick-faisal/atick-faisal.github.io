@@ -1,16 +1,37 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:base",
-        "group:all",
-        ":dependencyDashboard",
+        "config:best-practices",
         "schedule:daily"
     ],
+    "minimumReleaseAge": "3 days",
+    "prConcurrentLimit": 5,
     "packageRules": [
         {
-            "description": "Automerge non-major updates",
-            "matchUpdateTypes": ["minor", "patch"],
+            "description": "Automerge non-major updates after stability period",
+            "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
             "automerge": true
+        },
+        {
+            "description": "Group Astro and related packages",
+            "matchPackagePrefixes": ["@astrojs/", "astro"],
+            "groupName": "Astro"
+        },
+        {
+            "description": "Group Biome packages",
+            "matchPackagePrefixes": ["@biomejs/"],
+            "groupName": "Biome"
+        },
+        {
+            "description": "Weekly updates for development dependencies",
+            "matchDepTypes": ["devDependencies"],
+            "schedule": ["before 6am on monday"]
+        },
+        {
+            "description": "Separate major updates for manual review",
+            "matchUpdateTypes": ["major"],
+            "automerge": false,
+            "minimumReleaseAge": "7 days"
         }
     ]
 }
