@@ -5,6 +5,7 @@
  * Displays header card with description and GitHub CTA, followed by a grid of project cards.
  * Header background uses gradient that switches based on dark/light mode.
  */
+import { Image } from 'astro:assets';
 import { Github } from 'lucide-astro';
 import raspberryPi from '../assets/raspberry-pi-alt.webp';
 import { ICON_SIZES } from '../constants/ui';
@@ -35,10 +36,12 @@ const projects = projectsData as Project[];
 
         <!-- Image -->
         <div class="relative z-10 flex-1 flex items-center justify-center">
-            <img
+            <Image
                 class="image w-full max-w-full h-auto"
                 alt="Raspberry Pi"
-                src={raspberryPi.src}
+                src={raspberryPi}
+                widths={[200, 400, 800]}
+                sizes="(max-width: 800px) 100vw, 800px"
             />
         </div>
     </div>
