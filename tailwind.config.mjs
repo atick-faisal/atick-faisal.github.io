@@ -15,22 +15,22 @@ export default {
                 },
                 // Button colors
                 button: {
-                    github: '#424242',          // Neutral variant (like M3 neutral-40)
-                    'github-hover': '#666666',  // Neutral variant darker tone (neutral-30)
-                    download: '#D32F2F',        // M3 error main
-                    'download-hover': '#B71C1C',// M3 error dark
-                    web: '#1E88E5',             // M3 primary (blue tone)
-                    'web-hover': '#1565C0',     // M3 primary dark
-                    use: '#009688',             // M3 tertiary teal
-                    'use-hover': '#00796B',     // M3 tertiary dark
-                    youtube: '#E53935',         // M3 error accent
-                    'youtube-hover': '#C62828', // M3 error darker
-                    pdf: '#C2185B',             // M3 neutral variant (blue gray)
-                    'pdf-hover': '#880E4F',     // Darker neutral
-                    online: '#1E88E5',          // Same as web for consistency
-                    'online-hover': '#1565C0',
-                    dataset: '#43A047',         // M3 success main
-                    'dataset-hover': '#2E7D32', // M3 success dark
+                    github: '#1F1F1F',          // M3 Neutral
+                    'github-hover': '#333333',  // M3 Neutral Variant
+                    download: '#B3261E',        // M3 Error
+                    'download-hover': '#9E221B',// M3 Error Dark
+                    web: '#3461FD',             // M3 Primary
+                    'web-hover': '#2F57E3',     // M3 Primary Dark
+                    use: '#006A60',             // M3 Tertiary
+                    'use-hover': '#00534C',     // M3 Tertiary Dark
+                    youtube: '#B3261E',         // M3 Error
+                    'youtube-hover': '#9E221B', // M3 Error Dark
+                    pdf: '#5C5E62',             // M3 Secondary
+                    'pdf-hover': '#4A4B4F',     // M3 Secondary Dark
+                    online: '#3461FD',          // M3 Primary
+                    'online-hover': '#2F57E3', // M3 Primary Dark
+                    dataset: '#3461FD',         // M3 Primary
+                    'dataset-hover': '#2F57E3', // M3 Primary Dark
                 },
                 // Selector toggle colors
                 selector: {
