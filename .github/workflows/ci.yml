@@ -1,0 +1,46 @@
+name: 🔍 CI - Pull Request Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+      - dev
+
+jobs:
+  quality-checks:
+    name: 🧪 Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🏗️ Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: 🎨 Run linter
+        run: bun run lint
+
+      - name: 🏗️ Build project
+        run: bun run build
+
+      - name: ✅ Verify build artifacts
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "❌ Build failed - dist directory not found"
+            exit 1
+          fi
+          echo "✅ Build artifacts verified"
+
+      - name: 📊 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+          retention-days: 7
