@@ -1,0 +1,153 @@
+---
+/**
+ * Footer Component
+ *
+ * Site footer with social media/contact links and copyright information.
+ * Icons link to email, GitHub, LinkedIn, Google Scholar, and Facebook.
+ */
+import { Facebook, Github, GraduationCap, Linkedin, Mail } from 'lucide-astro';
+---
+
+<footer id="footer" class="container mx-auto px-6 mt-20 mb-12">
+    <div class="footer-card bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark">
+        <h3 id="contacts" class="footer-title">Contacts</h3>
+
+        <div class="footer-social">
+            <a
+                href="mailto:atickfaisal@gmail.com"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email"
+            >
+                <Mail class="social-icon" />
+            </a>
+
+            <a
+                href="https://github.com/atick-faisal/"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+            >
+                <Github class="social-icon" />
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/atick-faisal/"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
+                <Linkedin class="social-icon" />
+            </a>
+
+            <a
+                href="https://scholar.google.com/citations?user=p4I3Sa0AAAAJ&hl=en"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Scholar"
+            >
+                <GraduationCap class="social-icon" />
+            </a>
+
+            <a
+                href="https://www.facebook.com/atick.faisal/"
+                class="btn btn-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+                <Facebook class="social-icon" />
+            </a>
+        </div>
+
+        <br />
+
+        <p class="footer-copyright">
+            Atick Faisal, {new Date().getFullYear()}
+        </p>
+
+        <a
+            class="footer-source-link"
+            href="https://github.com/atick-faisal/atick.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            &lt; source code /&gt;
+        </a>
+    </div>
+</footer>
+
+<style>
+    .footer-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+        border-radius: 3rem;
+        width: 100%;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--text-light);
+    }
+
+    :global(.dark) .footer-title {
+        color: var(--text-dark);
+    }
+
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social .btn {
+        margin: 1rem;
+        padding: 0;
+    }
+
+    .social-icon {
+        width: 2rem;
+        height: 2rem;
+        margin: 1rem;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        color: var(--text-light);
+    }
+
+    :global(.dark) .footer-copyright {
+        color: var(--text-dark);
+    }
+
+    .footer-source-link {
+        font-family: monospace;
+        text-decoration: none;
+        color: #512da8;
+        margin-top: 0.5rem;
+    }
+
+    :global(.dark) .footer-source-link {
+        color: #b39ddb;
+    }
+
+    @media (min-width: 481px) {
+        .footer-title {
+            font-size: 1.875rem;
+        }
+
+        .footer-social {
+            flex-direction: row;
+        }
+    }
+</style>

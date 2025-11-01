@@ -1,0 +1,69 @@
+---
+/**
+ * Bio Section Component
+ *
+ * Displays personal introduction with background image, profile photo, and CTA button.
+ * Background images switch based on dark/light mode.
+ */
+import { Mail } from 'lucide-astro';
+import profileImage from '../assets/atick.webp';
+import bioBgLight from '../assets/bio-bg.webp';
+import bioBgDark from '../assets/bio-bg-dark.webp';
+import { ICON_SIZES } from '../constants/ui';
+---
+
+<section id="about" class="container mx-auto px-6 py-16">
+    <div class="relative rounded-header overflow-hidden">
+        <!-- Background images with dark mode toggle -->
+        <div class="absolute inset-0 dark:hidden">
+            <img
+                src={bioBgLight.src}
+                alt=""
+                class="w-full h-full object-cover"
+            />
+        </div>
+        <div class="absolute inset-0 hidden dark:block">
+            <img
+                src={bioBgDark.src}
+                alt=""
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Semi-transparent overlay for better text contrast in dark mode -->
+        <div class="absolute inset-0 bg-black/50 opacity-0 dark:opacity-100"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col md:flex-row items-end">
+            <!-- Left side - Text content -->
+            <div class="description flex-[1.5] space-y-6 px-6 py-8 md:px-12 md:py-12">
+                <h2 class="text-gray-900 dark:text-white">
+                    Hello! I'm<br />
+                    <span class="text-gray-900 dark:text-white">Atick Faisal</span>
+                </h2>
+                <p class="text-gray-800 dark:text-gray-200">
+                    I'm a Data Scientist, Computer Vision Researcher, and Software Developer. 
+                    I currently work as a Data Scientist at Iberdrola and am pursuing a Ph.D. in Computer Vision at Qatar University.
+                </p>
+                <div>
+                    <a
+                        href="#footer"
+                        class="btn btn-primary inline-flex items-center gap-2"
+                    >
+                        <Mail size={ICON_SIZES.MD} />
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right side - Profile image -->
+            <div class="flex-1 self-end">
+                <img
+                    src={profileImage.src}
+                    alt="Atick Faisal"
+                    class="image w-full max-w-full rounded-3xl -scale-x-100 block"
+                />
+            </div>
+        </div>
+    </div>
+</section>

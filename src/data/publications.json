@@ -1,67 +1,95 @@
 [
-  [
     {
-      "title": "Exploiting domain transformation and deep learning for hand gesture recognition using a low-cost dataglove",
-      "image": "spatial-projection.webp",
-      "publisher": "Scientific Reports, Nature",
-      "online": "https://www.nature.com/articles/s41598-022-25108-2/",
-      "pdf": "https://www.nature.com/articles/s41598-022-25108-2.pdf"
+        "title": "Deep learning in automated power line inspection: A review",
+        "image": "power-line-review.webp",
+        "publisher": "Applied Energy, Elsevier",
+        "online": "https://www.sciencedirect.com/science/article/pii/S0306261925002375",
+        "pdf": "https://manara.qnl.qa/ndownloader/files/52825343/1"
     },
     {
-      "title": "NDDNet: a deep learning model for predicting neurodegenerative diseases from gait pattern",
-      "image": "nddnet.webp",
-      "publisher": "Applied Intelligence, Springer",
-      "online": "https://link.springer.com/article/10.1007/s10489-023-04557-w",
-      "pdf": "https://link.springer.com/content/pdf/10.1007/s10489-023-04557-w.pdf?pdf=button"
-    }
-  ],
-  [
-    {
-      "title": "An investigation to study the effects of Tai Chi on human gait dynamics using classical machine learning",
-      "image": "taichi.webp",
-      "publisher": "Computers in Biology and Medicine, Elsevier",
-      "online": "https://www.sciencedirect.com/science/article/pii/S0010482521009781/",
-      "pdf": "https://www.sciencedirect.com/science/article/pii/S0010482521009781/pdfft?md5=e2e28943d70679e3cc44011f5da553c6&pid=1-s2.0-S0010482521009781-main.pdf"
+        "title": "Rapid wall shear stress prediction for aortic aneurysms using deep learning: a fast alternative to CFD",
+        "image": "aneurysm.webp",
+        "publisher": "Medical & Biomedical Engineering & Computing, Springer",
+        "online": "https://link.springer.com/article/10.1007/s11517-025-03311-3",
+        "pdf": "https://link.springer.com/content/pdf/10.1007/s11517-025-03311-3.pdf",
+        "github": "https://github.com/atick-faisal/MultiViewUNet-Aneurysm"
     },
     {
-      "title": "UPIC: user and position independent classical approach for locomotion and transportation modes recognition",
-      "image": "upic.webp",
-      "publisher": "UbiComp, 2020",
-      "online": "https://dl.acm.org/doi/abs/10.1145/3410530.3414343",
-      "pdf": "http://www.shl-dataset.org/wp-content/uploads/SHLChallenge2020/short_videos_presentations/07_ubicomp20q-sub1001-cam-i7.pdf"
-    }
-  ],
-  [
-    {
-      "title": "Contactless Human Activity Analysis: An Overview of Different Modalities",
-      "image": "contactless.webp",
-      "publisher": "Springer Book",
-      "online": "https://link.springer.com/chapter/10.1007/978-3-030-68590-4_3/",
-      "pdf": "https://link.springer.com/chapter/10.1007/978-3-030-68590-4_3/"
+        "title": "Robust and novel attention guided MultiResUnet model for 3D ground reaction force and moment prediction from foot kinematics",
+        "image": "grf-synthesis.webp",
+        "publisher": "Neural Computing and Applications, Springer",
+        "online": "https://link.springer.com/article/10.1007/s00521-023-09081-z",
+        "pdf": "https://link.springer.com/content/pdf/10.1007/s00521-023-09081-z.pdf"
     },
     {
-      "title": "Sensor dataglove for real-time static and dynamic hand gesture recognition",
-      "image": "slr.webp",
-      "publisher": "IEEE Conference",
-      "online": "https://ieeexplore.ieee.org/abstract/document/9564226/",
-      "pdf": "https://ieeexplore.ieee.org/abstract/document/9564226/"
-    }
-  ],
-  [
-    {
-      "title": "A pragmatic signal processing approach for nurse care activity recognition using classical machine learning",
-      "image": "nurse-care.webp",
-      "publisher": "UbiComp, 2020",
-      "online": "https://dl.acm.org/doi/abs/10.1145/3410530.3414337",
-      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3410530.3414337"
+        "title": "Laser-induced graphene-based smart insole to measure plantar temperature",
+        "image": "lig.webp",
+        "publisher": "IEEE Sensors Journal, IEEE",
+        "online": "https://ieeexplore.ieee.org/abstract/document/10264816",
+        "pdf": "https://ieeexplore.ieee.org/abstract/document/10264816"
     },
     {
-      "title": "ESLCE: A Dataset of Emotional Sounds from Large Crowd Events",
-      "image": "crowd-emotion.webp",
-      "publisher": "ICIEV, IEEE",
-      "online": "https://ieeexplore.ieee.org/abstract/document/9564179",
-      "pdf": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9564179",
-      "dataset": "https://drive.google.com/file/d/1XWKMzZuU8jBcf8_Sl3DeIUAjXx0MfiJV/view?usp=sharing"
+        "title": "Machine learning for predicting outcomes of transcatheter aortic valve implantation: A systematic review",
+        "image": "tavi-review.webp",
+        "publisher": "International Journal of Medical Informatics, Elsevier",
+        "online": "https://www.sciencedirect.com/science/article/pii/S1386505625000577",
+        "pdf": "https://www.sciencedirect.com/science/article/pii/S1386505625000577"
+    },
+    {
+        "title": "Exploiting domain transformation and deep learning for hand gesture recognition using a low-cost dataglove",
+        "image": "dataglove.webp",
+        "publisher": "Scientific Reports, Nature",
+        "online": "https://www.nature.com/articles/s41598-022-25108-2/",
+        "pdf": "https://www.nature.com/articles/s41598-022-25108-2.pdf"
+    },
+    {
+        "title": "NDDNet: a deep learning model for predicting neurodegenerative diseases from gait pattern",
+        "image": "nddnet.webp",
+        "publisher": "Applied Intelligence, Springer",
+        "online": "https://link.springer.com/article/10.1007/s10489-023-04557-w",
+        "pdf": "https://link.springer.com/content/pdf/10.1007/s10489-023-04557-w.pdf?pdf=button"
+    },
+    {
+        "title": "An investigation to study the effects of Tai Chi on human gait dynamics using classical machine learning",
+        "image": "taichi.webp",
+        "publisher": "Computers in Biology and Medicine, Elsevier",
+        "online": "https://www.sciencedirect.com/science/article/pii/S0010482521009781/",
+        "pdf": "https://www.sciencedirect.com/science/article/pii/S0010482521009781/pdfft?md5=e2e28943d70679e3cc44011f5da553c6&pid=1-s2.0-S0010482521009781-main.pdf"
+    },
+    {
+        "title": "UPIC: user and position independent classical approach for locomotion and transportation modes recognition",
+        "image": "upic.webp",
+        "publisher": "UbiComp, 2020",
+        "online": "https://dl.acm.org/doi/abs/10.1145/3410530.3414343",
+        "pdf": "http://www.shl-dataset.org/wp-content/uploads/SHLChallenge2020/short_videos_presentations/07_ubicomp20q-sub1001-cam-i7.pdf"
+    },
+    {
+        "title": "Contactless Human Activity Analysis: An Overview of Different Modalities",
+        "image": "contactless.webp",
+        "publisher": "Springer Book",
+        "online": "https://link.springer.com/chapter/10.1007/978-3-030-68590-4_3/",
+        "pdf": "https://link.springer.com/chapter/10.1007/978-3-030-68590-4_3/"
+    },
+    {
+        "title": "Sensor dataglove for real-time static and dynamic hand gesture recognition",
+        "image": "slr.webp",
+        "publisher": "IEEE Conference",
+        "online": "https://ieeexplore.ieee.org/abstract/document/9564226/",
+        "pdf": "https://ieeexplore.ieee.org/abstract/document/9564226/"
+    },
+    {
+        "title": "A pragmatic signal processing approach for nurse care activity recognition using classical machine learning",
+        "image": "nurse-care.webp",
+        "publisher": "UbiComp, 2020",
+        "online": "https://dl.acm.org/doi/abs/10.1145/3410530.3414337",
+        "pdf": "https://dl.acm.org/doi/pdf/10.1145/3410530.3414337"
+    },
+    {
+        "title": "ESLCE: A Dataset of Emotional Sounds from Large Crowd Events",
+        "image": "crowd-emotion.webp",
+        "publisher": "ICIEV, IEEE",
+        "online": "https://ieeexplore.ieee.org/abstract/document/9564179",
+        "pdf": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9564179",
+        "dataset": "https://drive.google.com/file/d/1XWKMzZuU8jBcf8_Sl3DeIUAjXx0MfiJV/view?usp=sharing"
     }
-  ]
 ]

@@ -1,0 +1,99 @@
+---
+/**
+ * Navbar Component
+ *
+ * Fixed navigation bar with brand name, navigation links, and dark mode toggle.
+ * Sticky positioning keeps it visible during scroll.
+ */
+import { BookMarked, Moon, Sun, User, Wrench } from 'lucide-astro';
+import { ICON_SIZES } from '../constants/ui';
+---
+
+<nav class="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark transition-colors duration-300">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#top" class="text-xl font-bold">
+                <span class="text-text-light dark:text-text-dark">Atick</span>
+                <span class="text-text-muted-light dark:text-text-muted-dark font-normal"> Faisal</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="flex items-center gap-2">
+                <li>
+                    <a
+                        href="#about"
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-hover-light dark:hover:bg-surface-hover-dark transition-colors"
+                    >
+                        <User size={ICON_SIZES.MD} />
+                        <span class="hidden sm:inline">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        id="nav-projects-link"
+                        href="#selector"
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-hover-light dark:hover:bg-surface-hover-dark transition-colors"
+                    >
+                        <Wrench size={ICON_SIZES.MD} />
+                        <span class="hidden sm:inline">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        id="nav-publications-link"
+                        href="#selector"
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-hover-light dark:hover:bg-surface-hover-dark transition-colors"
+                    >
+                        <BookMarked size={ICON_SIZES.MD} />
+                        <span class="hidden sm:inline">Publications</span>
+                    </a>
+                </li>
+                <li>
+                    <button
+                        id="theme-toggle"
+                        aria-label="Toggle dark mode"
+                        class="p-2 rounded-lg hover:bg-surface-hover-light dark:hover:bg-surface-hover-dark transition-colors"
+                    >
+                        <Sun id="sun-icon" size={ICON_SIZES.MD} class="hidden dark:block" />
+                        <Moon id="moon-icon" size={ICON_SIZES.MD} class="block dark:hidden" />
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.getElementById('theme-toggle');
+        const navProjectsLink = document.getElementById('nav-projects-link');
+        const navPublicationsLink = document.getElementById('nav-publications-link');
+
+        themeToggle?.addEventListener('click', () => {
+            if (typeof window.toggleTheme === 'function') {
+                window.toggleTheme();
+            }
+        });
+
+        // Handle Projects navbar link - trigger the projects button click
+        navProjectsLink?.addEventListener('click', (e) => {
+            // Allow default navigation to #selector
+            // After navigation, trigger the projects button
+            setTimeout(() => {
+                const projectsBtn = document.getElementById('projects-btn');
+                projectsBtn?.click();
+            }, 100);
+        });
+
+        // Handle Publications navbar link - trigger the publications button click
+        navPublicationsLink?.addEventListener('click', (e) => {
+            // Allow default navigation to #selector
+            // After navigation, trigger the publications button
+            setTimeout(() => {
+                const publicationsBtn = document.getElementById('publications-btn');
+                publicationsBtn?.click();
+            }, 100);
+        });
+    });
+</script>

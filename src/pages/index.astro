@@ -1,0 +1,29 @@
+---
+import BackToTop from '../components/BackToTop.astro';
+import Bio from '../components/Bio.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Navbar from '../components/Navbar.astro';
+import Projects from '../components/Projects.astro';
+import Publications from '../components/Publications.astro';
+import Selector from '../components/Selector.astro';
+import SkipToContent from '../components/SkipToContent.astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Atick Faisal - Portfolio">
+    <SkipToContent />
+    <Navbar />
+
+    <main id="main-content" class="min-h-screen">
+        <Hero id="top" />
+        <Bio />
+        <Selector />
+        <Projects />
+        <Publications />
+        <BackToTop />
+    </main>
+
+    <Footer />
+</Layout>
