@@ -1,0 +1,101 @@
+---
+/**
+ * Selector Component
+ *
+ * Toggle component for switching between Projects and Publications sections.
+ * Only one section is visible at a time based on the active button.
+ */
+import { BookOpen, Code2 } from 'lucide-astro';
+import { ICON_SIZES, SELECTOR } from '../constants/ui';
+---
+
+<section id="selector" class="container mx-auto px-6 mt-12">
+    <div class="flex justify-center items-center gap-4 pb-4" role="tablist" aria-label="Content selector">
+        <button
+            id="projects-btn"
+            role="tab"
+            aria-controls="projects-section"
+            aria-selected="true"
+            aria-label="Show projects"
+            class="selector-btn active inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-selector-active text-selector-active-text border-0"
+            data-target="projects"
+        >
+            <Code2 size={ICON_SIZES.MD} aria-hidden="true" />
+            Projects
+        </button>
+        <button
+            id="publications-btn"
+            role="tab"
+            aria-controls="publications-section"
+            aria-selected="false"
+            aria-label="Show publications"
+            class="selector-btn inline-flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-200 bg-transparent text-text dark:text-text-dark border-0"
+            data-target="publications"
+        >
+            <BookOpen size={ICON_SIZES.MD} aria-hidden="true" />
+            Publications
+        </button>
+    </div>
+    <hr class="border-t border-gray-300 dark:border-gray-600" />
+</section>
+
+<script>
+    // Selector toggle logic
+    function initSelector() {
+        const projectsBtn = document.getElementById('projects-btn');
+        const publicationsBtn = document.getElementById('publications-btn');
+        const projectsSection = document.getElementById('projects-section');
+        const publicationsSection = document.getElementById('publications-section');
+
+        if (!projectsBtn || !publicationsBtn || !projectsSection || !publicationsSection) {
+            return;
+        }
+
+        function setActive(activeBtn: HTMLButtonElement, inactiveBtn: HTMLButtonElement) {
+            // Update button styles - active has colored background, inactive is transparent
+            activeBtn.classList.remove('bg-transparent', 'text-text', 'dark:text-text-dark');
+            activeBtn.classList.add('bg-selector-active', 'text-selector-active-text', 'active');
+            activeBtn.setAttribute('aria-selected', 'true');
+
+            inactiveBtn.classList.remove('bg-selector-active', 'text-selector-active-text', 'active');
+            inactiveBtn.classList.add('bg-transparent', 'text-text', 'dark:text-text-dark');
+            inactiveBtn.setAttribute('aria-selected', 'false');
+        }
+
+        projectsBtn.addEventListener('click', () => {
+            setActive(projectsBtn, publicationsBtn);
+            projectsSection.classList.remove('hidden');
+            publicationsSection.classList.add('hidden');
+        });
+
+        publicationsBtn.addEventListener('click', () => {
+            setActive(publicationsBtn, projectsBtn);
+            publicationsSection.classList.remove('hidden');
+            projectsSection.classList.add('hidden');
+        });
+    }
+
+    // Initialize on page load
+    initSelector();
+
+    // Re-initialize after page transitions (if using Astro view transitions)
+    document.addEventListener('astro:page-load', initSelector);
+</script>
+
+<style define:vars={{ minWidth: `${SELECTOR.MIN_WIDTH}px` }}>
+    .selector-btn {
+        min-width: var(--minWidth);
+        /* No shadows - clean flat design */
+        box-shadow: none;
+    }
+
+    .selector-btn:hover {
+        opacity: 0.8;
+    }
+
+    /* Visible focus indicator for keyboard navigation */
+    .selector-btn:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+</style>

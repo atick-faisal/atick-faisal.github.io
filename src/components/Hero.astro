@@ -1,0 +1,37 @@
+---
+/**
+ * Hero Section Component
+ *
+ * Main landing section featuring the Butterfly Effect canvas animation,
+ * inspirational quote, and call-to-action buttons.
+ */
+import Butterfly from './Butterfly.astro';
+---
+
+<section class="banner py-12 md:py-20">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center gap-8">
+            <!-- Butterfly Canvas -->
+            <div class="w-full flex justify-center">
+                <Butterfly />
+            </div>
+
+            <!-- Quote -->
+            <p class="quote text-center max-w-3xl text-text-muted-light dark:text-text-dark italic">
+                Each smallest act of kindness, reverberates across great distances and spans of time,
+                affecting lives unknown to the one who's generous spirit, was the source of this good
+                echo. That's the beauty of the <strong class="text-primary dark:text-primary-dark font-bold">Butterfly Effect.</strong>
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="actions flex flex-wrap gap-4 justify-center">
+                <a href="#contacts" class="btn btn-outline-primary">
+                    Contact Me
+                </a>
+                <a href="#about" class="btn btn-primary">
+                    Explore My Works
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

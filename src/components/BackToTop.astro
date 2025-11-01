@@ -1,0 +1,78 @@
+---
+/**
+ * Back to Top Component
+ *
+ * Floating action button that appears after scrolling down.
+ * Scrolls user back to the top of the page with smooth animation.
+ * Responds to theme changes for appropriate styling.
+ */
+import { ArrowUp } from 'lucide-astro';
+import { ICON_SIZES } from '../constants/ui';
+---
+
+<button
+    id="back-to-top"
+    aria-label="Back to top"
+    class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-primary hover:bg-primary-hover dark:bg-primary-dark dark:hover:bg-primary-dark-hover text-white shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 invisible translate-y-4 flex items-center justify-center z-50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-dark focus:ring-offset-2 dark:focus:ring-offset-surface-dark"
+    aria-hidden="true"
+>
+    <ArrowUp size={ICON_SIZES.LG} />
+</button>
+
+<script>
+    const backToTopButton = document.getElementById('back-to-top');
+    const SCROLL_THRESHOLD = 300; // Show button after scrolling 300px
+
+    if (backToTopButton) {
+        // Handle scroll detection
+        const handleScroll = () => {
+            const scrolled = window.scrollY > SCROLL_THRESHOLD;
+
+            if (scrolled) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.setAttribute('aria-hidden', 'false');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.setAttribute('aria-hidden', 'true');
+            }
+        };
+
+        // Handle click to scroll to top
+        const scrollToTop = (e: Event) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        };
+
+        // Add event listeners
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        backToTopButton.addEventListener('click', scrollToTop);
+
+        // Initial check
+        handleScroll();
+
+        // Theme change listener (for any custom theme-specific behavior)
+        window.addEventListener('themechange', () => {
+            // Button colors are handled by Tailwind's dark: classes
+            // This listener is here for future enhancements if needed
+        });
+    }
+</script>
+
+<style>
+    #back-to-top {
+        /* Add hover scale effect */
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        /* Active state */
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+</style>

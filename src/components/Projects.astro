@@ -1,0 +1,63 @@
+---
+/**
+ * Projects Section Component
+ *
+ * Displays header card with description and GitHub CTA, followed by a grid of project cards.
+ * Header background uses gradient that switches based on dark/light mode.
+ */
+import { Github } from 'lucide-astro';
+import raspberryPi from '../assets/raspberry-pi-alt.webp';
+import { ICON_SIZES } from '../constants/ui';
+import projectsData from '../data/projects.json';
+import type { Project } from '../types';
+import Card from './Card.astro';
+
+const projects = projectsData as Project[];
+---
+
+<section id="projects-section" role="tabpanel" aria-labelledby="projects-btn" class="container mx-auto px-6 py-12">
+    <!-- Header Card -->
+    <div class="header-card project-header flex rounded-header overflow-hidden flex-col md:flex-row mb-12">
+        <!-- Description -->
+        <div class="description relative z-10 flex-[2] px-6 py-8 md:px-12 md:py-12">
+            <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Projects</h1>
+            <p class="text-lg mb-6 text-gray-700 dark:text-gray-200">
+                I am a robotics enthusiast and a native Android developer (Kotlin, Java) with experience in modern architectural components and MVVM design pattern. I have developed several mobile applications to communicate with IoT devices via Bluetooth, BLE, HTTP and MQTT protocols. I also have experience in design and deployment of Machine Learning based solutions for IoT devices.
+            </p>
+            <a
+                href="https://github.com/atick-faisal/"
+                class="btn btn-dark inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 dark:bg-gray-700 text-white hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors"
+            >
+                <Github class="icon" size={ICON_SIZES.MD} />
+                <span>Explore on GitHub</span>
+            </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative z-10 flex-1 flex items-center justify-center">
+            <img
+                class="image w-full max-w-full h-auto"
+                alt="Raspberry Pi"
+                src={raspberryPi.src}
+            />
+        </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+            <Card item={project} type="project" />
+        ))}
+    </div>
+</section>
+
+<style>
+    .header-card {
+        position: relative;
+        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+    }
+
+    :global(.dark) .header-card {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+    }
+</style>

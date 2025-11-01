@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    font-size: 1rem;
+}
+
+/* Typography - matching old codebase */
+h1 {
+    font-size: clamp(2.5rem, calc(1.375rem + 1.5vw), 3.2rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(2rem, calc(1.325rem + 0.9vw), 2rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: clamp(1.75rem, calc(1.3rem + 0.6vw), 2.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h4 {
+    font-size: clamp(1.5rem, calc(1.275rem + 0.3vw), 1.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 481px) {
+    p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Custom button styles - Pill-shaped buttons */
+.btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 rounded-button px-6 py-1.5;
+}
+
+.btn-primary {
+    @apply bg-primary hover:bg-primary-hover dark:bg-primary-dark dark:hover:bg-primary-dark-hover text-white shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white;
+}
+
+.btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-primary-dark dark:text-primary-dark dark:hover:bg-primary-dark;
+}
+
+.btn-dark {
+    @apply bg-gray-800 hover:bg-gray-900 text-white;
+}
+
+/* Card styles */
+.card {
+    @apply overflow-hidden transition-all duration-300;
+}
+
+.card-img-container {
+    @apply rounded-t-card-image;
+}
+
+.card-img {
+    @apply rounded-t-card-image;
+}
+
+/* Dark mode: slightly dim the card images */
+:global(.dark) .card-img {
+    filter: brightness(95%);
+}
+
+/* Header card styles */
+.header-card {
+    @apply rounded-header overflow-hidden;
+}
