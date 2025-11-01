@@ -8,39 +8,11 @@
 import { Image } from 'astro:assets';
 import { Mail } from 'lucide-astro';
 import profileImage from '../assets/atick.webp';
-import bioBgLight from '../assets/bio-bg.webp';
-import bioBgDark from '../assets/bio-bg-dark.webp';
 import { ICON_SIZES } from '../constants/ui';
 ---
 
 <section id="about" class="container mx-auto px-6 py-16">
-    <div class="relative rounded-header overflow-hidden">
-        <!-- Background images with dark mode toggle -->
-        <div class="absolute inset-0 dark:hidden">
-            <Image
-                src={bioBgLight}
-                alt=""
-                class="w-full h-full object-cover"
-                widths={[400, 800, 960]}
-                sizes="(max-width: 800px) 100vw, 960px"
-                width={960}
-                height={540}
-            />
-        </div>
-        <div class="absolute inset-0 hidden dark:block">
-            <Image
-                src={bioBgDark}
-                alt=""
-                class="w-full h-full object-cover"
-                widths={[400, 800, 960]}
-                sizes="(max-width: 800px) 100vw, 960px"
-                width={960}
-                height={540}
-            />
-        </div>
-
-        <!-- Semi-transparent overlay for better text contrast in dark mode -->
-        <div class="absolute inset-0 bg-black/50 opacity-0 dark:opacity-100"></div>
+    <div class="bio-header relative rounded-header overflow-hidden">
 
         <!-- Content -->
         <div class="relative z-10 flex flex-col md:flex-row items-end">
@@ -80,3 +52,13 @@ import { ICON_SIZES } from '../constants/ui';
         </div>
     </div>
 </section>
+
+<style>
+    .bio-header {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+    }
+
+    :global(.dark) .bio-header {
+        background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #2196f3 100%);
+    }
+</style>
