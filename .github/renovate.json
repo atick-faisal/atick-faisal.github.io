@@ -9,27 +9,43 @@
     "packageRules": [
         {
             "description": "Automerge non-major updates after stability period",
-            "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "pin",
+                "digest"
+            ],
             "automerge": true
         },
         {
             "description": "Group Astro and related packages",
-            "matchPackagePrefixes": ["@astrojs/", "astro"],
-            "groupName": "Astro"
+            "groupName": "Astro",
+            "matchPackageNames": [
+                "@astrojs/{/,}**",
+                "astro{/,}**"
+            ]
         },
         {
             "description": "Group Biome packages",
-            "matchPackagePrefixes": ["@biomejs/"],
-            "groupName": "Biome"
+            "groupName": "Biome",
+            "matchPackageNames": [
+                "@biomejs/{/,}**"
+            ]
         },
         {
             "description": "Weekly updates for development dependencies",
-            "matchDepTypes": ["devDependencies"],
-            "schedule": ["before 6am on monday"]
+            "matchDepTypes": [
+                "devDependencies"
+            ],
+            "schedule": [
+                "before 6am on monday"
+            ]
         },
         {
             "description": "Separate major updates for manual review",
-            "matchUpdateTypes": ["major"],
+            "matchUpdateTypes": [
+                "major"
+            ],
             "automerge": false,
             "minimumReleaseAge": "7 days"
         }
