@@ -5,7 +5,7 @@
       "name": "atick.dev",
       "dependencies": {
         "@astrojs/partytown": "^2.1.4",
-        "lucide-astro": "^0.548.0",
+        "lucide-astro": "^0.552.0",
       },
       "devDependencies": {
         "@astrojs/tailwind": "6.0.2",
@@ -550,7 +550,7 @@
 
     "lru-cache": ["lru-cache@10.4.3", "", {}, "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ=="],
 
-    "lucide-astro": ["lucide-astro@0.548.0", "", { "peerDependencies": { "astro": ">=2.7.1" } }, "sha512-ZfYkQgGZS+MkguatE7BpqeF1v1HamiANuGNCWLaN8a2H1z+RQkSdTxzbxpRJJ+eRtotpre823gH3az6GFjp1fg=="],
+    "lucide-astro": ["lucide-astro@0.552.0", "", { "peerDependencies": { "astro": ">=2.7.1" } }, "sha512-Wpwn0TmFXcLkBjwyy4u/MrWC/4gB/HXjzDJEMj5kiIqlhGEqIR+rWmTaYL3WrguxdKIbG9jp3VSKkH4kH28xsg=="],
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 
