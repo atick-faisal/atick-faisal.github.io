@@ -2,7 +2,13 @@ import partytown from '@astrojs/partytown';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-    integrations: [partytown()],
+    integrations: [
+        partytown({
+            config: {
+                forward: ['dataLayer.push'],
+            },
+        }),
+    ],
     build: {
         inlineStylesheets: 'always',
     },
