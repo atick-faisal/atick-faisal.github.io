@@ -1,10 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+    /* Primary brand colors (Deep Purple from original site) */
+    --color-primary: #512da8;
+    --color-primary-hover: #45278f;
+    --color-primary-light: #bbdefb;
+    --color-primary-dark: #9575cd;
+    --color-primary-dark-hover: #7e57c2;
+    
+    /* Button colors */
+    --color-button-github: #1F1F1F;
+    --color-button-github-hover: #333333;
+    --color-button-download: #B3261E;
+    --color-button-download-hover: #9E221B;
+    --color-button-web: #3461FD;
+    --color-button-web-hover: #2F57E3;
+    --color-button-use: #006A60;
+    --color-button-use-hover: #00534C;
+    --color-button-youtube: #B3261E;
+    --color-button-youtube-hover: #9E221B;
+    --color-button-pdf: #5C5E62;
+    --color-button-pdf-hover: #4A4B4F;
+    --color-button-online: #3461FD;
+    --color-button-online-hover: #2F57E3;
+    --color-button-dataset: #3461FD;
+    --color-button-dataset-hover: #2F57E3;
+    
+    /* Selector toggle colors */
+    --color-selector-active: #bbdefb;
+    --color-selector-active-text: #000000;
+    --color-selector-inactive: #e5e7eb;
+    --color-selector-inactive-dark: #374151;
+    --color-selector-inactive-text: #1f2937;
+    --color-selector-inactive-text-dark: #e5e7eb;
+    
+    /* Light mode colors */
+    --color-surface-light: #ffffff;
+    --color-surface-hover-light: #f3f4f6;
+    --color-card-light: rgb(232, 234, 246);
+    --color-card-border-light: rgba(0, 0, 0, 0.175);
+    --color-text-light: #111827;
+    --color-text-muted-light: #6b7280;
+    --color-border-light: #e5e7eb;
+    
+    /* Dark mode colors (One Dark theme) */
+    --color-surface-dark: #282c34;
+    --color-surface-elevated-dark: #2c313a;
+    --color-surface-hover-dark: #2c313a;
+    --color-card-dark: rgb(59, 66, 82);
+    --color-card-border-dark: rgba(255, 255, 255, 0.15);
+    --color-text-dark: #abb2bf;
+    --color-text-muted-dark: #5c6370;
+    --color-border-dark: #3e4451;
+    
+    /* Border radius */
+    --radius-card: 1.5rem;
+    --radius-card-image: 1.5rem;
+    --radius-button: 1.2rem;
+    --radius-header: 3rem;
+    
+    /* Container breakpoints */
+    --breakpoint-sm: 486px;
+    --breakpoint-md: 648px;
+    --breakpoint-lg: 864px;
+    --breakpoint-xl: 1026px;
+    --breakpoint-2xl: 1188px;
+}
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -58,6 +121,43 @@ p {
 @media (min-width: 481px) {
     p {
         font-size: 1.3rem;
+    }
+}
+
+/* Container utility - custom implementation for Tailwind v4 */
+.container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+@media (min-width: 486px) {
+    .container {
+        max-width: 486px;
+    }
+}
+
+@media (min-width: 648px) {
+    .container {
+        max-width: 648px;
+    }
+}
+
+@media (min-width: 864px) {
+    .container {
+        max-width: 864px;
+    }
+}
+
+@media (min-width: 1026px) {
+    .container {
+        max-width: 1026px;
+    }
+}
+
+@media (min-width: 1188px) {
+    .container {
+        max-width: 1188px;
     }
 }
 
