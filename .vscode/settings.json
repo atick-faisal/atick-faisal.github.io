@@ -21,6 +21,6 @@
         "*.css": "tailwindcss"
     },
     "tailwindCSS.experimental.classRegex": [
-        ["class:\\s*['\"\`]([^'\"\`]*)['\"\`]", "([^'\"\`]*)"]
+        ["class:\\\\s*['\"`]([^'\"`]*)['\"`]", "([^'\"`]*)"]
     ]
 }
