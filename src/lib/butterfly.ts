@@ -98,7 +98,11 @@ export class LorentzParticle {
         this.canvas = canvas;
         const context = canvas.getContext('2d');
         if (!context) {
-            throw new Error('Could not get 2D context from canvas');
+            const error = new Error(
+                'Could not get 2D context from canvas. Canvas rendering may not be supported in this browser.',
+            );
+            console.error('[ButterflyAnimation]', error);
+            throw error;
         }
         this.ctx = context;
         this.isDark = document.documentElement.classList.contains('dark');
