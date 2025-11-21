@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
 /**
  * Card Component
  *
@@ -9,6 +7,8 @@ import type { ImageMetadata } from 'astro';
  *
  * Supported link types: github, download, web, use, youtube, pdf, online, dataset
  */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import {
     Database,
     Download,
@@ -21,6 +21,7 @@ import {
 } from 'lucide-astro';
 import { ICON_SIZES } from '../constants/ui';
 import type { Project, Publication } from '../types';
+import { extractCardLinks } from '../utils/cardLinks';
 
 interface Props {
     item: Project | Publication;
@@ -28,8 +29,6 @@ interface Props {
 }
 
 const { item, type } = Astro.props;
-
-type IconComponent = typeof Github;
 
 // Import all images from assets directory at build time
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/*.{webp,gif,png,jpg,jpeg}', {
@@ -41,76 +40,43 @@ const imagePath = `../assets/${item.image}`;
 const imageModule = images[imagePath];
 const imageSrc = imageModule?.default;
 
-/**
- * Returns button configuration (label, icon, styles) for a given link type.
- *
- * @param linkType - Type of link (github, download, web, use, youtube, pdf, online, dataset)
- * @returns Button configuration object with label, icon component, and CSS classes
- */
-function getButtonConfig(linkType: string) {
-    const configs: Record<string, { label: string; icon: IconComponent; class: string }> = {
-        github: {
-            label: 'GitHub',
-            icon: Github,
-            class: 'bg-button-github hover:bg-button-github-hover text-white',
-        },
-        download: {
-            label: 'Download',
-            icon: Download,
-            class: 'bg-button-download hover:bg-button-download-hover text-white',
-        },
-        web: {
-            label: 'Visit',
-            icon: Globe,
-            class: 'bg-button-web hover:bg-button-web-hover text-white',
-        },
-        use: {
-            label: 'Use This',
-            icon: GitBranch,
-            class: 'bg-button-use hover:bg-button-use-hover text-white',
-        },
-        youtube: {
-            label: 'YouTube',
-            icon: Youtube,
-            class: 'bg-button-youtube hover:bg-button-youtube-hover text-white',
-        },
-        pdf: {
-            label: 'PDF',
-            icon: LibraryBig,
-            class: 'bg-button-pdf hover:bg-button-pdf-hover text-white',
-        },
-        online: {
-            label: 'Online',
-            icon: LinkIcon,
-            class: 'bg-button-online hover:bg-button-online-hover text-white',
-        },
-        dataset: {
-            label: 'Dataset',
-            icon: Database,
-            class: 'bg-button-dataset hover:bg-button-dataset-hover text-white',
-        },
-    };
-    return configs[linkType];
-}
+// Icon mapping for button components
+const ICON_MAP = {
+    github: Github,
+    download: Download,
+    web: Globe,
+    use: GitBranch,
+    youtube: Youtube,
+    pdf: LibraryBig,
+    online: LinkIcon,
+    dataset: Database,
+} as const;
 
-// Get all available links (excluding github which goes last)
-const links = Object.entries(item)
-    .filter(
-        ([key, value]) =>
-            value &&
-            typeof value === 'string' &&
-            key !== 'title' &&
-            key !== 'image' &&
-            key !== 'description' &&
-            key !== 'publisher' &&
-            key !== 'github',
-    )
-    .map(([key, value]) => ({ type: key, url: value as string }));
+// Button configuration for different link types
+const BUTTON_STYLES = {
+    github: 'bg-button-github hover:bg-button-github-hover text-white',
+    download: 'bg-button-download hover:bg-button-download-hover text-white',
+    web: 'bg-button-web hover:bg-button-web-hover text-white',
+    use: 'bg-button-use hover:bg-button-use-hover text-white',
+    youtube: 'bg-button-youtube hover:bg-button-youtube-hover text-white',
+    pdf: 'bg-button-pdf hover:bg-button-pdf-hover text-white',
+    online: 'bg-button-online hover:bg-button-online-hover text-white',
+    dataset: 'bg-button-dataset hover:bg-button-dataset-hover text-white',
+} as const;
 
-// Add github last if it exists
-if ('github' in item && item.github) {
-    links.push({ type: 'github', url: item.github });
-}
+const BUTTON_LABELS = {
+    github: 'GitHub',
+    download: 'Download',
+    web: 'Visit',
+    use: 'Use This',
+    youtube: 'YouTube',
+    pdf: 'PDF',
+    online: 'Online',
+    dataset: 'Dataset',
+} as const;
+
+// Extract links from item data
+const links = extractCardLinks(item);
 ---
 
 <div class="card group bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark rounded-card p-0">
@@ -138,25 +104,30 @@ if ('github' in item && item.github) {
         </p>
 
         <!-- Action Buttons -->
-        {links.length > 0 && (
-            <div class="flex flex-wrap gap-3 pt-2">
-                {links.map(({ type: linkType, url }) => {
-                    const config = getButtonConfig(linkType);
-                    if (!config) return null;
-                    const Icon = config.icon;
-                    return (
-                        <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class={`inline-flex items-center gap-2 font-medium transition-all duration-200 text-sm rounded-button py-2 px-7 ${config.class}`}
-                        >
-                            <Icon size={ICON_SIZES.SM} />
-                            {config.label}
-                        </a>
-                    );
-                })}
-            </div>
-        )}
+        {
+            links.length > 0 && (
+                <div class="flex flex-wrap gap-3 pt-2">
+                    {links.map(({ type: linkType, url }) => {
+                        const Icon = ICON_MAP[linkType as keyof typeof ICON_MAP];
+                        const label = BUTTON_LABELS[linkType as keyof typeof BUTTON_LABELS];
+                        const styleClass = BUTTON_STYLES[linkType as keyof typeof BUTTON_STYLES];
+
+                        if (!Icon || !label || !styleClass) return null;
+
+                        return (
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class={`inline-flex items-center gap-2 font-medium transition-all duration-200 text-sm rounded-button py-2 px-7 ${styleClass}`}
+                            >
+                                <Icon size={ICON_SIZES.SM} />
+                                {label}
+                            </a>
+                        );
+                    })}
+                </div>
+            )
+        }
     </div>
 </div>

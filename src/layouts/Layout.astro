@@ -32,36 +32,41 @@ const { title } = Astro.props;
 
         <script is:inline>
             // Dark mode initialization - runs before page render to prevent flash
-            const getTheme = () => {
-                if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-                    return localStorage.getItem('theme');
-                }
-                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    return 'dark';
-                }
-                return 'light';
-            };
+            (function() {
+                const getTheme = () => {
+                    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                        return localStorage.getItem('theme');
+                    }
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        return 'dark';
+                    }
+                    return 'light';
+                };
 
-            const theme = getTheme();
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
+                const applyTheme = (theme) => {
+                    if (theme === 'dark') {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                };
 
-            // Make theme available globally
-            window.toggleTheme = () => {
-                const isDark = document.documentElement.classList.contains('dark');
-                if (isDark) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                }
-                // Dispatch event for components that need to react to theme changes
-                window.dispatchEvent(new CustomEvent('themechange'));
-            };
+                // Initialize theme immediately
+                const theme = getTheme();
+                applyTheme(theme);
+
+                // Make theme toggle available globally
+                window.toggleTheme = () => {
+                    const isDark = document.documentElement.classList.contains('dark');
+                    const newTheme = isDark ? 'light' : 'dark';
+                    
+                    applyTheme(newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    
+                    // Dispatch event for components that need to react to theme changes
+                    window.dispatchEvent(new CustomEvent('themechange'));
+                };
+            })();
         </script>
     </body>
 </html>
