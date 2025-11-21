@@ -1,31 +1,47 @@
 ---
 import '../styles/global.css';
+import { ANALYTICS_CONFIG, SITE_CONFIG } from '../config/site';
 
 interface Props {
-    title: string;
+    title?: string;
+    description?: string;
 }
 
-const { title } = Astro.props;
+const { title = SITE_CONFIG.title, description = SITE_CONFIG.description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" id="theme-root">
+<html lang={SITE_CONFIG.lang} id="theme-root">
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Atick Faisal - Machine Learning Researcher, Robotic Enthusiast and Software Developer" />
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
-        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="icon" href={SITE_CONFIG.favicon} />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <title>{title}</title>
 
         <!-- Google Analytics -->
-        <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}></script>
-        <script type="text/partytown" define:vars={{ gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', gaId);
-        </script>
+        {
+            ANALYTICS_CONFIG.gaId && (
+                <>
+                    <script
+                        type="text/partytown"
+                        src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_CONFIG.gaId}`}
+                    />
+                    <script
+                        type="text/partytown"
+                        define:vars={{ gaId: ANALYTICS_CONFIG.gaId }}
+                    >
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() {
+                            dataLayer.push(arguments);
+                        }
+                        gtag('js', new Date());
+                        gtag('config', gaId);
+                    </script>
+                </>
+            )
+        }
     </head>
     <body class="bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark transition-colors duration-300">
         <slot />
