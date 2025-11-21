@@ -5,19 +5,22 @@
  * @see https://en.wikipedia.org/wiki/Lorenz_system
  */
 
+import { BREAKPOINTS } from './breakpoints';
+import { BACKGROUND_COLORS } from './colors';
+
 export const BUTTERFLY_CONFIG = {
     // Particle system
     PARTICLE_COUNT_MOBILE: 100,
     PARTICLE_COUNT_DESKTOP: 300,
-    MOBILE_BREAKPOINT: 481, // px
+    MOBILE_BREAKPOINT: BREAKPOINTS.sm,
 
     // Canvas sizing (multipliers of viewport width)
-    CANVAS_WIDTH_LARGE: 0.5, // > 1370px
-    CANVAS_WIDTH_MEDIUM: 0.6, // > 720px
-    CANVAS_WIDTH_SMALL: 0.9, // < 720px
+    CANVAS_WIDTH_LARGE: 0.5, // > xl breakpoint
+    CANVAS_WIDTH_MEDIUM: 0.6, // > md breakpoint
+    CANVAS_WIDTH_SMALL: 0.9, // < md breakpoint
     CANVAS_HEIGHT_RATIO: 0.6, // Height as ratio of width
-    BREAKPOINT_LARGE: 1370, // px
-    BREAKPOINT_MEDIUM: 720, // px
+    BREAKPOINT_LARGE: BREAKPOINTS.xl,
+    BREAKPOINT_MEDIUM: BREAKPOINTS.md,
 
     // Coordinate scaling factors
     WIDTH_SCALE_FACTOR: 13.0 / 600.0,
@@ -47,8 +50,8 @@ export const BUTTERFLY_CONFIG = {
     LINE_WIDTH: 1.5, // Particle trail width
 
     // Background colors
-    BG_LIGHT: 'rgb(255, 255, 255)',
-    BG_DARK: 'rgb(40, 44, 52)', // #282c34 - One Dark theme
+    BG_LIGHT: BACKGROUND_COLORS.light,
+    BG_DARK: BACKGROUND_COLORS.dark,
 
     // Particle initialization ranges
     PARTICLE_X_MIN: -100,
