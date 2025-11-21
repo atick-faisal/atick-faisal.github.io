@@ -6,7 +6,7 @@
       "name": "atick.dev",
       "dependencies": {
         "@astrojs/partytown": "^2.1.4",
-        "lucide-astro": "^0.553.0",
+        "lucide-astro": "^0.554.0",
       },
       "devDependencies": {
         "@biomejs/biome": "2.3.5",
@@ -501,7 +501,7 @@
 
     "lru-cache": ["lru-cache@10.4.3", "", {}, "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ=="],
 
-    "lucide-astro": ["lucide-astro@0.553.0", "", { "peerDependencies": { "astro": ">=2.7.1" } }, "sha512-aFQtl5mfjU78S2QRFWaUOIrlYDLifkB2Bk0l3PWL5eN2lBgVMpNEqRaug6pqqPfwvSa6AksM/WSe8wqbbilj9w=="],
+    "lucide-astro": ["lucide-astro@0.554.0", "", { "peerDependencies": { "astro": ">=2.7.1" } }, "sha512-4vXKrbno6v0EKfg1axgCEttW+E5Z7zuJKiLIdqP/mmNTPeaVjCrEuHzuq7XFCahlgp2kKFZFCpgyzkNhBQzFYA=="],
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 
