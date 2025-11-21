@@ -1,6 +1,6 @@
 # 🔥 [atick.dev](https://atick.dev) - Personal Portfolio
 
-<img width="600" height="150" alt="image" src="https://github.com/user-attachments/assets/dab3ecee-7821-4419-b57f-ee67ed8a6105" align="right" />
+<img width="400" height="85" alt="image" src="https://github.com/user-attachments/assets/dab3ecee-7821-4419-b57f-ee67ed8a6105" align="right" />
 A modern, performant portfolio website built with Astro, showcasing my work in machine learning, Android development, and embedded systems. Featuring a clean design with dark mode support, type-safe components, and optimized for speed. 
 
 <br/>
