@@ -40,6 +40,11 @@ const imagePath = `../assets/${item.image}`;
 const imageModule = images[imagePath];
 const imageSrc = imageModule?.default;
 
+// Throw error if image not found
+if (!imageSrc) {
+    throw new Error(`Image not found: ${item.image}`);
+}
+
 // Icon mapping for button components
 const ICON_MAP = {
     github: Github,
@@ -100,7 +105,7 @@ const links = extractCardLinks(item);
 
         <!-- Description or Publisher -->
         <p class="text-gray-700 dark:text-gray-300">
-            {type === 'publication' && 'publisher' in item ? item.publisher : item.description}
+            {type === 'publication' && 'publisher' in item ? item.publisher : 'description' in item ? item.description : ''}
         </p>
 
         <!-- Action Buttons -->

@@ -42,8 +42,8 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
 <script>
     // Selector toggle logic
     function initSelector() {
-        const projectsBtn = document.getElementById('projects-btn');
-        const publicationsBtn = document.getElementById('publications-btn');
+        const projectsBtn = document.getElementById('projects-btn') as HTMLButtonElement;
+        const publicationsBtn = document.getElementById('publications-btn') as HTMLButtonElement;
         const projectsSection = document.getElementById('projects-section');
         const publicationsSection = document.getElementById('publications-section');
 

@@ -215,11 +215,17 @@ export class LorentzParticle {
             this.ctx.translate(this.canvas.width / 2, 0);
 
             for (let i = 0; i < nParticles; i++) {
-                const oldP = this.particles[i].copy();
-                this.particles[i].update();
-                const newP = this.particles[i].copy();
+                const particle = this.particles[i];
+                if (!particle) continue;
 
-                this.ctx.strokeStyle = this.colors[i];
+                const color = this.colors[i];
+                if (!color) continue;
+
+                const oldP = particle.copy();
+                particle.update();
+                const newP = particle.copy();
+
+                this.ctx.strokeStyle = color;
                 this.ctx.lineWidth = BUTTERFLY_CONFIG.LINE_WIDTH;
                 this.ctx.beginPath();
                 this.ctx.moveTo(oldP.x * widthScaler, this.canvas.height - oldP.z * heightScaler);
