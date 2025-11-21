@@ -21,12 +21,12 @@
     --color-button-use-hover: #00534C;
     --color-button-youtube: #B3261E;
     --color-button-youtube-hover: #9E221B;
-    --color-button-pdf: #5C5E62;
-    --color-button-pdf-hover: #4A4B4F;
+    --color-button-pdf: #B3261E;
+    --color-button-pdf-hover: #9E221B;
     --color-button-online: #3461FD;
     --color-button-online-hover: #2F57E3;
-    --color-button-dataset: #3461FD;
-    --color-button-dataset-hover: #2F57E3;
+    --color-button-dataset: #D97706;
+    --color-button-dataset-hover: #B45309;
     
     /* Selector toggle colors */
     --color-selector-active: #bbdefb;
