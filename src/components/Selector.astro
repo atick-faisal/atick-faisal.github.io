@@ -62,23 +62,15 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
             inactiveBtn.setAttribute('aria-selected', 'false');
         }
 
-        function showSection(section: 'projects' | 'publications', updateUrl = true, cardId?: string) {
+        function showSection(section: 'projects' | 'publications', cardId?: string) {
             if (section === 'projects') {
                 setActive(projectsBtn, publicationsBtn);
                 projectsSection.classList.remove('hidden');
                 publicationsSection.classList.add('hidden');
-                if (updateUrl) {
-                    const hash = cardId ? `#projects/${cardId}` : '#projects';
-                    history.pushState(null, '', hash);
-                }
             } else {
                 setActive(publicationsBtn, projectsBtn);
                 publicationsSection.classList.remove('hidden');
                 projectsSection.classList.add('hidden');
-                if (updateUrl) {
-                    const hash = cardId ? `#publications/${cardId}` : '#publications';
-                    history.pushState(null, '', hash);
-                }
             }
 
             // Scroll to card if specified
@@ -96,7 +88,7 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
 
         function handleHash(hash: string) {
             if (!hash || hash === '#') {
-                showSection('projects', false);
+                showSection('projects');
                 return;
             }
 
@@ -106,14 +98,14 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
             // Check for card-specific hash (e.g., #projects/project-jetpack-compose-starter)
             if (cleanHash.startsWith('projects/')) {
                 const cardId = cleanHash.substring(9);
-                showSection('projects', false, cardId);
+                showSection('projects', cardId);
             } else if (cleanHash.startsWith('publications/')) {
                 const cardId = cleanHash.substring(13);
-                showSection('publications', false, cardId);
+                showSection('publications', cardId);
             } else if (cleanHash === 'publications') {
-                showSection('publications', false);
+                showSection('publications');
             } else {
-                showSection('projects', false);
+                showSection('projects');
             }
         }
 
