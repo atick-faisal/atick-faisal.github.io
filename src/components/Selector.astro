@@ -62,17 +62,38 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
             inactiveBtn.setAttribute('aria-selected', 'false');
         }
 
-        projectsBtn.addEventListener('click', () => {
-            setActive(projectsBtn, publicationsBtn);
-            projectsSection.classList.remove('hidden');
-            publicationsSection.classList.add('hidden');
+        function showSection(section: 'projects' | 'publications') {
+            if (section === 'projects') {
+                setActive(projectsBtn, publicationsBtn);
+                projectsSection.classList.remove('hidden');
+                publicationsSection.classList.add('hidden');
+                history.pushState(null, '', '#projects');
+            } else {
+                setActive(publicationsBtn, projectsBtn);
+                publicationsSection.classList.remove('hidden');
+                projectsSection.classList.add('hidden');
+                history.pushState(null, '', '#publications');
+            }
+        }
+
+        projectsBtn.addEventListener('click', () => showSection('projects'));
+        publicationsBtn.addEventListener('click', () => showSection('publications'));
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash;
+            if (hash === '#publications') {
+                showSection('publications');
+            } else {
+                showSection('projects');
+            }
         });
 
-        publicationsBtn.addEventListener('click', () => {
-            setActive(publicationsBtn, projectsBtn);
-            publicationsSection.classList.remove('hidden');
-            projectsSection.classList.add('hidden');
-        });
+        // Initialize based on current URL hash
+        const currentHash = window.location.hash;
+        if (currentHash === '#publications') {
+            showSection('publications');
+        }
     }
 
     // Initialize on page load
