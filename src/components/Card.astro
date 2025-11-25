@@ -22,6 +22,7 @@ import {
 import { ICON_SIZES } from '../constants/ui';
 import type { Project, Publication } from '../types';
 import { extractCardLinks } from '../utils/cardLinks';
+import { slugify } from '../utils/slugify';
 
 interface Props {
     item: Project | Publication;
@@ -29,6 +30,9 @@ interface Props {
 }
 
 const { item, type } = Astro.props;
+
+// Generate unique ID for this card
+const cardId = `${type}-${slugify(item.title)}`;
 
 // Import all images from assets directory at build time
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/*.{webp,gif,png,jpg,jpeg}', {
@@ -84,7 +88,7 @@ const BUTTON_LABELS = {
 const links = extractCardLinks(item);
 ---
 
-<div class="card group bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark rounded-card p-0">
+<div id={cardId} class="card group bg-card-light dark:bg-card-dark border border-card-border-light dark:border-card-border-dark rounded-card p-0 scroll-mt-24">
     <!-- Image -->
     <div class="relative overflow-hidden aspect-video rounded-card-image">
         <Image
@@ -99,8 +103,17 @@ const links = extractCardLinks(item);
     <!-- Content -->
     <div class="space-y-4 p-8">
         <!-- Title -->
-        <h3 class="text-gray-900 dark:text-white">
+        <h3 class="text-gray-900 dark:text-white flex items-center gap-2">
             {item.title}
+            <button
+                class="copy-link-btn opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                data-card-id={cardId}
+                data-section={type === 'project' ? 'projects' : 'publications'}
+                aria-label="Copy link to this card"
+                title="Copy link"
+            >
+                <LinkIcon size={ICON_SIZES.SM} />
+            </button>
         </h3>
 
         <!-- Description or Publisher -->
@@ -136,3 +149,45 @@ const links = extractCardLinks(item);
         }
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Handle copy link buttons
+        document.querySelectorAll('.copy-link-btn').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const button = e.currentTarget as HTMLButtonElement;
+                const cardId = button.dataset.cardId;
+                const section = button.dataset.section;
+                
+                if (cardId && section) {
+                    const url = `${window.location.origin}${window.location.pathname}#${section}/${cardId}`;
+                    
+                    try {
+                        await navigator.clipboard.writeText(url);
+                        
+                        // Show feedback
+                        const originalTitle = button.title;
+                        button.title = 'Copied!';
+                        button.style.color = 'rgb(34, 197, 94)';
+                        
+                        setTimeout(() => {
+                            button.title = originalTitle;
+                            button.style.color = '';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy link:', err);
+                    }
+                }
+            });
+        });
+    });
+
+    // Re-run on Astro page transitions
+    document.addEventListener('astro:page-load', () => {
+        document.querySelectorAll('.copy-link-btn').forEach(btn => {
+            const clonedBtn = btn.cloneNode(true);
+            btn.parentNode?.replaceChild(clonedBtn, btn);
+        });
+    });
+</script>

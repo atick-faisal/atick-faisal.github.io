@@ -218,3 +218,17 @@ p {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* Highlight effect for linked cards */
+.highlight-card {
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0%, 100% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+    }
+}

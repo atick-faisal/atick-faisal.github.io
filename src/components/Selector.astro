@@ -62,17 +62,58 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
             inactiveBtn.setAttribute('aria-selected', 'false');
         }
 
-        function showSection(section: 'projects' | 'publications') {
+        function showSection(section: 'projects' | 'publications', updateUrl = true, cardId?: string) {
             if (section === 'projects') {
                 setActive(projectsBtn, publicationsBtn);
                 projectsSection.classList.remove('hidden');
                 publicationsSection.classList.add('hidden');
-                history.pushState(null, '', '#projects');
+                if (updateUrl) {
+                    const hash = cardId ? `#projects/${cardId}` : '#projects';
+                    history.pushState(null, '', hash);
+                }
             } else {
                 setActive(publicationsBtn, projectsBtn);
                 publicationsSection.classList.remove('hidden');
                 projectsSection.classList.add('hidden');
-                history.pushState(null, '', '#publications');
+                if (updateUrl) {
+                    const hash = cardId ? `#publications/${cardId}` : '#publications';
+                    history.pushState(null, '', hash);
+                }
+            }
+
+            // Scroll to card if specified
+            if (cardId) {
+                setTimeout(() => {
+                    const element = document.getElementById(cardId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        element.classList.add('highlight-card');
+                        setTimeout(() => element.classList.remove('highlight-card'), 2000);
+                    }
+                }, 100);
+            }
+        }
+
+        function handleHash(hash: string) {
+            if (!hash || hash === '#') {
+                showSection('projects', false);
+                return;
+            }
+
+            // Remove leading #
+            const cleanHash = hash.substring(1);
+            
+            // Check for card-specific hash (e.g., #projects/project-jetpack-compose-starter)
+            if (cleanHash.startsWith('projects/')) {
+                const cardId = cleanHash.substring(9);
+                showSection('projects', false, cardId);
+            } else if (cleanHash.startsWith('publications/')) {
+                const cardId = cleanHash.substring(13);
+                showSection('publications', false, cardId);
+            } else if (cleanHash === 'publications') {
+                showSection('publications', false);
+            } else {
+                showSection('projects', false);
             }
         }
 
@@ -81,19 +122,11 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
 
         // Handle browser back/forward buttons
         window.addEventListener('popstate', () => {
-            const hash = window.location.hash;
-            if (hash === '#publications') {
-                showSection('publications');
-            } else {
-                showSection('projects');
-            }
+            handleHash(window.location.hash);
         });
 
         // Initialize based on current URL hash
-        const currentHash = window.location.hash;
-        if (currentHash === '#publications') {
-            showSection('publications');
-        }
+        handleHash(window.location.hash);
     }
 
     // Initialize on page load
