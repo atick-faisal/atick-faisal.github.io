@@ -65,12 +65,12 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
         function showSection(section: 'projects' | 'publications', cardId?: string) {
             if (section === 'projects') {
                 setActive(projectsBtn, publicationsBtn);
-                projectsSection.classList.remove('hidden');
-                publicationsSection.classList.add('hidden');
+                projectsSection!.classList.remove('hidden');
+                publicationsSection!.classList.add('hidden');
             } else {
                 setActive(publicationsBtn, projectsBtn);
-                publicationsSection.classList.remove('hidden');
-                projectsSection.classList.add('hidden');
+                publicationsSection!.classList.remove('hidden');
+                projectsSection!.classList.add('hidden');
             }
 
             // Scroll to card if specified
@@ -94,7 +94,7 @@ import { ICON_SIZES, SELECTOR } from '../constants/ui';
 
             // Remove leading #
             const cleanHash = hash.substring(1);
-            
+
             // Check for card-specific hash (e.g., #projects/project-jetpack-compose-starter)
             if (cleanHash.startsWith('projects/')) {
                 const cardId = cleanHash.substring(9);
