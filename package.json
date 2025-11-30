@@ -20,6 +20,6 @@
     "type": "module",
     "dependencies": {
         "@astrojs/partytown": "^2.1.4",
-        "lucide-astro": "^0.554.0"
+        "lucide-astro": "^0.555.0"
     }
 }
