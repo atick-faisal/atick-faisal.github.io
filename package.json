@@ -2,10 +2,10 @@
     "name": "atick.dev",
     "devDependencies": {
         "@biomejs/biome": "2.3.8",
-        "@tailwindcss/postcss": "4.1.17",
+        "@tailwindcss/postcss": "4.1.18",
         "@types/bun": "latest",
         "astro": "5.16.4",
-        "tailwindcss": "4.1.17",
+        "tailwindcss": "4.1.18",
         "typescript": "5.9.3"
     },
     "private": true,
