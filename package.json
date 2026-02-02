@@ -1,7 +1,7 @@
 {
     "name": "atick.dev",
     "devDependencies": {
-        "@biomejs/biome": "2.3.11",
+        "@biomejs/biome": "2.3.13",
         "@tailwindcss/postcss": "4.1.18",
         "@types/bun": "latest",
         "astro": "5.16.14",
