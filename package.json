@@ -4,7 +4,7 @@
         "@biomejs/biome": "2.5.3",
         "@tailwindcss/postcss": "4.3.2",
         "@types/bun": "latest",
-        "astro": "6.4.8",
+        "astro": "7.0.7",
         "tailwindcss": "4.3.2",
         "typescript": "6.0.3"
     },
