@@ -16,8 +16,5 @@ export default defineConfig({
         build: {
             assetsInlineLimit: 10000,
         },
-        css: {
-            postcss: './postcss.config.mjs',
-        },
     },
 });
