@@ -1,4 +1,5 @@
 import partytown from '@astrojs/partytown';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
@@ -16,5 +17,6 @@ export default defineConfig({
         build: {
             assetsInlineLimit: 10000,
         },
+        plugins: [tailwindcss()],
     },
 });
