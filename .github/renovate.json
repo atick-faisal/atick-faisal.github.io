@@ -18,6 +18,13 @@
             "automerge": true
         },
         {
+            "description": "Digest updates have no release timestamp, so the age check can never pass (Renovate 42+). See https://docs.renovatebot.com/key-concepts/minimum-release-age/",
+            "matchUpdateTypes": [
+                "digest"
+            ],
+            "minimumReleaseAge": null
+        },
+        {
             "description": "Group Astro and related packages",
             "groupName": "Astro",
             "matchPackageNames": [
